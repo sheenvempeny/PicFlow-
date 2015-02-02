@@ -13,6 +13,9 @@
 		30EC14B81A7F579100985144 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 30EC14B71A7F579100985144 /* Images.xcassets */; };
 		30EC14BB1A7F579100985144 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 30EC14B91A7F579100985144 /* LaunchScreen.xib */; };
 		30EC14C71A7F579100985144 /* PicFlow__Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30EC14C61A7F579100985144 /* PicFlow__Tests.swift */; };
+		30EC14D11A7F596700985144 /* PicFlow.txt in Resources */ = {isa = PBXBuildFile; fileRef = 30EC14D01A7F596700985144 /* PicFlow.txt */; };
+		30EC14D41A7F619C00985144 /* First Screen.png in Resources */ = {isa = PBXBuildFile; fileRef = 30EC14D31A7F619C00985144 /* First Screen.png */; };
+		30EC14D61A7F64A100985144 /* Second Screen.png in Resources */ = {isa = PBXBuildFile; fileRef = 30EC14D51A7F64A100985144 /* Second Screen.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +39,9 @@
 		30EC14C01A7F579100985144 /* PicFlow++Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "PicFlow++Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		30EC14C51A7F579100985144 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		30EC14C61A7F579100985144 /* PicFlow__Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PicFlow__Tests.swift; sourceTree = "<group>"; };
+		30EC14D01A7F596700985144 /* PicFlow.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = PicFlow.txt; sourceTree = SOURCE_ROOT; };
+		30EC14D31A7F619C00985144 /* First Screen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "First Screen.png"; path = "Screens/First Screen.png"; sourceTree = SOURCE_ROOT; };
+		30EC14D51A7F64A100985144 /* Second Screen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Second Screen.png"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +96,8 @@
 		30EC14AE1A7F579100985144 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				30EC14D21A7F615300985144 /* Screens */,
+				30EC14D01A7F596700985144 /* PicFlow.txt */,
 				30EC14AF1A7F579100985144 /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -110,6 +118,15 @@
 				30EC14C51A7F579100985144 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		30EC14D21A7F615300985144 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				30EC14D51A7F64A100985144 /* Second Screen.png */,
+				30EC14D31A7F619C00985144 /* First Screen.png */,
+			);
+			name = Screens;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -192,7 +209,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				30EC14D61A7F64A100985144 /* Second Screen.png in Resources */,
+				30EC14D41A7F619C00985144 /* First Screen.png in Resources */,
 				30EC14B61A7F579100985144 /* Main.storyboard in Resources */,
+				30EC14D11A7F596700985144 /* PicFlow.txt in Resources */,
 				30EC14BB1A7F579100985144 /* LaunchScreen.xib in Resources */,
 				30EC14B81A7F579100985144 /* Images.xcassets in Resources */,
 			);
@@ -405,6 +425,7 @@
 				30EC14CC1A7F579100985144 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		30EC14CD1A7F579100985144 /* Build configuration list for PBXNativeTarget "PicFlow++Tests" */ = {
 			isa = XCConfigurationList;
@@ -413,6 +434,7 @@
 				30EC14CF1A7F579100985144 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
