@@ -54,11 +54,14 @@ Initial screens : 3
 
 1) Show number of created projects + new project button
 2) When click on a project, it shows the details of the project
-3) When click on a new project , it show user a screen with 3 big buttons
+3) When click on a new project , it show user a screen like in the image "Second Screen.png"
 
-    1) Add Media ( we allow photos and video)
-    2) Add Muisc
-    3) Record
+    a) Add Photos
+    b) Add Video
+    c) Add Music
+    d) Record Sound
+    e) Take a Photo
+    f) Take a Video
 
 
 
@@ -67,4 +70,7 @@ Extra - for mockup creation
 ---------------------------
 https://gomockingbird.com/mockingbird/
 
+Useful links
+-------------
+http://stackoverflow.com/questions/5640657/avfoundation-assetwriter-generate-movie-with-images-and-audio
 

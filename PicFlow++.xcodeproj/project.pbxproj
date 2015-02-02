@@ -123,8 +123,8 @@
 		30EC14D21A7F615300985144 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
-				30EC14D51A7F64A100985144 /* Second Screen.png */,
 				30EC14D31A7F619C00985144 /* First Screen.png */,
+				30EC14D51A7F64A100985144 /* Second Screen.png */,
 			);
 			name = Screens;
 			sourceTree = "<group>";
