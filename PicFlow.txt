@@ -1,0 +1,73 @@
+Project Name : PicFlow++
+
+Aim : Make a movie from set of images and audio . Upload that video to social media
+or save to album
+
+
+
+
+Social Medias
+——————
+
+1) Instagram
+
+2) Facebook
+
+3) Dropbox
+
+
+
+Revenue
+————
+
+1) From Advertisement , Show when something in progress
+
+2) Remove add , in app purchase
+
+
+
+Feature
+—————
+
+1) Allow to record voice 
+
+2) Allow to take Photo
+
+3) Allow to add empty text Photo
+
+4) Allow to do with no music
+
+5) We can allow some sample music
+
+6) Each Photo different transitions, not one transition for all photos
+
+7) Allow time set for photos
+
+8) Allow to add text (water mark) to all photos or some photos
+
+9) User can able to multiple songs
+
+
+
+
+In Future
+———————————
+
+1) Allow user to add video
+
+2) Allow user to search on youtube and add audio
+
+3) Sound Cloud integration
+
+
+
+
+Problems
+——————————
+
+1) How to deal with small set of images and big audio file
+
+and : 1) One option is user can customise the audio track’s length
+
+
+2) Can allow to add other app audio’s to this ?

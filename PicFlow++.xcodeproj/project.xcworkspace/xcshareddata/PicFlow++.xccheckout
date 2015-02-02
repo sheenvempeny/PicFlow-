@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>B9EBF916-09C3-4BA2-A9F4-614EA779A120</string>
+	<key>IDESourceControlProjectName</key>
+	<string>PicFlow++</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>6AF2F38132A579C4DA12EC848B7C818BDDA81728</key>
+		<string>https://bitbucket.org/sheenvempeny/picflow.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>PicFlow++.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>6AF2F38132A579C4DA12EC848B7C818BDDA81728</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://bitbucket.org/sheenvempeny/picflow.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>6AF2F38132A579C4DA12EC848B7C818BDDA81728</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>6AF2F38132A579C4DA12EC848B7C818BDDA81728</string>
+			<key>IDESourceControlWCCName</key>
+			<string>PicFlow++</string>
+		</dict>
+	</array>
+</dict>
+</plist>
