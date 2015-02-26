@@ -13,7 +13,7 @@ Social Medias
 Revenue
 ————
 
-1) From Advertisement , Show when something in progress
+1) From Advertisement , Show add when something in progress
 2) Remove add , in app purchase
 
 Feature
