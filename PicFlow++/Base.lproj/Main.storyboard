@@ -21,8 +21,12 @@
                                 <state key="normal" title="Create New Project">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="NewProject:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="BIQ-As-M3K"/>
+                                    <segue destination="LQL-Jp-ai2" kind="presentation" id="FRr-z5-ifQ"/>
+                                </connections>
                             </button>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Qpe-j5-Adm">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Qpe-j5-Adm">
                                 <rect key="frame" x="0.0" y="108" width="600" height="492"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="kay-0U-CY6">
                                     <size key="itemSize" width="50" height="50"/>
@@ -46,16 +50,114 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="Qpe-j5-Adm" firstAttribute="top" secondItem="fDV-RM-BZb" secondAttribute="bottom" constant="37" id="H5A-JP-3dk"/>
-                            <constraint firstItem="Qpe-j5-Adm" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="88" id="M1O-qn-hbT"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="Qpe-j5-Adm" secondAttribute="bottom" id="NV2-aw-1VG"/>
                             <constraint firstItem="Qpe-j5-Adm" firstAttribute="width" secondItem="kh9-bI-dsS" secondAttribute="width" id="O3M-7D-YOT"/>
                             <constraint firstAttribute="centerX" secondItem="fDV-RM-BZb" secondAttribute="centerX" id="SnX-Gp-kLv"/>
-                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="Qpe-j5-Adm" secondAttribute="bottom" id="sd4-rq-nHR"/>
+                            <constraint firstItem="Qpe-j5-Adm" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="88" id="ah9-bw-x9W"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="MCT-Yt-0ud"/>
+                    <connections>
+                        <outlet property="projectsList" destination="Qpe-j5-Adm" id="iaQ-Z3-V3v"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="634" y="545"/>
+            <point key="canvasLocation" x="130" y="55"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="wOw-Kf-N1I">
+            <objects>
+                <navigationController id="LQL-Jp-ai2" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="rLO-1z-7pZ">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="ysM-Pd-V58" kind="relationship" relationship="rootViewController" id="5YJ-ml-kkQ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Zjf-eB-TLf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1015" y="-143"/>
+        </scene>
+        <!--Operation View Controller-->
+        <scene sceneID="fBj-Nc-lNL">
+            <objects>
+                <viewController id="ysM-Pd-V58" customClass="OperationViewController" customModule="PicFlow__" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="hK1-BK-5Kw"/>
+                        <viewControllerLayoutGuide type="bottom" id="msq-P5-KHI"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="egH-c0-hlx">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BJQ-xJ-p6g">
+                                <rect key="frame" x="98" y="91" width="120" height="94"/>
+                                <state key="normal" title="Add Photos">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="addPhotos:" destination="ysM-Pd-V58" eventType="touchUpInside" id="YQ3-M0-A6i"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Ed-FD-wtA">
+                                <rect key="frame" x="98" y="241" width="120" height="94"/>
+                                <state key="normal" title="Add Music">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="addMusic:" destination="ysM-Pd-V58" eventType="touchUpInside" id="yyY-oW-oRG"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Fg-cw-uCr">
+                                <rect key="frame" x="382" y="241" width="120" height="94"/>
+                                <state key="normal" title="Record Music">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="recordMusic:" destination="ysM-Pd-V58" eventType="touchUpInside" id="JR2-mU-1cZ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uJw-nE-cya">
+                                <rect key="frame" x="98" y="415" width="120" height="94"/>
+                                <state key="normal" title="Record Video">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="recordVideo:" destination="ysM-Pd-V58" eventType="touchUpInside" id="ZPm-0I-eW7"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9mk-nh-OHR">
+                                <rect key="frame" x="382" y="415" width="120" height="94"/>
+                                <state key="normal" title="Take a Photo">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="takeAPhoto:" destination="ysM-Pd-V58" eventType="touchUpInside" id="YFa-jB-ifY"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="75K-Pw-Fkm">
+                                <rect key="frame" x="382" y="91" width="120" height="94"/>
+                                <state key="normal" title="Add Videos">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="addVideos:" destination="ysM-Pd-V58" eventType="touchUpInside" id="Obz-jU-SNf"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="QyG-1d-Opz"/>
+                    <connections>
+                        <outlet property="addMuisc" destination="1Ed-FD-wtA" id="wP2-Js-mcq"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="G0S-IO-gkR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1006" y="631"/>
         </scene>
     </scenes>
 </document>
