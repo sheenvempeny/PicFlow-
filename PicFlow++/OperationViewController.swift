@@ -8,7 +8,7 @@
 
 import UIKit
 
-class OperationViewController: UIViewController {
+class OperationViewController: UIViewController , UIImagePickerControllerDelegate,UINavigationControllerDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,7 +24,16 @@ class OperationViewController: UIViewController {
 
     @IBAction func addPhotos(sender: AnyObject)
     {
-    
+        if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.PhotoLibrary){
+            
+            var imag = UIImagePickerController()
+            imag.delegate = self
+            imag.sourceType = UIImagePickerControllerSourceType.PhotoLibrary;
+            //imag.mediaTypes = [kUTTypeImage];
+            imag.allowsEditing = false
+            self.presentViewController(imag, animated: true, completion: nil)
+        }
+
     }
     
     
@@ -57,14 +66,19 @@ class OperationViewController: UIViewController {
     @IBAction func takeAPhoto(sender: AnyObject)
     {
     
-    
     }
     
-    
+    func imagePickerController(picker: UIImagePickerController!, didFinishPickingImage image: UIImage!, editingInfo: NSDictionary!) {
+        let selectedImage : UIImage = image
+        //var tempImage:UIImage = editingInfo[UIImagePickerControllerOriginalImage] as UIImage
+       // img.image=selectedImage
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)
+    {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
     

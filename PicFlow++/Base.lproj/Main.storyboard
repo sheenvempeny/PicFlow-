@@ -1,9 +1,29 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6249" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6249" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="kI0-in-0dO">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6243"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="IZ8-aY-mD5">
+            <objects>
+                <navigationController navigationBarHidden="YES" id="kI0-in-0dO" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="43n-40-Tlr">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="n0u-5T-qKK">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
+                    <connections>
+                        <segue destination="vXZ-lx-hvc" kind="relationship" relationship="rootViewController" id="0ST-yx-eF2"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ahq-lM-0iA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-812" y="-578"/>
+        </scene>
         <!--View Controller-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
@@ -23,10 +43,10 @@
                                 </state>
                                 <connections>
                                     <action selector="NewProject:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="BIQ-As-M3K"/>
-                                    <segue destination="LQL-Jp-ai2" kind="presentation" id="FRr-z5-ifQ"/>
+                                    <segue destination="ysM-Pd-V58" kind="show" id="1cb-Rk-qWX"/>
                                 </connections>
                             </button>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Qpe-j5-Adm">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Qpe-j5-Adm">
                                 <rect key="frame" x="0.0" y="108" width="600" height="492"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="kay-0U-CY6">
                                     <size key="itemSize" width="50" height="50"/>
@@ -63,23 +83,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="130" y="55"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="wOw-Kf-N1I">
-            <objects>
-                <navigationController id="LQL-Jp-ai2" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="rLO-1z-7pZ">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="ysM-Pd-V58" kind="relationship" relationship="rootViewController" id="5YJ-ml-kkQ"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Zjf-eB-TLf" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1015" y="-143"/>
+            <point key="canvasLocation" x="-79" y="-587"/>
         </scene>
         <!--Operation View Controller-->
         <scene sceneID="fBj-Nc-lNL">
@@ -93,8 +97,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BJQ-xJ-p6g">
-                                <rect key="frame" x="98" y="91" width="120" height="94"/>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BJQ-xJ-p6g">
+                                <rect key="frame" x="51" y="115" width="120" height="94"/>
                                 <state key="normal" title="Add Photos">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -102,8 +106,8 @@
                                     <action selector="addPhotos:" destination="ysM-Pd-V58" eventType="touchUpInside" id="YQ3-M0-A6i"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Ed-FD-wtA">
-                                <rect key="frame" x="98" y="241" width="120" height="94"/>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Ed-FD-wtA">
+                                <rect key="frame" x="51" y="276" width="120" height="94"/>
                                 <state key="normal" title="Add Music">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -111,8 +115,8 @@
                                     <action selector="addMusic:" destination="ysM-Pd-V58" eventType="touchUpInside" id="yyY-oW-oRG"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Fg-cw-uCr">
-                                <rect key="frame" x="382" y="241" width="120" height="94"/>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Fg-cw-uCr">
+                                <rect key="frame" x="431" y="275" width="120" height="94"/>
                                 <state key="normal" title="Record Music">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -120,8 +124,8 @@
                                     <action selector="recordMusic:" destination="ysM-Pd-V58" eventType="touchUpInside" id="JR2-mU-1cZ"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uJw-nE-cya">
-                                <rect key="frame" x="98" y="415" width="120" height="94"/>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uJw-nE-cya">
+                                <rect key="frame" x="51" y="437" width="120" height="94"/>
                                 <state key="normal" title="Record Video">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -129,8 +133,8 @@
                                     <action selector="recordVideo:" destination="ysM-Pd-V58" eventType="touchUpInside" id="ZPm-0I-eW7"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9mk-nh-OHR">
-                                <rect key="frame" x="382" y="415" width="120" height="94"/>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9mk-nh-OHR">
+                                <rect key="frame" x="431" y="437" width="120" height="94"/>
                                 <state key="normal" title="Take a Photo">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -138,8 +142,8 @@
                                     <action selector="takeAPhoto:" destination="ysM-Pd-V58" eventType="touchUpInside" id="YFa-jB-ifY"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="75K-Pw-Fkm">
-                                <rect key="frame" x="382" y="91" width="120" height="94"/>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="75K-Pw-Fkm">
+                                <rect key="frame" x="431" y="115" width="120" height="94"/>
                                 <state key="normal" title="Add Videos">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -147,17 +151,34 @@
                                     <action selector="addVideos:" destination="ysM-Pd-V58" eventType="touchUpInside" id="Obz-jU-SNf"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Please select an option" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jia-KU-Jnn">
+                                <rect key="frame" x="51" y="51" width="418" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Jia-KU-Jnn" firstAttribute="top" secondItem="hK1-BK-5Kw" secondAttribute="bottom" constant="39" id="27r-Sc-stn"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="6Fg-cw-uCr" secondAttribute="trailing" constant="33" id="4P1-xl-zbR"/>
+                            <constraint firstItem="BJQ-xJ-p6g" firstAttribute="leading" secondItem="egH-c0-hlx" secondAttribute="leadingMargin" constant="35" id="8z0-21-wtk"/>
+                            <constraint firstItem="9mk-nh-OHR" firstAttribute="top" secondItem="6Fg-cw-uCr" secondAttribute="bottom" constant="68" id="LKp-AI-8go"/>
+                            <constraint firstItem="6Fg-cw-uCr" firstAttribute="top" secondItem="75K-Pw-Fkm" secondAttribute="bottom" constant="66" id="LOW-yd-bz0"/>
+                            <constraint firstItem="Jia-KU-Jnn" firstAttribute="leading" secondItem="egH-c0-hlx" secondAttribute="leadingMargin" constant="35" id="P3S-Mx-iHr"/>
+                            <constraint firstItem="1Ed-FD-wtA" firstAttribute="top" secondItem="BJQ-xJ-p6g" secondAttribute="bottom" constant="67" id="YRO-cy-jqJ"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="9mk-nh-OHR" secondAttribute="trailing" constant="33" id="g7e-cb-myL"/>
+                            <constraint firstItem="uJw-nE-cya" firstAttribute="leading" secondItem="egH-c0-hlx" secondAttribute="leadingMargin" constant="35" id="iNq-eo-t11"/>
+                            <constraint firstItem="uJw-nE-cya" firstAttribute="top" secondItem="1Ed-FD-wtA" secondAttribute="bottom" constant="67" id="kTS-bg-xAI"/>
+                            <constraint firstItem="1Ed-FD-wtA" firstAttribute="leading" secondItem="egH-c0-hlx" secondAttribute="leadingMargin" constant="35" id="rAJ-qm-Lc1"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="75K-Pw-Fkm" secondAttribute="trailing" constant="33" id="rGk-Zy-jyN"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="QyG-1d-Opz"/>
-                    <connections>
-                        <outlet property="addMuisc" destination="1Ed-FD-wtA" id="wP2-Js-mcq"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="G0S-IO-gkR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1006" y="631"/>
+            <point key="canvasLocation" x="-616" y="118"/>
         </scene>
     </scenes>
 </document>
