@@ -8,7 +8,7 @@
 
 import UIKit
 
-class OperationViewController: UIViewController , UIImagePickerControllerDelegate,UINavigationControllerDelegate {
+class OperationViewController: UIViewController,UINavigationControllerDelegate,ELCImagePickerControllerDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,25 +21,24 @@ class OperationViewController: UIViewController , UIImagePickerControllerDelegat
         // Dispose of any resources that can be recreated.
     }
     
-
+    func openMeida(mediaType: EMedia)
+    {
+        var elcPicker = ELCImagePickerController(type: mediaType)
+        elcPicker.maximumImagesCount = 10 //Set the maximum number of images to select, defaults to 4
+        elcPicker.imagePickerDelegate = self
+        self.presentViewController(elcPicker, animated: true, completion: nil)
+    }
+    
+    
     @IBAction func addPhotos(sender: AnyObject)
     {
-        if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.PhotoLibrary){
-            
-            var imag = UIImagePickerController()
-            imag.delegate = self
-            imag.sourceType = UIImagePickerControllerSourceType.PhotoLibrary;
-            //imag.mediaTypes = [kUTTypeImage];
-            imag.allowsEditing = false
-            self.presentViewController(imag, animated: true, completion: nil)
-        }
-
+        openMeida(EPhoto)
     }
     
     
     @IBAction func addVideos(sender: AnyObject)
     {
-    
+        openMeida(EVideo)
     }
     
     
@@ -68,14 +67,20 @@ class OperationViewController: UIViewController , UIImagePickerControllerDelegat
     
     }
     
-    func imagePickerController(picker: UIImagePickerController!, didFinishPickingImage image: UIImage!, editingInfo: NSDictionary!) {
-        let selectedImage : UIImage = image
-        //var tempImage:UIImage = editingInfo[UIImagePickerControllerOriginalImage] as UIImage
-       // img.image=selectedImage
+ 
+    
+    func elcImagePickerController(picker: ELCImagePickerController, didFinishPickingMediaWithInfo info: NSArray )
+    {
         self.dismissViewControllerAnimated(true, completion: nil)
     }
-    // MARK: - Navigation
 
+    func elcImagePickerControllerDidCancel(picker:ELCImagePickerController )
+    {
+    
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)
     {

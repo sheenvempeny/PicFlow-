@@ -1,0 +1,1 @@
+PODS_PICFLOW___ELCIMAGEPICKERCONTROLLER_OTHER_LDFLAGS = -framework "AssetsLibrary" -framework "CoreLocation" -framework "Foundation" -framework "UIKit"
