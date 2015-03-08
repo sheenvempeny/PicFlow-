@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3044CCC01AAC472E005DEC22 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3044CCBF1AAC472E005DEC22 /* AVFoundation.framework */; };
+		3044CCC21AAC4773005DEC22 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3044CCC11AAC4773005DEC22 /* MediaPlayer.framework */; };
+		3044CCC41AAC6749005DEC22 /* Project.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3044CCC31AAC6749005DEC22 /* Project.swift */; };
+		3044CCC61AAC67F8005DEC22 /* Frame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3044CCC51AAC67F8005DEC22 /* Frame.swift */; };
+		3044CCC81AAC70FB005DEC22 /* AudioTrack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3044CCC71AAC70FB005DEC22 /* AudioTrack.swift */; };
 		307E8CC51AA342DD0049D69D /* OperationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 307E8CC41AA342DD0049D69D /* OperationViewController.swift */; };
 		30EC14B11A7F579100985144 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30EC14B01A7F579100985144 /* AppDelegate.swift */; };
 		30EC14B31A7F579100985144 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30EC14B21A7F579100985144 /* ViewController.swift */; };
@@ -31,6 +36,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3044CCBF1AAC472E005DEC22 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		3044CCC11AAC4773005DEC22 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
+		3044CCC31AAC6749005DEC22 /* Project.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Project.swift; sourceTree = "<group>"; };
+		3044CCC51AAC67F8005DEC22 /* Frame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Frame.swift; sourceTree = "<group>"; };
+		3044CCC71AAC70FB005DEC22 /* AudioTrack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioTrack.swift; sourceTree = "<group>"; };
 		304514121AA59A9500526976 /* PicFlow++-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PicFlow++-Bridging-Header.h"; sourceTree = "<group>"; };
 		307E8CC41AA342DD0049D69D /* OperationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OperationViewController.swift; sourceTree = "<group>"; };
 		30EC14AB1A7F579100985144 /* PicFlow++.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "PicFlow++.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -56,6 +66,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3044CCC21AAC4773005DEC22 /* MediaPlayer.framework in Frameworks */,
+				3044CCC01AAC472E005DEC22 /* AVFoundation.framework in Frameworks */,
 				6D2C4800CEAFCBB6DA0081CE /* libPods-PicFlow++.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -94,8 +106,11 @@
 		30EC14AD1A7F579100985144 /* PicFlow++ */ = {
 			isa = PBXGroup;
 			children = (
+				3044CCC31AAC6749005DEC22 /* Project.swift */,
+				3044CCC51AAC67F8005DEC22 /* Frame.swift */,
 				30EC14B01A7F579100985144 /* AppDelegate.swift */,
 				30EC14B21A7F579100985144 /* ViewController.swift */,
+				3044CCC71AAC70FB005DEC22 /* AudioTrack.swift */,
 				307E8CC41AA342DD0049D69D /* OperationViewController.swift */,
 				30EC14B41A7F579100985144 /* Main.storyboard */,
 				30EC14B71A7F579100985144 /* Images.xcassets */,
@@ -144,6 +159,8 @@
 		502E01A0E17D392E8E37F21E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				3044CCC11AAC4773005DEC22 /* MediaPlayer.framework */,
+				3044CCBF1AAC472E005DEC22 /* AVFoundation.framework */,
 				A993D0E2CB9732D7DE551D60 /* libPods-PicFlow++.a */,
 			);
 			name = Frameworks;
@@ -298,7 +315,10 @@
 			files = (
 				30EC14B31A7F579100985144 /* ViewController.swift in Sources */,
 				30EC14B11A7F579100985144 /* AppDelegate.swift in Sources */,
+				3044CCC81AAC70FB005DEC22 /* AudioTrack.swift in Sources */,
 				307E8CC51AA342DD0049D69D /* OperationViewController.swift in Sources */,
+				3044CCC41AAC6749005DEC22 /* Project.swift in Sources */,
+				3044CCC61AAC67F8005DEC22 /* Frame.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

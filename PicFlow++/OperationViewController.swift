@@ -7,14 +7,23 @@
 //
 
 import UIKit
+import MediaPlayer
 
-class OperationViewController: UIViewController,UINavigationControllerDelegate,ELCImagePickerControllerDelegate {
+class OperationViewController: UIViewController,UINavigationControllerDelegate,ELCImagePickerControllerDelegate,MPMediaPickerControllerDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
+    
+    func getViewController() -> ViewController
+    {
+        let appDelegate = UIApplication.sharedApplication().delegate as AppDelegate
+        let controller:UIViewController = appDelegate.window!.rootViewController!
+        return controller as ViewController;
+    }
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -27,6 +36,16 @@ class OperationViewController: UIViewController,UINavigationControllerDelegate,E
         elcPicker.maximumImagesCount = 10 //Set the maximum number of images to select, defaults to 4
         elcPicker.imagePickerDelegate = self
         self.presentViewController(elcPicker, animated: true, completion: nil)
+    }
+    
+    func openAudio()
+    {
+        var picker: MPMediaPickerController = MPMediaPickerController(mediaTypes: MPMediaType.Music)
+        picker.delegate						= self;
+        picker.allowsPickingMultipleItems	= true;
+        picker.prompt						= "Add songs to play"
+        UIApplication.sharedApplication().setStatusBarStyle(UIStatusBarStyle.Default, animated: true)
+        self.presentViewController(picker, animated: true, completion: nil)
     }
     
     
@@ -44,8 +63,7 @@ class OperationViewController: UIViewController,UINavigationControllerDelegate,E
     
     @IBAction func addMusic(sender: AnyObject)
     {
-    
-    
+        openAudio()
     }
    
     
@@ -71,15 +89,26 @@ class OperationViewController: UIViewController,UINavigationControllerDelegate,E
     
     func elcImagePickerController(picker: ELCImagePickerController, didFinishPickingMediaWithInfo info: NSArray )
     {
+        let viewController:ViewController = self.getViewController()
+        viewController.mProject.addPhotos(info)
         self.dismissViewControllerAnimated(true, completion: nil)
     }
 
     func elcImagePickerControllerDidCancel(picker:ELCImagePickerController )
     {
-    
         self.dismissViewControllerAnimated(true, completion: nil)
     }
     
+    func mediaPicker(mediaPicker: MPMediaPickerController!, didPickMediaItems mediaItemCollection: MPMediaItemCollection!)
+    {
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    func mediaPickerDidCancel(mediaPicker: MPMediaPickerController!)
+    {
+       self.dismissViewControllerAnimated(true, completion: nil)
+    }
+
     
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)

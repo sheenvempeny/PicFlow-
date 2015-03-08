@@ -10,8 +10,15 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    required init(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+
     @IBOutlet weak var projectsList: UICollectionView!
     @IBOutlet weak var operViewController : OperationViewController!
+    
+    var mProject : Project;
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,7 +33,8 @@ class ViewController: UIViewController {
 
     @IBAction func NewProject(sender: AnyObject)
     {
-    
+        var newProject:Project = Project()
+        mProject = newProject
     }
     
     // In a storyboard-based application, you will often want to do a little preparation before navigation
