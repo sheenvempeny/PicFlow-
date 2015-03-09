@@ -20,7 +20,7 @@ class Project : NSObject
     }
     
     func addPhotos(images:NSArray){
-        
+        NSLog("photos added")
     }
     
 }

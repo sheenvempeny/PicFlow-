@@ -11,20 +11,14 @@ import MediaPlayer
 
 class OperationViewController: UIViewController,UINavigationControllerDelegate,ELCImagePickerControllerDelegate,MPMediaPickerControllerDelegate {
 
+   
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
     
-    func getViewController() -> ViewController
-    {
-        let appDelegate = UIApplication.sharedApplication().delegate as AppDelegate
-        let controller:UIViewController = appDelegate.window!.rootViewController!
-        return controller as ViewController;
-    }
-    
-
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -46,6 +40,12 @@ class OperationViewController: UIViewController,UINavigationControllerDelegate,E
         picker.prompt						= "Add songs to play"
         UIApplication.sharedApplication().setStatusBarStyle(UIStatusBarStyle.Default, animated: true)
         self.presentViewController(picker, animated: true, completion: nil)
+    }
+    
+    func getViewController() -> ViewController?
+    {
+       let mAppDelegate:AppDelegate  =  UIApplication.sharedApplication().delegate as AppDelegate
+       return mAppDelegate.mainViewController
     }
     
     
@@ -89,8 +89,7 @@ class OperationViewController: UIViewController,UINavigationControllerDelegate,E
     
     func elcImagePickerController(picker: ELCImagePickerController, didFinishPickingMediaWithInfo info: NSArray )
     {
-        let viewController:ViewController = self.getViewController()
-        viewController.mProject.addPhotos(info)
+        self.getViewController()?.mProject?.addPhotos(info)
         self.dismissViewControllerAnimated(true, completion: nil)
     }
 
@@ -115,8 +114,7 @@ class OperationViewController: UIViewController,UINavigationControllerDelegate,E
     {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
-    
-    
+        
     }
     
 

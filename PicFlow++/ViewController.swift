@@ -10,19 +10,26 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    required init(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+   
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
+      super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
     }
-
+    
+    required init(coder aDecoder: NSCoder) {
+     super.init(coder: aDecoder)
+    }
+    
     @IBOutlet weak var projectsList: UICollectionView!
     @IBOutlet weak var operViewController : OperationViewController!
     
-    var mProject : Project;
+    var mProject : Project?;
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        let mAppDelegate:AppDelegate  =  UIApplication.sharedApplication().delegate as AppDelegate
+        mAppDelegate.mainViewController = self
     }
 
     override func didReceiveMemoryWarning() {

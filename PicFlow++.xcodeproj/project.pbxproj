@@ -12,6 +12,8 @@
 		3044CCC41AAC6749005DEC22 /* Project.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3044CCC31AAC6749005DEC22 /* Project.swift */; };
 		3044CCC61AAC67F8005DEC22 /* Frame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3044CCC51AAC67F8005DEC22 /* Frame.swift */; };
 		3044CCC81AAC70FB005DEC22 /* AudioTrack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3044CCC71AAC70FB005DEC22 /* AudioTrack.swift */; };
+		304A0C3F1AADD96700370E7F /* RAReorderableLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 304A0C3E1AADD96700370E7F /* RAReorderableLayout.swift */; };
+		304A0C411AADDCF900370E7F /* HorizontalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 304A0C401AADDCF900370E7F /* HorizontalViewController.swift */; };
 		307E8CC51AA342DD0049D69D /* OperationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 307E8CC41AA342DD0049D69D /* OperationViewController.swift */; };
 		30EC14B11A7F579100985144 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30EC14B01A7F579100985144 /* AppDelegate.swift */; };
 		30EC14B31A7F579100985144 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30EC14B21A7F579100985144 /* ViewController.swift */; };
@@ -42,6 +44,8 @@
 		3044CCC51AAC67F8005DEC22 /* Frame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Frame.swift; sourceTree = "<group>"; };
 		3044CCC71AAC70FB005DEC22 /* AudioTrack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioTrack.swift; sourceTree = "<group>"; };
 		304514121AA59A9500526976 /* PicFlow++-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PicFlow++-Bridging-Header.h"; sourceTree = "<group>"; };
+		304A0C3E1AADD96700370E7F /* RAReorderableLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RAReorderableLayout.swift; sourceTree = "<group>"; };
+		304A0C401AADDCF900370E7F /* HorizontalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HorizontalViewController.swift; sourceTree = "<group>"; };
 		307E8CC41AA342DD0049D69D /* OperationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OperationViewController.swift; sourceTree = "<group>"; };
 		30EC14AB1A7F579100985144 /* PicFlow++.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "PicFlow++.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		30EC14AF1A7F579100985144 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -106,6 +110,8 @@
 		30EC14AD1A7F579100985144 /* PicFlow++ */ = {
 			isa = PBXGroup;
 			children = (
+				304A0C401AADDCF900370E7F /* HorizontalViewController.swift */,
+				304A0C3E1AADD96700370E7F /* RAReorderableLayout.swift */,
 				3044CCC31AAC6749005DEC22 /* Project.swift */,
 				3044CCC51AAC67F8005DEC22 /* Frame.swift */,
 				30EC14B01A7F579100985144 /* AppDelegate.swift */,
@@ -313,7 +319,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				304A0C3F1AADD96700370E7F /* RAReorderableLayout.swift in Sources */,
 				30EC14B31A7F579100985144 /* ViewController.swift in Sources */,
+				304A0C411AADDCF900370E7F /* HorizontalViewController.swift in Sources */,
 				30EC14B11A7F579100985144 /* AppDelegate.swift in Sources */,
 				3044CCC81AAC70FB005DEC22 /* AudioTrack.swift in Sources */,
 				307E8CC51AA342DD0049D69D /* OperationViewController.swift in Sources */,
