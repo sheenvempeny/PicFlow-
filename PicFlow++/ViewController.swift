@@ -11,6 +11,7 @@ import UIKit
 class ViewController: UIViewController {
 
    
+    let detailedViewController:DetailViewController?
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
       super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
     }
@@ -21,6 +22,7 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var projectsList: UICollectionView!
     @IBOutlet weak var operViewController : OperationViewController!
+   
     
     var mProject : Project?;
     
@@ -37,6 +39,15 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    func showDetailedViewController() -> Void
+    {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let controller = storyboard.instantiateViewControllerWithIdentifier("DetailView") as UIViewController
+        let appDelegate:AppDelegate = UIApplication.sharedApplication().delegate as AppDelegate
+        let navController:UINavigationController = appDelegate.window?.rootViewController as UINavigationController
+        navController.pushViewController(controller, animated: true)
+    }
+    
 
     @IBAction func NewProject(sender: AnyObject)
     {

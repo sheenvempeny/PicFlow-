@@ -13,4 +13,9 @@ class Frame:NSObject
 {
     var image : UIImage?;
     var range: NSRange?
+    
+    func duration() -> NSInteger
+    {
+        return 3;
+    }
 }

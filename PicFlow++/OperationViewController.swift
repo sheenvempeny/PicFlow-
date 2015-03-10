@@ -90,7 +90,8 @@ class OperationViewController: UIViewController,UINavigationControllerDelegate,E
     func elcImagePickerController(picker: ELCImagePickerController, didFinishPickingMediaWithInfo info: NSArray )
     {
         self.getViewController()?.mProject?.addPhotos(info)
-        self.dismissViewControllerAnimated(true, completion: nil)
+        self.dismissViewControllerAnimated(false, completion: nil)
+        self.getViewController()?.showDetailedViewController()
     }
 
     func elcImagePickerControllerDidCancel(picker:ELCImagePickerController )

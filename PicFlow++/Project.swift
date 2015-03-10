@@ -6,6 +6,8 @@
 //  Copyright (c) 2015 Sheen. All rights reserved.
 //
 
+
+
 import Foundation
 
 class Project : NSObject
@@ -20,7 +22,23 @@ class Project : NSObject
     }
     
     func addPhotos(images:NSArray){
-        NSLog("photos added")
+        var dict:NSDictionary?
+        var image:UIImage?
+    
+        for dict in images
+        {
+            image = dict.objectForKey(UIImagePickerControllerOriginalImage) as? UIImage
+            var newFrame = Frame()
+            newFrame.image = image;
+            newFrame.range = NSMakeRange(frames.count * newFrame.duration(), newFrame.duration())
+            frames.append(newFrame)
+        }
+    }
+    
+    func repositionFrame(atIndex startIndex:NSInteger,toIndex endIndex:NSInteger) -> Void
+    {
+        let frame:Frame = frames.removeAtIndex(startIndex)
+        frames.insert(frame, atIndex: endIndex)
     }
     
 }
