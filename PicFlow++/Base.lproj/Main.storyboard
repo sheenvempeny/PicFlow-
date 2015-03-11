@@ -103,27 +103,54 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TAA-Ne-ela">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="311"/>
-                            </imageView>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="duu-rI-9Co">
-                                <rect key="frame" x="0.0" y="310" width="600" height="263"/>
-                                <collectionViewLayout key="collectionViewLayout" id="YBP-Us-gHC" customClass="RAReorderableLayout" customModule="PicFlow__" customModuleProvider="target"/>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="duu-rI-9Co">
+                                <rect key="frame" x="0.0" y="360" width="600" height="159"/>
+                                <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="159" id="ax7-l8-k90"/>
+                                </constraints>
+                                <collectionViewLayout key="collectionViewLayout" id="xAe-ea-8ot" customClass="RAReorderableLayout" customModule="PicFlow__" customModuleProvider="target"/>
                                 <cells/>
                             </collectionView>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" alwaysBounceVertical="YES" alwaysBounceHorizontal="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Tny-q7-BSf">
+                                <rect key="frame" x="0.0" y="28" width="600" height="322"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TAA-Ne-ela">
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="322"/>
+                                    </imageView>
+                                </subviews>
+                            </scrollView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LA6-vj-M6g">
+                                <rect key="frame" x="0.0" y="556" width="600" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="AY9-Qh-2TU"/>
+                                </constraints>
+                                <items>
+                                    <barButtonItem title="Item" id="dus-Ql-3v2"/>
+                                </items>
+                            </toolbar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <variation key="heightClass=compact"/>
-                        <variation key="widthClass=compact"/>
+                        <constraints>
+                            <constraint firstItem="Tny-q7-BSf" firstAttribute="top" secondItem="6kr-KS-MaQ" secondAttribute="bottom" constant="8" id="1UQ-tX-KOK"/>
+                            <constraint firstItem="LA6-vj-M6g" firstAttribute="top" secondItem="duu-rI-9Co" secondAttribute="bottom" constant="37" id="2T5-zu-8ZK"/>
+                            <constraint firstItem="Tny-q7-BSf" firstAttribute="leading" secondItem="2vE-Ji-SNV" secondAttribute="leadingMargin" id="71Z-96-Gu1"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Tny-q7-BSf" secondAttribute="trailing" id="7Jy-gW-a4m"/>
+                            <constraint firstItem="McJ-4Q-Mtz" firstAttribute="top" secondItem="LA6-vj-M6g" secondAttribute="bottom" id="d2F-ip-wSk"/>
+                            <constraint firstItem="duu-rI-9Co" firstAttribute="top" secondItem="Tny-q7-BSf" secondAttribute="bottom" constant="10" id="eGH-1s-gzc"/>
+                            <constraint firstItem="duu-rI-9Co" firstAttribute="leading" secondItem="2vE-Ji-SNV" secondAttribute="leadingMargin" id="iuY-Y0-aeB"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="duu-rI-9Co" secondAttribute="trailing" id="ulC-qb-XgH"/>
+                        </constraints>
                     </view>
                     <connections>
+                        <outlet property="imageScrollView" destination="Tny-q7-BSf" id="WmC-n6-qZP"/>
                         <outlet property="imageView" destination="TAA-Ne-ela" id="H9M-pM-bbC"/>
                         <outlet property="picCollectionView" destination="duu-rI-9Co" id="9H6-27-UxP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DbG-uM-Pte" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="142" y="239"/>
+            <point key="canvasLocation" x="124" y="347"/>
         </scene>
         <!--Operation View Controller-->
         <scene sceneID="fBj-Nc-lNL">
