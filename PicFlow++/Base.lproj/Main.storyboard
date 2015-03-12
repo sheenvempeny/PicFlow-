@@ -112,13 +112,8 @@
                                 <collectionViewLayout key="collectionViewLayout" id="xAe-ea-8ot" customClass="RAReorderableLayout" customModule="PicFlow__" customModuleProvider="target"/>
                                 <cells/>
                             </collectionView>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" alwaysBounceVertical="YES" alwaysBounceHorizontal="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Tny-q7-BSf">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" alwaysBounceHorizontal="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Tny-q7-BSf" customClass="YRImageZoomingView" customModule="PicFlow__" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="600" height="322"/>
-                                <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TAA-Ne-ela">
-                                        <rect key="frame" x="0.0" y="0.0" width="600" height="322"/>
-                                    </imageView>
-                                </subviews>
                             </scrollView>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LA6-vj-M6g">
                                 <rect key="frame" x="0.0" y="556" width="600" height="44"/>
@@ -144,7 +139,6 @@
                     </view>
                     <connections>
                         <outlet property="imageScrollView" destination="Tny-q7-BSf" id="WmC-n6-qZP"/>
-                        <outlet property="imageView" destination="TAA-Ne-ela" id="H9M-pM-bbC"/>
                         <outlet property="picCollectionView" destination="duu-rI-9Co" id="9H6-27-UxP"/>
                     </connections>
                 </viewController>
