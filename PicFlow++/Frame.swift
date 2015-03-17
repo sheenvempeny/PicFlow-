@@ -13,9 +13,20 @@ class Frame:NSObject
 {
     var image : UIImage?;
     var range: NSRange?
+    var transition : CIFilter?
     
+    override init() {
+        super.init()
+        // Initialization code
+        self.range = NSMakeRange(0, 3)
+        self.transition = CIFilter(name: "CIDissolveTransition")
+
+    }
+
     func duration() -> NSInteger
     {
-        return 3;
+        return range!.length;
     }
+    
+    
 }

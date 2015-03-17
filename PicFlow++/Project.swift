@@ -41,4 +41,12 @@ class Project : NSObject
         frames.insert(frame, atIndex: endIndex)
     }
     
+    
+    func exportToMovie()
+    {
+        
+        
+        
+    }
+    
 }
