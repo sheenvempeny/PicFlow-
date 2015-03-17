@@ -42,7 +42,7 @@ class ViewController: UIViewController {
     func showDetailedViewController() -> Void
     {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let controller = storyboard.instantiateViewControllerWithIdentifier("DetailView") as UIViewController
+        let controller = storyboard.instantiateViewControllerWithIdentifier("DetailView") as DetailViewController
         let appDelegate:AppDelegate = UIApplication.sharedApplication().delegate as AppDelegate
         let navController:UINavigationController = appDelegate.window?.rootViewController as UINavigationController
         navController.pushViewController(controller, animated: true)

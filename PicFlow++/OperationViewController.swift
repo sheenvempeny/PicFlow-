@@ -9,13 +9,16 @@
 import UIKit
 import MediaPlayer
 
-class OperationViewController: UIViewController,UINavigationControllerDelegate,ELCImagePickerControllerDelegate,MPMediaPickerControllerDelegate {
+class OperationViewController: UIViewController,UINavigationControllerDelegate,ELCImagePickerControllerDelegate,MPMediaPickerControllerDelegate,UITableViewDataSource,UITableViewDelegate {
 
    
+    @IBOutlet weak var actionsListView: UITableView!
+    var actions:[String] = ["Add Photos","Add Music","Show Details"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        actionsListView.delegate = self
+        actionsListView.dataSource = self
         // Do any additional setup after loading the view.
     }
     
@@ -84,7 +87,13 @@ class OperationViewController: UIViewController,UINavigationControllerDelegate,E
     {
     
     }
-    
+ 
+    @IBAction func showDetails(sender: AnyObject)
+    {
+        self.dismissViewControllerAnimated(false, completion: nil)
+        self.getViewController()?.showDetailedViewController()
+    }
+
  
     
     func elcImagePickerController(picker: ELCImagePickerController, didFinishPickingMediaWithInfo info: NSArray )
@@ -118,5 +127,32 @@ class OperationViewController: UIViewController,UINavigationControllerDelegate,E
         
     }
     
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int
+    {
+        return actions.count
+    }
+    // Row display. Implementers should *always* try to reuse cells by setting each cell's reuseIdentifier and querying for available reusable cells with dequeueReusableCellWithIdentifier:
+    // Cell gets various attributes set automatically based on table (separators) and data source (accessory views, editing controls)
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
+    {
+        var cell:UITableViewCell = self.actionsListView.dequeueReusableCellWithIdentifier("cell") as UITableViewCell
+        cell.textLabel?.text = self.actions[indexPath.row]
+        return cell;
+    }
+
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath)
+    {
+        
+        if(self.actions[indexPath.row] == actions[0])
+        {
+            self.addPhotos(tableView)
+        }
+        else if(self.actions[indexPath.row] == actions[2])
+        {
+            self.showDetails(tableView)
+        }
+
+    }
 
 }

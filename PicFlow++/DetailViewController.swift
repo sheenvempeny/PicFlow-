@@ -42,8 +42,11 @@ class DetailViewController: UIViewController,RAReorderableLayoutDelegate, RAReor
         self.picCollectionView.delegate = self
         self.picCollectionView.dataSource = self
         (self.picCollectionView.collectionViewLayout as RAReorderableLayout).scrollDirection = .Horizontal
+        var timer = NSTimer.scheduledTimerWithTimeInterval(0.05, target: self, selector: Selector("selectDefaultPic"), userInfo: nil, repeats: false)
        
     }
+    
+    
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         self.picCollectionView.contentInset = UIEdgeInsetsMake(self.topLayoutGuide.length, 0, 0, 0)
@@ -65,8 +68,16 @@ class DetailViewController: UIViewController,RAReorderableLayoutDelegate, RAReor
     {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
-        
-        
+    }
+    
+    func selectDefaultPic()
+    {
+        if(self.frames()?.count > 0)
+        {
+            
+            var frame:Frame = self.frames()![0]
+            imageScrollView?.image = frame.image
+        }
     }
     
     func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
@@ -86,7 +97,7 @@ class DetailViewController: UIViewController,RAReorderableLayoutDelegate, RAReor
     }
     
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAtIndex section: Int) -> CGFloat {
-        return 1.0
+        return 0.0
     }
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {

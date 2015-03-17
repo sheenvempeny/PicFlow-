@@ -33,10 +33,11 @@ class YRImageZoomingView: UIScrollView,UIScrollViewDelegate {
     {
         self.delegate = self
         self.imageView = UIImageView(frame:self.bounds)
-        self.imageView!.contentMode = .ScaleAspectFill
+        self.imageView!.contentMode = .ScaleAspectFill //ScaleAspectFill
         self.addSubview(self.imageView!)
-        self.showsHorizontalScrollIndicator = false
-        self.showsVerticalScrollIndicator = false
+        self.imageView!.clipsToBounds = true;
+        self.showsHorizontalScrollIndicator = true
+        self.showsVerticalScrollIndicator = true
         self.backgroundColor = UIColor.clearColor()
         self.minimumZoomScale = 1;
         self.maximumZoomScale = 3;
