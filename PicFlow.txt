@@ -74,3 +74,9 @@ Useful links
 -------------
 http://stackoverflow.com/questions/5640657/avfoundation-assetwriter-generate-movie-with-images-and-audio
 
+Controls
+---------
+https://www.cocoacontrols.com/controls/asradial
+https://www.cocoacontrols.com/controls/sywaveformplayer
+https://www.cocoacontrols.com/controls/cnpgridmenu
+

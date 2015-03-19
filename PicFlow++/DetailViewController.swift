@@ -89,7 +89,7 @@ class DetailViewController: UIViewController,RAReorderableLayoutDelegate, RAReor
     }
     
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
-        return CGSizeMake(120.0, 100.0)
+        return CGSizeMake(120.0, 120.0)
     }
     
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAtIndex section: Int) -> UIEdgeInsets {

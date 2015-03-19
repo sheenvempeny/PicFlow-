@@ -101,17 +101,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="duu-rI-9Co">
-                                <rect key="frame" x="5" y="396" width="591" height="159"/>
-                                <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="159" id="ax7-l8-k90"/>
-                                </constraints>
-                                <collectionViewLayout key="collectionViewLayout" id="xAe-ea-8ot" customClass="RAReorderableLayout" customModule="PicFlow__" customModuleProvider="target"/>
-                                <cells/>
-                            </collectionView>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" alwaysBounceHorizontal="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Tny-q7-BSf" customClass="YRImageZoomingView" customModule="PicFlow__" customModuleProvider="target">
-                                <rect key="frame" x="10" y="28" width="581" height="296"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" alwaysBounceHorizontal="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Tny-q7-BSf" customClass="YRImageZoomingView" customModule="PicFlow__" customModuleProvider="target">
+                                <rect key="frame" x="10" y="21" width="581" height="308"/>
                             </scrollView>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BlJ-00-jmq">
                                 <rect key="frame" x="-2" y="556" width="602" height="44"/>
@@ -130,22 +121,67 @@
                                     <barButtonItem title="Preview" id="ytD-Td-a19"/>
                                 </items>
                             </toolbar>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EPM-AV-guw">
+                                <rect key="frame" x="10" y="335" width="581" height="61"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="339-pv-iM7">
+                                        <rect key="frame" x="20" y="12" width="46" height="37"/>
+                                        <state key="normal" title="Rotate">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="our-EN-1fh">
+                                        <rect key="frame" x="112" y="12" width="54" height="37"/>
+                                        <state key="normal" title="Caption">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dOY-CT-fGq">
+                                        <rect key="frame" x="208" y="12" width="59" height="37"/>
+                                        <state key="normal" title="Duration">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uPc-NF-2Wi">
+                                        <rect key="frame" x="305" y="12" width="59" height="37"/>
+                                        <state key="normal" title="Delete">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="61" id="l0b-FZ-J5e"/>
+                                </constraints>
+                            </view>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="duu-rI-9Co">
+                                <rect key="frame" x="10" y="396" width="581" height="159"/>
+                                <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="159" id="ax7-l8-k90"/>
+                                </constraints>
+                                <collectionViewLayout key="collectionViewLayout" id="xAe-ea-8ot" customClass="RAReorderableLayout" customModule="PicFlow__" customModuleProvider="target"/>
+                                <cells/>
+                            </collectionView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="duu-rI-9Co" firstAttribute="leading" secondItem="2vE-Ji-SNV" secondAttribute="leadingMargin" constant="-11" id="5FH-ro-oYh"/>
+                            <constraint firstItem="duu-rI-9Co" firstAttribute="leading" secondItem="2vE-Ji-SNV" secondAttribute="leadingMargin" constant="-6" id="1ZL-J5-Xr1"/>
+                            <constraint firstItem="EPM-AV-guw" firstAttribute="leading" secondItem="2vE-Ji-SNV" secondAttribute="leadingMargin" constant="-6" id="2nS-M3-gJz"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="EPM-AV-guw" secondAttribute="trailing" constant="-7" id="6Bw-OT-kU9"/>
                             <constraint firstAttribute="trailingMargin" secondItem="BlJ-00-jmq" secondAttribute="trailing" constant="-16" id="7ca-VN-Skz"/>
                             <constraint firstItem="Tny-q7-BSf" firstAttribute="leading" secondItem="2vE-Ji-SNV" secondAttribute="leadingMargin" constant="-6" id="9Dg-DK-PoD"/>
                             <constraint firstItem="McJ-4Q-Mtz" firstAttribute="top" secondItem="BlJ-00-jmq" secondAttribute="bottom" id="AYl-cS-NaO"/>
+                            <constraint firstItem="duu-rI-9Co" firstAttribute="top" secondItem="EPM-AV-guw" secondAttribute="bottom" id="GtW-7l-Uez"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Tny-q7-BSf" secondAttribute="trailing" constant="-7" id="JiP-yC-3et"/>
-                            <constraint firstItem="duu-rI-9Co" firstAttribute="top" secondItem="Tny-q7-BSf" secondAttribute="bottom" constant="72" id="NBx-GV-uzF"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="Tny-q7-BSf" secondAttribute="trailing" constant="-7" id="Q9f-ox-tOy"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="duu-rI-9Co" secondAttribute="trailing" constant="-12" id="XfS-X8-g2I"/>
-                            <constraint firstItem="Tny-q7-BSf" firstAttribute="leading" secondItem="2vE-Ji-SNV" secondAttribute="leadingMargin" constant="-6" id="aJn-Re-3gt"/>
-                            <constraint firstItem="Tny-q7-BSf" firstAttribute="top" secondItem="6kr-KS-MaQ" secondAttribute="bottom" constant="8" id="igW-FE-92k"/>
-                            <constraint firstItem="Tny-q7-BSf" firstAttribute="top" secondItem="6kr-KS-MaQ" secondAttribute="bottom" constant="8" id="m9j-Rv-QOR"/>
+                            <constraint firstItem="BlJ-00-jmq" firstAttribute="top" secondItem="duu-rI-9Co" secondAttribute="bottom" constant="1" id="VZp-hd-iFI"/>
+                            <constraint firstItem="Tny-q7-BSf" firstAttribute="top" secondItem="6kr-KS-MaQ" secondAttribute="bottom" id="igW-FE-92k"/>
+                            <constraint firstItem="duu-rI-9Co" firstAttribute="top" secondItem="EPM-AV-guw" secondAttribute="bottom" id="lHt-uA-YnI"/>
                             <constraint firstItem="BlJ-00-jmq" firstAttribute="top" secondItem="duu-rI-9Co" secondAttribute="bottom" constant="1" id="nRO-wm-XiY"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="duu-rI-9Co" secondAttribute="trailing" constant="-7" id="sbt-I3-Yck"/>
+                            <constraint firstItem="BlJ-00-jmq" firstAttribute="top" secondItem="duu-rI-9Co" secondAttribute="bottom" constant="1" id="uvw-F3-vs9"/>
                             <constraint firstItem="BlJ-00-jmq" firstAttribute="leading" secondItem="2vE-Ji-SNV" secondAttribute="leadingMargin" constant="-18" id="vVN-4u-fmG"/>
+                            <constraint firstItem="EPM-AV-guw" firstAttribute="top" secondItem="Tny-q7-BSf" secondAttribute="bottom" constant="6" id="vai-Yq-nDq"/>
                         </constraints>
                     </view>
                     <connections>
@@ -155,7 +191,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DbG-uM-Pte" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="121" y="196"/>
+            <point key="canvasLocation" x="121" y="202"/>
         </scene>
         <!--Operation View Controller-->
         <scene sceneID="fBj-Nc-lNL">
