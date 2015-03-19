@@ -1,0 +1,1 @@
+../../../PhotoPickerPlus/PhotoPickerPlus/Controllers/Legacy/GCLegacyAlbumsCollectionViewController.h

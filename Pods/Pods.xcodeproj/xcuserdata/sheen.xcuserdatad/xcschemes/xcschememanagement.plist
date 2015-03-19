@@ -4,7 +4,42 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>Pods-PicFlow++-AFNetworking.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-PicFlow++-Chute-SDK.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-PicFlow++-CocoaLumberjack.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-PicFlow++-DCKeyValueObjectMapping.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-PicFlow++-ELCImagePickerController.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-PicFlow++-Lockbox.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-PicFlow++-MBProgressHUD.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-PicFlow++-PhotoPickerPlus.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -17,12 +52,47 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>AA594F5C9AE21A0A4B359CC7</key>
+		<key>2462CE6AF0406E8308C896D3</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>B1371E3FC51405A8E76852E5</key>
+		<key>2B6B95D3FD8157E5F7F1DA1D</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>3649BC532003954490D21C65</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>456D95299F229DCBECF3766F</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>48C3254EB4EEBDBFB9207AB1</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>801A06D92AA1AA9EFAEEE367</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>87491183CA6F9F174F3F5719</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>9EE0D4C16B1E956669D6EE18</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>A4E6A0D37623B92B533CFEBC</key>
 		<dict>
 			<key>primary</key>
 			<true/>

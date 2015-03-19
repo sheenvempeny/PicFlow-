@@ -3,6 +3,7 @@
 
 target 'PicFlow++' do
 pod 'ELCImagePickerController', '~> 0.2.0'
+pod 'PhotoPickerPlus'
 end
 
 target 'PicFlow++Tests' do

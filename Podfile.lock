@@ -1,10 +1,36 @@
 PODS:
+  - AFNetworking (1.3.4)
+  - Chute-SDK (2.0.6):
+    - AFNetworking (~> 1.3.2)
+    - CocoaLumberjack (~> 1.6.2)
+    - DCKeyValueObjectMapping (~> 1.4)
+    - Lockbox (~> 1.4.3)
+    - MBProgressHUD (~> 0.7)
+  - CocoaLumberjack (1.6.5.1):
+    - CocoaLumberjack/Core (= 1.6.5.1)
+    - CocoaLumberjack/Extensions (= 1.6.5.1)
+  - CocoaLumberjack/Core (1.6.5.1)
+  - CocoaLumberjack/Extensions (1.6.5.1):
+    - CocoaLumberjack/Core
+  - DCKeyValueObjectMapping (1.4)
   - ELCImagePickerController (0.2.0)
+  - Lockbox (1.4.9)
+  - MBProgressHUD (0.9.1)
+  - PhotoPickerPlus (2.3.0):
+    - Chute-SDK (~> 2.0.6)
 
 DEPENDENCIES:
   - ELCImagePickerController (~> 0.2.0)
+  - PhotoPickerPlus
 
 SPEC CHECKSUMS:
+  AFNetworking: 80c4e0652b08eb34e25b9c0ff3c82556fe5967b4
+  Chute-SDK: 2b53c83f2560eb8930f0cbd04c8873eae5b4fdfe
+  CocoaLumberjack: baf4a09a3bcbdfea3363556a90104e026d3504e2
+  DCKeyValueObjectMapping: c3561709f296ddffba7768a9d7ccf234307fd3c9
   ELCImagePickerController: 4dc83bb6ce995f4964b0080d77ad5a01141e6db2
+  Lockbox: cfe87dbbce6b5c6d7cfeefc3fe6594ef55919b11
+  MBProgressHUD: f3747dcbd45a9e855a6b0674550651e0b7ed250c
+  PhotoPickerPlus: 8f1bc399ecbb2b678733a51481822929f5b23c81
 
 COCOAPODS: 0.35.0

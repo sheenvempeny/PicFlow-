@@ -76,6 +76,7 @@ http://stackoverflow.com/questions/5640657/avfoundation-assetwriter-generate-mov
 
 Controls
 ---------
+https://github.com/chute/photo-picker-plus-ios
 https://www.cocoacontrols.com/controls/asradial
 https://www.cocoacontrols.com/controls/sywaveformplayer
 https://www.cocoacontrols.com/controls/cnpgridmenu

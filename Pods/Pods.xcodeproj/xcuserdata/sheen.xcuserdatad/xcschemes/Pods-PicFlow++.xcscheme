@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "AA594F5C9AE21A0A4B359CC7"
+               BlueprintIdentifier = "456D95299F229DCBECF3766F"
                BuildableName = "libPods-PicFlow++.a"
                BlueprintName = "Pods-PicFlow++"
                ReferencedContainer = "container:Pods.xcodeproj">
