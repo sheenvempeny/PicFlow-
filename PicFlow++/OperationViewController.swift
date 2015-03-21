@@ -9,7 +9,7 @@
 import UIKit
 import MediaPlayer
 
-class OperationViewController: UIViewController,UINavigationControllerDelegate,ELCImagePickerControllerDelegate,MPMediaPickerControllerDelegate,UITableViewDataSource,UITableViewDelegate {
+class OperationViewController: UIViewController,UINavigationControllerDelegate,ELCImagePickerControllerDelegate,MPMediaPickerControllerDelegate,UITableViewDataSource,UITableViewDelegate,PhotoPickerViewControllerDelegate {
 
    
     @IBOutlet weak var actionsListView: UITableView!
@@ -26,8 +26,16 @@ class OperationViewController: UIViewController,UINavigationControllerDelegate,E
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
+
     func openMeida(mediaType: EMedia)
+    {
+        var photoPicker = PhotoPickerViewController(title: "Photos")
+        photoPicker.isMultipleSelectionEnabled = true
+        photoPicker.delegate = self;
+        self.presentViewController(photoPicker, animated: true, completion: nil)
+    }
+    
+    func openMeida2(mediaType: EMedia)
     {
         var elcPicker = ELCImagePickerController(type: mediaType)
         elcPicker.maximumImagesCount = 10 //Set the maximum number of images to select, defaults to 4
@@ -94,7 +102,25 @@ class OperationViewController: UIViewController,UINavigationControllerDelegate,E
         self.getViewController()?.showDetailedViewController()
     }
 
- 
+    //photo picker delegate
+    //one asset
+     /**
+    Called when the user had finished picking and had selected multiple assets, which are returned in an array.
+    */
+    func imagePickerController(picker:PhotoPickerViewController,didFinishPickingArrayOfMediaWithInfo info:NSArray)
+    {
+        self.getViewController()?.mProject?.addPhotos(info)
+        self.dismissViewControllerAnimated(false, completion: nil)
+        self.getViewController()?.showDetailedViewController()
+    }
+    
+    /**
+    Called when the user canceled the picking.
+    */
+    func imagePickerControllerDidCancel( picker:PhotoPickerViewController)
+    {
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
     
     func elcImagePickerController(picker: ELCImagePickerController, didFinishPickingMediaWithInfo info: NSArray )
     {
@@ -154,5 +180,7 @@ class OperationViewController: UIViewController,UINavigationControllerDelegate,E
         }
 
     }
+    
+    
 
 }

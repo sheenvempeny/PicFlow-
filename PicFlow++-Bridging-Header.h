@@ -3,3 +3,4 @@
 //
 
 #import "ELCImagePickerController.h"
+#import "PhotoPickerViewController.h"

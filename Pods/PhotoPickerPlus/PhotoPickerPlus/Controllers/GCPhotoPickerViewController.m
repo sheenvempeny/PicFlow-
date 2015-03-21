@@ -182,6 +182,7 @@
 {
     if(indexPath.section == 0 && self.hasLocal){
         
+        NSLog(GCLocalizedString(@"picker.take_photo"));
         
         NSString *serviceName = [self.localFeatures objectAtIndex:indexPath.row];
         NSString *cellTitle = [[serviceName capitalizedString] stringByReplacingOccurrencesOfString:@"_" withString:@" "];
