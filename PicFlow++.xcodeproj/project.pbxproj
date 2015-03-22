@@ -11,6 +11,8 @@
 		300B914B1AB9720200A6C5EF /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 300B914A1AB9720200A6C5EF /* CoreVideo.framework */; };
 		300B914D1AB9721800A6C5EF /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 300B914C1AB9721800A6C5EF /* AssetsLibrary.framework */; };
 		300B914F1AB972AB00A6C5EF /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 300B914E1AB972AB00A6C5EF /* CoreMedia.framework */; };
+		3014F0041ABEB05700817FDF /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3014EFE31ABEB05700817FDF /* InfoPlist.strings */; };
+		3014F0051ABEB05700817FDF /* PhotoPickerPlus.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3014EFE51ABEB05700817FDF /* PhotoPickerPlus.strings */; };
 		3044CCC01AAC472E005DEC22 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3044CCBF1AAC472E005DEC22 /* AVFoundation.framework */; };
 		3044CCC21AAC4773005DEC22 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3044CCC11AAC4773005DEC22 /* MediaPlayer.framework */; };
 		3044CCC41AAC6749005DEC22 /* Project.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3044CCC31AAC6749005DEC22 /* Project.swift */; };
@@ -53,6 +55,8 @@
 		300B914A1AB9720200A6C5EF /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
 		300B914C1AB9721800A6C5EF /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
 		300B914E1AB972AB00A6C5EF /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+		3014EFE41ABEB05700817FDF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		3014EFE61ABEB05700817FDF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/PhotoPickerPlus.strings; sourceTree = "<group>"; };
 		3044CCBF1AAC472E005DEC22 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		3044CCC11AAC4773005DEC22 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 		3044CCC31AAC6749005DEC22 /* Project.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Project.swift; sourceTree = "<group>"; };
@@ -116,6 +120,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3014EFE21ABEB05700817FDF /* Localizations */ = {
+			isa = PBXGroup;
+			children = (
+				3014EFE31ABEB05700817FDF /* InfoPlist.strings */,
+				3014EFE51ABEB05700817FDF /* PhotoPickerPlus.strings */,
+			);
+			path = Localizations;
+			sourceTree = "<group>";
+		};
 		308217781AB1D1FC00F6E496 /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -164,6 +177,7 @@
 		30EC14AE1A7F579100985144 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				3014EFE21ABEB05700817FDF /* Localizations */,
 				30EC14D21A7F615300985144 /* Screens */,
 				30EC14D01A7F596700985144 /* PicFlow.txt */,
 				30EC14AF1A7F579100985144 /* Info.plist */,
@@ -338,7 +352,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				30EC14D61A7F64A100985144 /* Second Screen.png in Resources */,
+				3014F0041ABEB05700817FDF /* InfoPlist.strings in Resources */,
 				305628441ABCC43F0081A281 /* GCConfiguration.plist in Resources */,
+				3014F0051ABEB05700817FDF /* PhotoPickerPlus.strings in Resources */,
 				30EC14D41A7F619C00985144 /* First Screen.png in Resources */,
 				30EC14B61A7F579100985144 /* Main.storyboard in Resources */,
 				30EC14D11A7F596700985144 /* PicFlow.txt in Resources */,
@@ -427,6 +443,22 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		3014EFE31ABEB05700817FDF /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3014EFE41ABEB05700817FDF /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		3014EFE51ABEB05700817FDF /* PhotoPickerPlus.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3014EFE61ABEB05700817FDF /* en */,
+			);
+			name = PhotoPickerPlus.strings;
+			sourceTree = "<group>";
+		};
 		30EC14B41A7F579100985144 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

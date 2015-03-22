@@ -3,11 +3,12 @@
     {
       "idiom" : "universal",
       "scale" : "1x",
-      "filename" : "film.png"
+      "filename" : "video_overlay.png"
     },
     {
       "idiom" : "universal",
-      "scale" : "2x"
+      "scale" : "2x",
+      "filename" : "video_overlay@2x.png"
     },
     {
       "idiom" : "universal",

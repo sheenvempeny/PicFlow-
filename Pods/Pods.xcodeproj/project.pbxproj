@@ -399,8 +399,6 @@
 		030E7D0D1D29DD3B54C05712 /* GCFlag.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GCFlag.m; path = "Chute-SDK/Models/GCFlag.m"; sourceTree = "<group>"; };
 		037BF589A2A47AC138FEDB0A /* DCParserConfiguration.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DCParserConfiguration.h; path = KeyValueObjectMapping/DCParserConfiguration.h; sourceTree = "<group>"; };
 		0393047D0E9629114AA5FC5A /* PHAsset+Utilities.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "PHAsset+Utilities.h"; path = "PhotoPickerPlus/Categories/PHAsset+Utilities.h"; sourceTree = "<group>"; };
-		04018F49CE82791C181EBB66 /* Localizations */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder; name = Localizations; path = PhotoPickerPlus/Resources/Localizations; sourceTree = "<group>"; };
-		040BC08299934F44D95FFDD2 /* picasa@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "picasa@2x.png"; path = "PhotoPickerPlus/Resources/picasa@2x.png"; sourceTree = "<group>"; };
 		058969C131BE68512AA763DF /* GCFlagCount.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GCFlagCount.m; path = "Chute-SDK/Models/GCFlagCount.m"; sourceTree = "<group>"; };
 		0676C91F6F5667E9908D1E04 /* DDDispatchQueueLogFormatter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DDDispatchQueueLogFormatter.h; path = Lumberjack/Extensions/DDDispatchQueueLogFormatter.h; sourceTree = "<group>"; };
 		08528824EC2CD6B613798ADA /* GCUploadingAsset.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GCUploadingAsset.h; path = "Chute-SDK/Models/GCUploadingAsset.h"; sourceTree = "<group>"; };
@@ -429,7 +427,6 @@
 		18742A0BE810972805506901 /* DDASLLogger.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DDASLLogger.h; path = Lumberjack/DDASLLogger.h; sourceTree = "<group>"; };
 		1CB1F9193A583C8A0A1B6256 /* Pods-PicFlow++-Chute-SDK-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-PicFlow++-Chute-SDK-Private.xcconfig"; sourceTree = "<group>"; };
 		1E71D4AD11C2A817AE6AA55B /* NSDictionary+ALAsset.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSDictionary+ALAsset.m"; path = "PhotoPickerPlus/Categories/NSDictionary+ALAsset.m"; sourceTree = "<group>"; };
-		1EFAD29B7D714FB6B087E63B /* google.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = google.png; path = PhotoPickerPlus/Resources/google.png; sourceTree = "<group>"; };
 		1F46277468648F9DC171642D /* GCLegacyAlbumsTableViewController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GCLegacyAlbumsTableViewController.m; path = PhotoPickerPlus/Controllers/Legacy/GCLegacyAlbumsTableViewController.m; sourceTree = "<group>"; };
 		1FC603A3C6FF3DE417C35EC0 /* GCAccount.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GCAccount.h; path = "Chute-SDK/Models/GCAccount.h"; sourceTree = "<group>"; };
 		2007B73E816E5E34EDB8880E /* NSMutableDictionary+GCUtil.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSMutableDictionary+GCUtil.m"; path = "Chute-SDK/Util/NSMutableDictionary+GCUtil.m"; sourceTree = "<group>"; };
@@ -444,7 +441,6 @@
 		22F737AFABEE115638F827DE /* GCLoginView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GCLoginView.h; path = "Chute-SDK/Views/GCLoginView.h"; sourceTree = "<group>"; };
 		238F42278F79B3D256FD4FCF /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/Security.framework; sourceTree = DEVELOPER_DIR; };
 		24DECEC98EB39206DC61F3C6 /* DCDynamicAttribute.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DCDynamicAttribute.h; path = KeyValueObjectMapping/DCDynamicAttribute.h; sourceTree = "<group>"; };
-		258AC6C16507C873AC3A4A33 /* googledrive@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "googledrive@2x.png"; path = "PhotoPickerPlus/Resources/googledrive@2x.png"; sourceTree = "<group>"; };
 		266C601F48D4035BC7C53D56 /* Pods-PicFlow++-AFNetworking-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-PicFlow++-AFNetworking-Private.xcconfig"; sourceTree = "<group>"; };
 		278A571A58B64B18AB79FDC6 /* Pods-PicFlow++-PhotoPickerPlus-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-PicFlow++-PhotoPickerPlus-Private.xcconfig"; sourceTree = "<group>"; };
 		27FA553C6B4E8F4CB2D8A032 /* Pods-PicFlow++-ELCImagePickerController-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-PicFlow++-ELCImagePickerController-dummy.m"; sourceTree = "<group>"; };
@@ -484,7 +480,6 @@
 		4AE1D07C7628A2B371FB80C6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		4B15B52F829A48DDBAD9883A /* GCPhotoPickerViewController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GCPhotoPickerViewController.m; path = PhotoPickerPlus/Controllers/GCPhotoPickerViewController.m; sourceTree = "<group>"; };
 		4B1A7E84AC29F762F5661A5C /* AFHTTPClient.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFHTTPClient.h; path = AFNetworking/AFHTTPClient.h; sourceTree = "<group>"; };
-		4D34BE01D32C15FC0DD88A7D /* defaultThumb.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = defaultThumb.png; path = PhotoPickerPlus/Resources/defaultThumb.png; sourceTree = "<group>"; };
 		4D8A3D5523D81235138C6433 /* DCPropertyAggregator.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = DCPropertyAggregator.m; path = KeyValueObjectMapping/DCPropertyAggregator.m; sourceTree = "<group>"; };
 		4E5CBBE2E48AC5A496AD822A /* DDFileLogger.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DDFileLogger.h; path = Lumberjack/DDFileLogger.h; sourceTree = "<group>"; };
 		4E7673E30A1D0564556A1DAB /* GCServiceVote.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GCServiceVote.h; path = "Chute-SDK/API/Services/GCServiceVote.h"; sourceTree = "<group>"; };
@@ -498,11 +493,8 @@
 		523B4C248E107A07F21EFCFC /* DCCustomInitialize.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = DCCustomInitialize.m; path = KeyValueObjectMapping/DCCustomInitialize.m; sourceTree = "<group>"; };
 		5285233478015CC644538551 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/CoreLocation.framework; sourceTree = DEVELOPER_DIR; };
 		531D5CBE3FA2A5B186B4E3E6 /* UIImage+VideoImage.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIImage+VideoImage.h"; path = "PhotoPickerPlus/Categories/UIImage+VideoImage.h"; sourceTree = "<group>"; };
-		5409AF3B3909972858AB28D5 /* popover_arrow.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = popover_arrow.png; path = PhotoPickerPlus/Resources/popover_arrow.png; sourceTree = "<group>"; };
 		54348E9414B5E182D548D62E /* Pods-PicFlow++-Chute-SDK.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-PicFlow++-Chute-SDK.xcconfig"; sourceTree = "<group>"; };
-		55332C2C7B94596684CD2684 /* flickr.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = flickr.png; path = PhotoPickerPlus/Resources/flickr.png; sourceTree = "<group>"; };
 		562EDDA9873D42085DFD2F12 /* GCUploads.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GCUploads.m; path = "Chute-SDK/Models/GCUploads.m"; sourceTree = "<group>"; };
-		56E057FDAA900B5D3797DD38 /* flickr@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "flickr@2x.png"; path = "PhotoPickerPlus/Resources/flickr@2x.png"; sourceTree = "<group>"; };
 		56FB478707C1F0F835F774B7 /* GCLog.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GCLog.m; path = "Chute-SDK/Util/GCLog.m"; sourceTree = "<group>"; };
 		57243A883D32A5E34DA8E88A /* ELCImagePickerController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ELCImagePickerController.h; path = Classes/ELCImagePicker/ELCImagePickerController.h; sourceTree = "<group>"; };
 		57BE7A323FE7043C51BE5A3B /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
@@ -510,12 +502,10 @@
 		58B975E80C5D716D99CC91EC /* Overlay.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = Overlay.png; path = Classes/ELCImagePicker/Resources/Overlay.png; sourceTree = "<group>"; };
 		58C21B7EBF555F2B2FCC61F6 /* GCFile.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GCFile.m; path = "Chute-SDK/Models/GCFile.m"; sourceTree = "<group>"; };
 		591C5DE4B1A45AE5DBEE4BAD /* libPods-PicFlow++-AFNetworking.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PicFlow++-AFNetworking.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		5AB5ECC95D3E0A536FCE8439 /* overlay.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = overlay.png; path = PhotoPickerPlus/Resources/overlay.png; sourceTree = "<group>"; };
 		5B4FA00C35664FD53A6221C9 /* Pods-PicFlow++-CocoaLumberjack-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-PicFlow++-CocoaLumberjack-Private.xcconfig"; sourceTree = "<group>"; };
 		5B79041E5BC77C40EC280BB4 /* GCServiceAlbum.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GCServiceAlbum.m; path = "Chute-SDK/API/Services/GCServiceAlbum.m"; sourceTree = "<group>"; };
 		5B83F5FBD71169A09198BE03 /* DCKeyValueObjectMapping.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DCKeyValueObjectMapping.h; path = KeyValueObjectMapping/DCKeyValueObjectMapping.h; sourceTree = "<group>"; };
 		5C5BDF0E97F99AE4F68F1436 /* GCLegacyAlbumsTableViewController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GCLegacyAlbumsTableViewController.h; path = PhotoPickerPlus/Controllers/Legacy/GCLegacyAlbumsTableViewController.h; sourceTree = "<group>"; };
-		5CE816DF41C3DB34E2A7C3C5 /* facebook@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "facebook@2x.png"; path = "PhotoPickerPlus/Resources/facebook@2x.png"; sourceTree = "<group>"; };
 		5D233E9A80ED8957197C8043 /* AFPropertyListRequestOperation.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AFPropertyListRequestOperation.m; path = AFNetworking/AFPropertyListRequestOperation.m; sourceTree = "<group>"; };
 		5DBDE0F667AC1A25C04FDD9D /* GCConfiguration.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GCConfiguration.m; path = "Chute-SDK/Configuration/GCConfiguration.m"; sourceTree = "<group>"; };
 		5EE6411806560CF854BBE637 /* GCServiceTag.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GCServiceTag.m; path = "Chute-SDK/API/Services/GCServiceTag.m"; sourceTree = "<group>"; };
@@ -529,7 +519,6 @@
 		660AF7AFCEE6DAFB1B38E8F2 /* ELCAssetPickerFilterDelegate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ELCAssetPickerFilterDelegate.h; path = Classes/ELCImagePicker/ELCAssetPickerFilterDelegate.h; sourceTree = "<group>"; };
 		671D50A55AE538540371B1A8 /* GCPagination.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GCPagination.h; path = "Chute-SDK/Models/GCPagination.h"; sourceTree = "<group>"; };
 		673161FD614EBFE913F2C814 /* GCMD5Hash.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = GCMD5Hash.c; path = "Chute-SDK/Util/GCMD5Hash.c"; sourceTree = "<group>"; };
-		67D9A4C2C6F3115297BF4434 /* dropbox@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "dropbox@2x.png"; path = "PhotoPickerPlus/Resources/dropbox@2x.png"; sourceTree = "<group>"; };
 		688330E0358DB55BFF0A32BB /* GCFlagCount.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GCFlagCount.h; path = "Chute-SDK/Models/GCFlagCount.h"; sourceTree = "<group>"; };
 		6964378719C3A890239F80AE /* GCLegacyAssetsTableViewController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GCLegacyAssetsTableViewController.h; path = PhotoPickerPlus/Controllers/Legacy/GCLegacyAssetsTableViewController.h; sourceTree = "<group>"; };
 		697FA8DEA8E59AA80DF8CAA8 /* Pods-PicFlow++-Lockbox-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-PicFlow++-Lockbox-prefix.pch"; sourceTree = "<group>"; };
@@ -538,9 +527,7 @@
 		6AC692B2A3D98241534AF718 /* GCAssetDimensions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GCAssetDimensions.m; path = "Chute-SDK/Models/GCAssetDimensions.m"; sourceTree = "<group>"; };
 		6CF15BC4F97B861EEC94E8B8 /* GCResponseStatus.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GCResponseStatus.h; path = "Chute-SDK/Models/GCResponseStatus.h"; sourceTree = "<group>"; };
 		6DBB85820555506603EFEDC6 /* GCResponse.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GCResponse.m; path = "Chute-SDK/Models/GCResponse.m"; sourceTree = "<group>"; };
-		6DC896794D91BE5AA701FA1E /* gradient_blue.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = gradient_blue.png; path = PhotoPickerPlus/Resources/gradient_blue.png; sourceTree = "<group>"; };
 		6ED4D29FB4CA888CD17E3DB1 /* ELCAssetTablePicker.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ELCAssetTablePicker.h; path = Classes/ELCImagePicker/ELCAssetTablePicker.h; sourceTree = "<group>"; };
-		6FEC8E1F93765FD0368E36E0 /* popover_border.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = popover_border.png; path = PhotoPickerPlus/Resources/popover_border.png; sourceTree = "<group>"; };
 		7075A27E80BCAB795B8BFD6C /* GCServiceVote.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GCServiceVote.m; path = "Chute-SDK/API/Services/GCServiceVote.m"; sourceTree = "<group>"; };
 		70E452A3F9FA9A0D7D722DBB /* GCUploadingAsset.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GCUploadingAsset.m; path = "Chute-SDK/Models/GCUploadingAsset.m"; sourceTree = "<group>"; };
 		718B7E89F93CFC3F203E0007 /* GCLog.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GCLog.h; path = "Chute-SDK/Util/GCLog.h"; sourceTree = "<group>"; };
@@ -550,7 +537,6 @@
 		72A8267FA191FF2635F49656 /* DDLog.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DDLog.h; path = Lumberjack/DDLog.h; sourceTree = "<group>"; };
 		72CE9F41160ACF04101A03D9 /* libPods-PicFlow++-PhotoPickerPlus.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PicFlow++-PhotoPickerPlus.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		73E90C5D180A26BCBD320258 /* GCAccount.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GCAccount.m; path = "Chute-SDK/Models/GCAccount.m"; sourceTree = "<group>"; };
-		73FABD13446DECA13ED237F8 /* skydrive@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "skydrive@2x.png"; path = "PhotoPickerPlus/Resources/skydrive@2x.png"; sourceTree = "<group>"; };
 		7676A8768DE1E88CD7875DDB /* DCGenericConverter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DCGenericConverter.h; path = KeyValueObjectMapping/DCGenericConverter.h; sourceTree = "<group>"; };
 		7690E57510E212C0CDE680B9 /* DCAttributeSetter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DCAttributeSetter.h; path = KeyValueObjectMapping/DCAttributeSetter.h; sourceTree = "<group>"; };
 		76C1F9775213D01840FDED92 /* AFHTTPRequestOperation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFHTTPRequestOperation.h; path = AFNetworking/AFHTTPRequestOperation.h; sourceTree = "<group>"; };
@@ -565,22 +551,18 @@
 		7B0E12BB556C5B8E210AB862 /* Pods-PicFlow++-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-PicFlow++-acknowledgements.markdown"; sourceTree = "<group>"; };
 		7B36AE88841A22AD485E8664 /* GCPhotoCell.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GCPhotoCell.h; path = PhotoPickerPlus/Views/GCPhotoCell.h; sourceTree = "<group>"; };
 		7B6F384559016B0817A41186 /* GCMD5Hash.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GCMD5Hash.h; path = "Chute-SDK/Util/GCMD5Hash.h"; sourceTree = "<group>"; };
-		7C15B907B0B2D26F42B616C7 /* youtube@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "youtube@2x.png"; path = "PhotoPickerPlus/Resources/youtube@2x.png"; sourceTree = "<group>"; };
 		7CAC7C84EE300474DFBF82BF /* GCAlbum.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GCAlbum.m; path = "Chute-SDK/Models/GCAlbum.m"; sourceTree = "<group>"; };
 		7CF7A985E33F6E814EBF62E9 /* GCLogFormatter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GCLogFormatter.m; path = "Chute-SDK/Util/GCLogFormatter.m"; sourceTree = "<group>"; };
 		7FC59926367FC808160684BF /* GCClient.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GCClient.m; path = "Chute-SDK/API/GCClient.m"; sourceTree = "<group>"; };
 		805CE5EB9563044F66A8B06E /* GCUserProfile.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GCUserProfile.h; path = "Chute-SDK/Models/GCUserProfile.h"; sourceTree = "<group>"; };
 		821CD5249A9755495697C7C9 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/MobileCoreServices.framework; sourceTree = DEVELOPER_DIR; };
 		83A1D871AEAF7322B0A9917B /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		86A0DC1857F6010B12A6A9BF /* instagram.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = instagram.png; path = PhotoPickerPlus/Resources/instagram.png; sourceTree = "<group>"; };
 		86E9E4642FB8CDBA44F1FC98 /* Pods-PicFlow++-Lockbox-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-PicFlow++-Lockbox-dummy.m"; sourceTree = "<group>"; };
 		87CACAB5099099237676C606 /* GCHeart.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GCHeart.m; path = "Chute-SDK/Models/GCHeart.m"; sourceTree = "<group>"; };
 		881041B219C7CA70556E31FB /* GCServiceComment.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GCServiceComment.h; path = "Chute-SDK/API/Services/GCServiceComment.h"; sourceTree = "<group>"; };
 		882F076A95C65EA9E24FE1DA /* GCCounter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GCCounter.h; path = "Chute-SDK/Models/GCCounter.h"; sourceTree = "<group>"; };
 		887EC5D9281461F40B692D46 /* GCMacros.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GCMacros.h; path = PhotoPickerPlus/Configuration/GCMacros.h; sourceTree = "<group>"; };
 		88B6E5B5ABBCE08EF525CEFA /* GCLegacyAssetsCollectionViewController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GCLegacyAssetsCollectionViewController.h; path = PhotoPickerPlus/Controllers/Legacy/GCLegacyAssetsCollectionViewController.h; sourceTree = "<group>"; };
-		8A8254458FDFB3BEB73E960A /* google@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "google@2x.png"; path = "PhotoPickerPlus/Resources/google@2x.png"; sourceTree = "<group>"; };
-		8ACC2E0D0A326E8F31A4BF60 /* overlay@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "overlay@2x.png"; path = "PhotoPickerPlus/Resources/overlay@2x.png"; sourceTree = "<group>"; };
 		8B3E1790A2EB13853F10B97C /* libPods-PicFlow++.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PicFlow++.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8CA3EB447571FDA665A1542C /* Pods-PicFlow++-Lockbox-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-PicFlow++-Lockbox-Private.xcconfig"; sourceTree = "<group>"; };
 		8D4F1288C670BD16E79ECC58 /* DCCustomParser.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = DCCustomParser.m; path = KeyValueObjectMapping/DCCustomParser.m; sourceTree = "<group>"; };
@@ -627,8 +609,6 @@
 		AB2956BA387F4E501204A335 /* DCDynamicAttribute.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = DCDynamicAttribute.m; path = KeyValueObjectMapping/DCDynamicAttribute.m; sourceTree = "<group>"; };
 		ABD5CD743F6F0B3D09E2790F /* GCServiceAsset.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GCServiceAsset.h; path = "Chute-SDK/API/Services/GCServiceAsset.h"; sourceTree = "<group>"; };
 		AC76AA256AEDB935726746DE /* GCUploadInfo.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GCUploadInfo.m; path = "Chute-SDK/Models/GCUploadInfo.m"; sourceTree = "<group>"; };
-		AD5BFD530D5377A9B5E71AF5 /* picasa.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = picasa.png; path = PhotoPickerPlus/Resources/picasa.png; sourceTree = "<group>"; };
-		B085936A5574F267B4278C60 /* instagram@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "instagram@2x.png"; path = "PhotoPickerPlus/Resources/instagram@2x.png"; sourceTree = "<group>"; };
 		B0D1FE65FEEC3198AF17D0A7 /* GCServiceAlbum.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GCServiceAlbum.h; path = "Chute-SDK/API/Services/GCServiceAlbum.h"; sourceTree = "<group>"; };
 		B2666CFF0E6B8916EB5499B5 /* DCGenericConverter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = DCGenericConverter.m; path = KeyValueObjectMapping/DCGenericConverter.m; sourceTree = "<group>"; };
 		B2880CBE3A0532EB19123975 /* ColorLog.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ColorLog.m; path = "Chute-SDK/Util/ColorLog.m"; sourceTree = "<group>"; };
@@ -636,7 +616,6 @@
 		B54C961A02EEEE43431C0285 /* GCLogFormatter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GCLogFormatter.h; path = "Chute-SDK/Util/GCLogFormatter.h"; sourceTree = "<group>"; };
 		B64558BDE3086B7C073D1C04 /* GCFile.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GCFile.h; path = "Chute-SDK/Models/GCFile.h"; sourceTree = "<group>"; };
 		B65E5A3E6EF7357378F7170C /* DDDispatchQueueLogFormatter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = DDDispatchQueueLogFormatter.m; path = Lumberjack/Extensions/DDDispatchQueueLogFormatter.m; sourceTree = "<group>"; };
-		B67B729DCC34E50C0EC8746E /* camera.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = camera.png; path = PhotoPickerPlus/Resources/camera.png; sourceTree = "<group>"; };
 		B6E8A24787F82BC89707F778 /* DCArrayMapping.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = DCArrayMapping.m; path = KeyValueObjectMapping/DCArrayMapping.m; sourceTree = "<group>"; };
 		B73713C53758ACBE1FC9B122 /* DDTTYLogger.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DDTTYLogger.h; path = Lumberjack/DDTTYLogger.h; sourceTree = "<group>"; };
 		B7FA902DD19FCA2D24AFBD1B /* DDLog.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = DDLog.m; path = Lumberjack/DDLog.m; sourceTree = "<group>"; };
@@ -645,7 +624,6 @@
 		BA96FFEE4FC6646BC6B848E3 /* PHAsset+Utilities.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "PHAsset+Utilities.m"; path = "PhotoPickerPlus/Categories/PHAsset+Utilities.m"; sourceTree = "<group>"; };
 		BAE3B3D721BB92299E04319E /* ELCAssetCell.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ELCAssetCell.h; path = Classes/ELCImagePicker/ELCAssetCell.h; sourceTree = "<group>"; };
 		BB6344E6551ECF50E072182F /* GCAssetsCollectionViewController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GCAssetsCollectionViewController.h; path = PhotoPickerPlus/Controllers/GCAssetsCollectionViewController.h; sourceTree = "<group>"; };
-		BC6E608E545F09C63F2216B0 /* facebook.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = facebook.png; path = PhotoPickerPlus/Resources/facebook.png; sourceTree = "<group>"; };
 		BC88FF82832B87D763CF444F /* GCAlbumCell.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GCAlbumCell.m; path = PhotoPickerPlus/Views/GCAlbumCell.m; sourceTree = "<group>"; };
 		BE324517AC8F5BC2B33AAB57 /* GCPopoverBackgroundView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GCPopoverBackgroundView.m; path = PhotoPickerPlus/Views/GCPopoverBackgroundView.m; sourceTree = "<group>"; };
 		BE9D6F82D12BB4264A325FB3 /* GCConfigurationFile.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GCConfigurationFile.h; path = "Chute-SDK/Configuration/GCConfigurationFile.h"; sourceTree = "<group>"; };
@@ -676,7 +654,6 @@
 		D64685B3B6A3439483259FA9 /* NSDictionary+ALAsset.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSDictionary+ALAsset.h"; path = "PhotoPickerPlus/Categories/NSDictionary+ALAsset.h"; sourceTree = "<group>"; };
 		D6B59C5FD35F6EEAE8444368 /* DDMultiFormatter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = DDMultiFormatter.m; path = Lumberjack/Extensions/DDMultiFormatter.m; sourceTree = "<group>"; };
 		D774D60A80C0612F8D62B70C /* GCLegacyAlbumsCollectionViewController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GCLegacyAlbumsCollectionViewController.m; path = PhotoPickerPlus/Controllers/Legacy/GCLegacyAlbumsCollectionViewController.m; sourceTree = "<group>"; };
-		D81586E3B569B5A70A19409D /* skydrive.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = skydrive.png; path = PhotoPickerPlus/Resources/skydrive.png; sourceTree = "<group>"; };
 		D83AF57B829D898EEFBA3F01 /* GCLinks.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GCLinks.h; path = "Chute-SDK/Models/GCLinks.h"; sourceTree = "<group>"; };
 		D9A46C2308343D883E4ACADC /* Pods-PicFlow++-ELCImagePickerController-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-PicFlow++-ELCImagePickerController-Private.xcconfig"; sourceTree = "<group>"; };
 		D9A60DE28EB9F37A36764B5E /* Pods-PicFlow++-ELCImagePickerController.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-PicFlow++-ELCImagePickerController.xcconfig"; sourceTree = "<group>"; };
@@ -694,12 +671,10 @@
 		DF0E38491AA691B841B09C2E /* NSMutableDictionary+GCUtil.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSMutableDictionary+GCUtil.h"; path = "Chute-SDK/Util/NSMutableDictionary+GCUtil.h"; sourceTree = "<group>"; };
 		DFDE6E845B6ECA56858ECBCD /* Pods-PicFlow++.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-PicFlow++.release.xcconfig"; sourceTree = "<group>"; };
 		E21D1CBED14F1BC6311AA7B8 /* GCPhotoPickerCell.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GCPhotoPickerCell.h; path = PhotoPickerPlus/Views/GCPhotoPickerCell.h; sourceTree = "<group>"; };
-		E225B1AE5E78EE8CB4F23DEE /* album_default.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = album_default.png; path = PhotoPickerPlus/Resources/album_default.png; sourceTree = "<group>"; };
 		E27FBD4BB0871184E4ECD7F1 /* DCSimpleConverter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = DCSimpleConverter.m; path = KeyValueObjectMapping/DCSimpleConverter.m; sourceTree = "<group>"; };
 		E4088F642EFCB3B42B88A377 /* GCVoteCount.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GCVoteCount.m; path = "Chute-SDK/Models/GCVoteCount.m"; sourceTree = "<group>"; };
 		E410138937247F173BE8D0EC /* GCServiceComment.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GCServiceComment.m; path = "Chute-SDK/API/Services/GCServiceComment.m"; sourceTree = "<group>"; };
 		E41030147C7BCC21422160E9 /* GetChute.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GetChute.h; path = "Chute-SDK/GetChute.h"; sourceTree = "<group>"; };
-		E508CFAD91D2FC3A6AD33F18 /* video_overlay@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "video_overlay@2x.png"; path = "PhotoPickerPlus/Resources/video_overlay@2x.png"; sourceTree = "<group>"; };
 		E594E0CB2A0672C24A75A60F /* GCPhotoPickerCell.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GCPhotoPickerCell.m; path = PhotoPickerPlus/Views/GCPhotoPickerCell.m; sourceTree = "<group>"; };
 		E5EB32E307946F05E79E163F /* AFXMLRequestOperation.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AFXMLRequestOperation.m; path = AFNetworking/AFXMLRequestOperation.m; sourceTree = "<group>"; };
 		E6186BE100882CB7DA5A182B /* DCSimpleConverter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DCSimpleConverter.h; path = KeyValueObjectMapping/DCSimpleConverter.h; sourceTree = "<group>"; };
@@ -714,15 +689,11 @@
 		EDD1806FB080B7C2FD6FA3F1 /* ELCAssetSelectionDelegate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ELCAssetSelectionDelegate.h; path = Classes/ELCImagePicker/ELCAssetSelectionDelegate.h; sourceTree = "<group>"; };
 		EE4DC2A12883441CBE672C82 /* DCCustomInitialize.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DCCustomInitialize.h; path = KeyValueObjectMapping/DCCustomInitialize.h; sourceTree = "<group>"; };
 		EE5ED74AD621C09D3E5561A6 /* Lockbox.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = Lockbox.m; sourceTree = "<group>"; };
-		EEEE226BF7531FA64A8DFA3D /* youtube.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = youtube.png; path = PhotoPickerPlus/Resources/youtube.png; sourceTree = "<group>"; };
 		EF0F2ADAE5DA447FFF0D4EFA /* Pods-PicFlow++-Lockbox.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-PicFlow++-Lockbox.xcconfig"; sourceTree = "<group>"; };
 		EFC3923F53DFB9953A204139 /* PhotoPickerClient.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PhotoPickerClient.h; path = PhotoPickerPlus/API/PhotoPickerClient.h; sourceTree = "<group>"; };
 		F0082634D6C8A3BA61F81BDA /* Pods-PicFlow++-PhotoPickerPlus.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-PicFlow++-PhotoPickerPlus.xcconfig"; sourceTree = "<group>"; };
 		F1988C2BF0DCE6692E22EA38 /* GCImageData.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GCImageData.h; path = "Chute-SDK/Models/GCImageData.h"; sourceTree = "<group>"; };
 		F1FA0F25D4C73501DFC22079 /* GCVoteCount.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GCVoteCount.h; path = "Chute-SDK/Models/GCVoteCount.h"; sourceTree = "<group>"; };
-		F23A1C2CACDC901E3EE36C4A /* video_overlay.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = video_overlay.png; path = PhotoPickerPlus/Resources/video_overlay.png; sourceTree = "<group>"; };
-		F3C7EBD2CF5D6222472EBAA6 /* chute.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = chute.png; path = PhotoPickerPlus/Resources/chute.png; sourceTree = "<group>"; };
-		F52BAB24B7AEA8D95C50CE8F /* googledrive.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = googledrive.png; path = PhotoPickerPlus/Resources/googledrive.png; sourceTree = "<group>"; };
 		F6F47E11F7B2BE77DC5F28E4 /* GCAssetSource.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GCAssetSource.m; path = "Chute-SDK/Models/GCAssetSource.m"; sourceTree = "<group>"; };
 		FA0600A898799AEF2F6E1FC3 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/CoreGraphics.framework; sourceTree = DEVELOPER_DIR; };
 		FA61CC25AF2F9CDE6D6A74CA /* GCCoordinate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GCCoordinate.h; path = "Chute-SDK/Models/GCCoordinate.h"; sourceTree = "<group>"; };
@@ -732,7 +703,6 @@
 		FB3514DBDAC3A7A8875B4958 /* AFJSONRequestOperation.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AFJSONRequestOperation.m; path = AFNetworking/AFJSONRequestOperation.m; sourceTree = "<group>"; };
 		FC4958FABB8A0E72B9A70028 /* DDLog+LOGV.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "DDLog+LOGV.h"; path = "Lumberjack/DDLog+LOGV.h"; sourceTree = "<group>"; };
 		FECF84B721FDAFE55EFAA8FD /* DDFileLogger.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = DDFileLogger.m; path = Lumberjack/DDFileLogger.m; sourceTree = "<group>"; };
-		FEE4186D074636445AE74800 /* dropbox.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = dropbox.png; path = PhotoPickerPlus/Resources/dropbox.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -985,36 +955,6 @@
 		5A21B2D864B61E1A55FF538B /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				04018F49CE82791C181EBB66 /* Localizations */,
-				E225B1AE5E78EE8CB4F23DEE /* album_default.png */,
-				B67B729DCC34E50C0EC8746E /* camera.png */,
-				F3C7EBD2CF5D6222472EBAA6 /* chute.png */,
-				4D34BE01D32C15FC0DD88A7D /* defaultThumb.png */,
-				FEE4186D074636445AE74800 /* dropbox.png */,
-				67D9A4C2C6F3115297BF4434 /* dropbox@2x.png */,
-				BC6E608E545F09C63F2216B0 /* facebook.png */,
-				5CE816DF41C3DB34E2A7C3C5 /* facebook@2x.png */,
-				55332C2C7B94596684CD2684 /* flickr.png */,
-				56E057FDAA900B5D3797DD38 /* flickr@2x.png */,
-				1EFAD29B7D714FB6B087E63B /* google.png */,
-				8A8254458FDFB3BEB73E960A /* google@2x.png */,
-				F52BAB24B7AEA8D95C50CE8F /* googledrive.png */,
-				258AC6C16507C873AC3A4A33 /* googledrive@2x.png */,
-				6DC896794D91BE5AA701FA1E /* gradient_blue.png */,
-				86A0DC1857F6010B12A6A9BF /* instagram.png */,
-				B085936A5574F267B4278C60 /* instagram@2x.png */,
-				5AB5ECC95D3E0A536FCE8439 /* overlay.png */,
-				8ACC2E0D0A326E8F31A4BF60 /* overlay@2x.png */,
-				AD5BFD530D5377A9B5E71AF5 /* picasa.png */,
-				040BC08299934F44D95FFDD2 /* picasa@2x.png */,
-				5409AF3B3909972858AB28D5 /* popover_arrow.png */,
-				6FEC8E1F93765FD0368E36E0 /* popover_border.png */,
-				D81586E3B569B5A70A19409D /* skydrive.png */,
-				73FABD13446DECA13ED237F8 /* skydrive@2x.png */,
-				F23A1C2CACDC901E3EE36C4A /* video_overlay.png */,
-				E508CFAD91D2FC3A6AD33F18 /* video_overlay@2x.png */,
-				EEEE226BF7531FA64A8DFA3D /* youtube.png */,
-				7C15B907B0B2D26F42B616C7 /* youtube@2x.png */,
 			);
 			name = Resources;
 			sourceTree = "<group>";

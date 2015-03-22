@@ -14,54 +14,54 @@
 				<string>collectionView</string>
 			</dict>
 			<key>googledrive</key>
-						<dict>
-							<key>folder_layout</key>
-							<string>tableView</string>
-							<key>asset_layout</key>
-							<string>collectionView</string>
-						</dict>
-						<key>instagram</key>
-									<dict>
-										<key>folder_layout</key>
-										<string>tableView</string>
-										<key>asset_layout</key>
-										<string>collectionView</string>
-									</dict>
-									<key>flickr</key>
-												<dict>
-													<key>folder_layout</key>
-													<string>tableView</string>
-													<key>asset_layout</key>
-													<string>collectionView</string>
-												</dict>
-												<key>picasa</key>
-															<dict>
-																<key>folder_layout</key>
-																<string>tableView</string>
-																<key>asset_layout</key>
-																<string>collectionView</string>
-															</dict>
-															<key>dropbox</key>
-																		<dict>
-																			<key>folder_layout</key>
-																			<string>tableView</string>
-																			<key>asset_layout</key>
-																			<string>collectionView</string>
-																		</dict>
-																		<key>skydrive</key>
-																					<dict>
-																						<key>folder_layout</key>
-																						<string>tableView</string>
-																						<key>asset_layout</key>
-																						<string>collectionView</string>
-																					</dict>
-																					<key>youtube</key>
-																								<dict>
-																									<key>folder_layout</key>
-																									<string>tableView</string>
-																									<key>asset_layout</key>
-																									<string>collectionView</string>
-																								</dict>
+			<dict>
+				<key>folder_layout</key>
+				<string>tableView</string>
+				<key>asset_layout</key>
+				<string>collectionView</string>
+			</dict>
+			<key>instagram</key>
+			<dict>
+				<key>folder_layout</key>
+				<string>tableView</string>
+				<key>asset_layout</key>
+				<string>collectionView</string>
+			</dict>
+			<key>flickr</key>
+			<dict>
+				<key>folder_layout</key>
+				<string>tableView</string>
+				<key>asset_layout</key>
+				<string>collectionView</string>
+			</dict>
+			<key>picasa</key>
+			<dict>
+				<key>folder_layout</key>
+				<string>tableView</string>
+				<key>asset_layout</key>
+				<string>collectionView</string>
+			</dict>
+			<key>dropbox</key>
+			<dict>
+				<key>folder_layout</key>
+				<string>tableView</string>
+				<key>asset_layout</key>
+				<string>collectionView</string>
+			</dict>
+			<key>skydrive</key>
+			<dict>
+				<key>folder_layout</key>
+				<string>tableView</string>
+				<key>asset_layout</key>
+				<string>collectionView</string>
+			</dict>
+			<key>youtube</key>
+			<dict>
+				<key>folder_layout</key>
+				<string>tableView</string>
+				<key>asset_layout</key>
+				<string>collectionView</string>
+			</dict>
 			<key>facebook</key>
 			<dict>
 				<key>folder_layout</key>
@@ -95,7 +95,7 @@
 		<key>show_images</key>
 		<true/>
 		<key>show_videos</key>
-		<true/>
+		<false/>
 		<key>default_layouts</key>
 		<dict>
 			<key>folder_layout</key>
