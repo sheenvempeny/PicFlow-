@@ -17,6 +17,11 @@ class Project : NSObject
     var duration:NSRange?
     
     
+    override init() {
+        super.init();
+    }
+    
+    
     func saveProject(){
     
     }

@@ -1,0 +1,41 @@
+App Project List
+_________________
+
+ * Project Name , Unique Id , Project resource path will save in a plist or db.
+   We access the pojects details from that and show to user.
+
+
+Project
+_________
+
+Creation
+---------
+ * When we create a new project , we create a new folder and copy all the assests added to that
+   folder.
+
+ * We wont modify the original file
+
+ * We will create a configuration plist for each project. This plist contains the details about the project.
+   (Frame duration and all other details )
+
+
+Deletion
+---------
+ * When user delete a project, we delete all the assests and 'created folder' for that project.
+
+
+Modification
+------------
+ * On modification , we allow change the attributes of the configuration plist
+
+
+Frames
+________
+
+ * Frame contains a) Image b) range ( starting time and duration) c) image path
+
+
+Audio Track
+______________
+
+Audio Track contains the audio file

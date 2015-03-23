@@ -64,6 +64,13 @@ Initial screens : 3
     f) Take a Video
 
 
+First Version
+--------------
+
+In first version we are not going to support videos . It will come in future.
+
+
+
 
 
 Extra - for mockup creation

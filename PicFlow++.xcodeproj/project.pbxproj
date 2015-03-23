@@ -23,6 +23,8 @@
 		306907851ABADE3600202263 /* ThirdScreen.png in Resources */ = {isa = PBXBuildFile; fileRef = 306907841ABADE3600202263 /* ThirdScreen.png */; };
 		307E8CC51AA342DD0049D69D /* OperationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 307E8CC41AA342DD0049D69D /* OperationViewController.swift */; };
 		3082177A1AB1D21000F6E496 /* YRImageZoomingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 308217791AB1D21000F6E496 /* YRImageZoomingView.swift */; };
+		30CDD5F51ABFF1BA004E2513 /* PicFlowDetails.txt in Resources */ = {isa = PBXBuildFile; fileRef = 30CDD5F41ABFF1BA004E2513 /* PicFlowDetails.txt */; };
+		30CDD5F71AC0055E004E2513 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 30CDD5F61AC0055E004E2513 /* libsqlite3.dylib */; };
 		30EC14B11A7F579100985144 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30EC14B01A7F579100985144 /* AppDelegate.swift */; };
 		30EC14B31A7F579100985144 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30EC14B21A7F579100985144 /* ViewController.swift */; };
 		30EC14B61A7F579100985144 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 30EC14B41A7F579100985144 /* Main.storyboard */; };
@@ -69,6 +71,8 @@
 		306907841ABADE3600202263 /* ThirdScreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ThirdScreen.png; path = Screens/ThirdScreen.png; sourceTree = SOURCE_ROOT; };
 		307E8CC41AA342DD0049D69D /* OperationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OperationViewController.swift; sourceTree = "<group>"; };
 		308217791AB1D21000F6E496 /* YRImageZoomingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YRImageZoomingView.swift; sourceTree = "<group>"; };
+		30CDD5F41ABFF1BA004E2513 /* PicFlowDetails.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = PicFlowDetails.txt; sourceTree = "<group>"; };
+		30CDD5F61AC0055E004E2513 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		30EC14AB1A7F579100985144 /* PicFlow++.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "PicFlow++.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		30EC14AF1A7F579100985144 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		30EC14B01A7F579100985144 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -97,6 +101,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				30CDD5F71AC0055E004E2513 /* libsqlite3.dylib in Frameworks */,
 				300B914F1AB972AB00A6C5EF /* CoreMedia.framework in Frameworks */,
 				300B914D1AB9721800A6C5EF /* AssetsLibrary.framework in Frameworks */,
 				300B914B1AB9720200A6C5EF /* CoreVideo.framework in Frameworks */,
@@ -180,6 +185,7 @@
 				3014EFE21ABEB05700817FDF /* Localizations */,
 				30EC14D21A7F615300985144 /* Screens */,
 				30EC14D01A7F596700985144 /* PicFlow.txt */,
+				30CDD5F41ABFF1BA004E2513 /* PicFlowDetails.txt */,
 				30EC14AF1A7F579100985144 /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -205,9 +211,9 @@
 		30EC14D21A7F615300985144 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
-				306907841ABADE3600202263 /* ThirdScreen.png */,
 				30EC14D31A7F619C00985144 /* First Screen.png */,
 				30EC14D51A7F64A100985144 /* Second Screen.png */,
+				306907841ABADE3600202263 /* ThirdScreen.png */,
 			);
 			name = Screens;
 			sourceTree = "<group>";
@@ -245,6 +251,7 @@
 		502E01A0E17D392E8E37F21E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				30CDD5F61AC0055E004E2513 /* libsqlite3.dylib */,
 				3056283F1ABCC1940081A281 /* SenTestingKit.framework */,
 				300B914E1AB972AB00A6C5EF /* CoreMedia.framework */,
 				300B914C1AB9721800A6C5EF /* AssetsLibrary.framework */,
@@ -351,6 +358,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				30CDD5F51ABFF1BA004E2513 /* PicFlowDetails.txt in Resources */,
 				30EC14D61A7F64A100985144 /* Second Screen.png in Resources */,
 				3014F0041ABEB05700817FDF /* InfoPlist.strings in Resources */,
 				305628441ABCC43F0081A281 /* GCConfiguration.plist in Resources */,

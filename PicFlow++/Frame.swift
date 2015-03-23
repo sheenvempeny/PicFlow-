@@ -14,6 +14,7 @@ class Frame:NSObject
     var image : UIImage?;
     var range: NSRange?
     var transition : CIFilter?
+    var imagePath : String?
     
     override init() {
         super.init()

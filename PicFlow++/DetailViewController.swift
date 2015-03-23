@@ -46,6 +46,28 @@ class DetailViewController: UIViewController,RAReorderableLayoutDelegate, RAReor
        
     }
     
+    @IBAction func rotateImage(sender: AnyObject)
+    {
+       
+        
+        
+    }
+
+    @IBAction func deleteFrame(sender: AnyObject)
+    {
+        
+        
+    }
+
+    
+    @IBAction func changeDuration(sender: AnyObject)
+    {
+        
+        
+        
+    }
+
+    
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
