@@ -1,4 +1,4 @@
-module CommonCrypto [system] {
+module sqlite3 [system] {
     header "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.1.sdk/usr/include/sqlite3.h"
     link "sqlite3"
     export *

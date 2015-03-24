@@ -4,3 +4,4 @@
 
 #import "ELCImagePickerController.h"
 #import "PhotoPickerViewController.h"
+#import <sqlite3.h>
