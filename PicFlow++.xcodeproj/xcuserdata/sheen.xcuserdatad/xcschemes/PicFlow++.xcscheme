@@ -36,10 +36,10 @@
          </BuildActionEntry>
          <BuildActionEntry
             buildForTesting = "YES"
-            buildForRunning = "YES"
+            buildForRunning = "NO"
             buildForProfiling = "NO"
             buildForArchiving = "NO"
-            buildForAnalyzing = "YES">
+            buildForAnalyzing = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "3010F0221AC1A23D0018B238"
@@ -50,10 +50,10 @@
          </BuildActionEntry>
          <BuildActionEntry
             buildForTesting = "YES"
-            buildForRunning = "YES"
+            buildForRunning = "NO"
             buildForProfiling = "NO"
             buildForArchiving = "NO"
-            buildForAnalyzing = "YES">
+            buildForAnalyzing = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "3010F04C1AC1A61C0018B238"
@@ -64,13 +64,13 @@
          </BuildActionEntry>
          <BuildActionEntry
             buildForTesting = "YES"
-            buildForRunning = "YES"
+            buildForRunning = "NO"
             buildForProfiling = "NO"
             buildForArchiving = "NO"
-            buildForAnalyzing = "YES">
+            buildForAnalyzing = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "3010F0751AC1A8EB0018B238"
+               BlueprintIdentifier = "30FDD8581AC28BA6007537F3"
                BuildableName = "CommonCryptoTests.xctest"
                BlueprintName = "CommonCryptoTests"
                ReferencedContainer = "container:PicFlow++.xcodeproj">
@@ -118,7 +118,7 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "3010F0751AC1A8EB0018B238"
+               BlueprintIdentifier = "30FDD8581AC28BA6007537F3"
                BuildableName = "CommonCryptoTests.xctest"
                BlueprintName = "CommonCryptoTests"
                ReferencedContainer = "container:PicFlow++.xcodeproj">

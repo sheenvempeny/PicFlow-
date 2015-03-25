@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "3010F0421AC1A61C0018B238"
+               BlueprintIdentifier = "30FDD8731AC28D1D007537F3"
                BuildableName = "DB.framework"
                BlueprintName = "DB"
                ReferencedContainer = "container:PicFlow++.xcodeproj">
@@ -42,7 +42,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "3010F0421AC1A61C0018B238"
+            BlueprintIdentifier = "30FDD8731AC28D1D007537F3"
             BuildableName = "DB.framework"
             BlueprintName = "DB"
             ReferencedContainer = "container:PicFlow++.xcodeproj">
@@ -60,7 +60,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "3010F0421AC1A61C0018B238"
+            BlueprintIdentifier = "30FDD8731AC28D1D007537F3"
             BuildableName = "DB.framework"
             BlueprintName = "DB"
             ReferencedContainer = "container:PicFlow++.xcodeproj">

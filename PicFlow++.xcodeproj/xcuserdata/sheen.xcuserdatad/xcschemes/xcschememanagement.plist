@@ -4,25 +4,15 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>CommonCrypto.xcscheme</key>
-		<dict>
-			<key>orderHint</key>
-			<integer>12</integer>
-		</dict>
 		<key>DB.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>11</integer>
+			<integer>10</integer>
 		</dict>
 		<key>PicFlow++.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>0</integer>
-		</dict>
-		<key>sqlite3.xcscheme</key>
-		<dict>
-			<key>orderHint</key>
-			<integer>10</integer>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
@@ -73,6 +63,26 @@
 			<true/>
 		</dict>
 		<key>30EC14BF1A7F579100985144</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>30FDD84E1AC28BA6007537F3</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>30FDD8581AC28BA6007537F3</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>30FDD8731AC28D1D007537F3</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>30FDD87D1AC28D1D007537F3</key>
 		<dict>
 			<key>primary</key>
 			<true/>
