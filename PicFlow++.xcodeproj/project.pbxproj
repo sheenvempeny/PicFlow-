@@ -28,6 +28,7 @@
 		3082177A1AB1D21000F6E496 /* YRImageZoomingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 308217791AB1D21000F6E496 /* YRImageZoomingView.swift */; };
 		30CDD5F51ABFF1BA004E2513 /* PicFlowDetails.txt in Resources */ = {isa = PBXBuildFile; fileRef = 30CDD5F41ABFF1BA004E2513 /* PicFlowDetails.txt */; };
 		30CDD5F71AC0055E004E2513 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 30CDD5F61AC0055E004E2513 /* libsqlite3.dylib */; };
+		30DC483F1AC3E811001A61A7 /* Utilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 30DC483E1AC3E811001A61A7 /* Utilities.m */; };
 		30EC14B11A7F579100985144 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30EC14B01A7F579100985144 /* AppDelegate.swift */; };
 		30EC14B31A7F579100985144 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30EC14B21A7F579100985144 /* ViewController.swift */; };
 		30EC14B61A7F579100985144 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 30EC14B41A7F579100985144 /* Main.storyboard */; };
@@ -102,6 +103,8 @@
 		308217791AB1D21000F6E496 /* YRImageZoomingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YRImageZoomingView.swift; sourceTree = "<group>"; };
 		30CDD5F41ABFF1BA004E2513 /* PicFlowDetails.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = PicFlowDetails.txt; sourceTree = "<group>"; };
 		30CDD5F61AC0055E004E2513 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
+		30DC483D1AC3E811001A61A7 /* Utilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utilities.h; sourceTree = "<group>"; };
+		30DC483E1AC3E811001A61A7 /* Utilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Utilities.m; sourceTree = "<group>"; };
 		30EC14AB1A7F579100985144 /* PicFlow++.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "PicFlow++.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		30EC14AF1A7F579100985144 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		30EC14B01A7F579100985144 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -157,6 +160,8 @@
 		3010EFD51AC14DBB0018B238 /* Database */ = {
 			isa = PBXGroup;
 			children = (
+				30DC483D1AC3E811001A61A7 /* Utilities.h */,
+				30DC483E1AC3E811001A61A7 /* Utilities.m */,
 				3047A4561AC2944E0019F71B /* DBManager.h */,
 				3047A4571AC2944E0019F71B /* DBManager.m */,
 			);
@@ -494,6 +499,7 @@
 				30EC14B31A7F579100985144 /* ViewController.swift in Sources */,
 				30EC14B11A7F579100985144 /* AppDelegate.swift in Sources */,
 				3082177A1AB1D21000F6E496 /* YRImageZoomingView.swift in Sources */,
+				30DC483F1AC3E811001A61A7 /* Utilities.m in Sources */,
 				3044CCC81AAC70FB005DEC22 /* AudioTrack.swift in Sources */,
 				3047A4581AC2944E0019F71B /* DBManager.m in Sources */,
 				307E8CC51AA342DD0049D69D /* OperationViewController.swift in Sources */,
@@ -575,6 +581,8 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
+				DEFINES_MODULE = YES;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -593,7 +601,9 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_MODULE_NAME = PicFlow;
 				SDKROOT = iphoneos;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
@@ -617,6 +627,8 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
+				DEFINES_MODULE = YES;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -628,7 +640,9 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_MODULE_NAME = PicFlow;
 				SDKROOT = iphoneos;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;

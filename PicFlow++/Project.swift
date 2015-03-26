@@ -10,11 +10,13 @@
 
 import Foundation
 
-class Project : NSObject
+@objc class Project : NSObject
 {
     var name:String = "";
     var frames:[Frame] = []
     var duration:NSRange?
+    var creationDate:NSDate?
+    var modificationDate:NSDate?
     
     
     override init() {
