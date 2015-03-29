@@ -12,23 +12,38 @@ import Foundation
 
 @objc class Project : NSObject
 {
+    var uniqueId:String?
     var name:String = "";
     var frames:[Frame] = []
     var duration:NSRange?
     var creationDate:NSDate?
     var modificationDate:NSDate?
+    var resourcePath:String?
+    var captionImagePath:String?
     
     
     override init() {
         super.init();
     }
     
-    
-    func saveProject(){
-    
+    func createResources(){
+        
+        
     }
     
-    func addPhotos(images:NSArray){
+    func saveProjectToPlist(){
+    
+        
+    }
+    
+    func saveProject(){
+      DBManager.getSharedInstance().saveProject(self)
+      //save the project details to the plist
+        
+    }
+    
+    func addPhotos(images:NSArray)
+    {
         var dict:NSDictionary?
         var image:UIImage?
     

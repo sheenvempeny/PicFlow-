@@ -12,18 +12,25 @@
 
 +(NSString*)convertDateToString:(NSDate*)date
 {
-    NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
-    [dateFormat setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
-    NSString *dateString=[dateFormat stringFromDate:date];
+    NSString *dateString = nil;
+    if(date)
+    {
+        NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
+        [dateFormat setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
+        dateString=[dateFormat stringFromDate:date];
+    }
     return dateString;
 }
 
-+(NSDate*)convertStringToDate:(char*)dateStr
++(NSDate*)convertStringToDate:(NSString*)dateStr
 {
-    NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
-    [dateFormat setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
-    NSDate *returnDate =[dateFormat dateFromString:[NSString stringWithUTF8String:dateStr]];
-
+    NSDate *returnDate = nil;
+    if(dateStr)
+    {
+        NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
+        [dateFormat setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
+        returnDate =[dateFormat dateFromString:dateStr];
+    }
     return returnDate;
 }
 

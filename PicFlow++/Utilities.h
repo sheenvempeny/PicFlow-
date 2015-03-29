@@ -15,7 +15,7 @@
 }
 
 +(NSString*)convertDateToString:(NSDate*)date;
-+(NSDate*)convertStringToDate:(char*)dateStr;
++(NSDate*)convertStringToDate:(NSString*)dateStr;
 
 @end
 

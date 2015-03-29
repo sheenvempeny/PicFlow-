@@ -8,14 +8,16 @@
 
 #import <Foundation/Foundation.h>
 #import <sqlite3.h>
-
+@class Project;
 
 @interface DBManager : NSObject
 {
     NSString *databasePath;
 }
 
+
 +(DBManager*)getSharedInstance;
--(BOOL)createDB;
--(BOOL)saveProject:(NSString*)projectName resourcePath:(NSString*)rPath creationDate:(NSDate*)date;
+-(NSArray*)getProjects;
+-(BOOL)saveProject:(Project*)project;
+
 @end
