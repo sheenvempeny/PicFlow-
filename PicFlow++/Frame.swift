@@ -9,25 +9,43 @@
 import Foundation
 import UIKit
 
-class Frame:NSObject
+class Frame:NSObject,NSCoding
 {
-    var image : UIImage?;
-    var range: NSRange?
+   
+    var duration : CGFloat?
     var transition : CIFilter?
     var imagePath : String?
     
     override init() {
         super.init()
         // Initialization code
-        self.range = NSMakeRange(0, 3)
+       self.duration = 3
         self.transition = CIFilter(name: "CIDissolveTransition")
-
     }
 
-    func duration() -> NSInteger
+    
+    func image() -> UIImage
     {
-        return range!.length;
+        return UIImage(contentsOfFile: imagePath!)!
     }
     
+    func encodeWithCoder(aCoder: NSCoder) {
     
+        if let duration = self.duration{
+            aCoder.encodeObject(duration, forKey: "duration")
+        }
+        if let transition = self.transition{
+            aCoder.encodeObject(transition, forKey: "transition")
+        }
+        if let imagePath = self.imagePath{
+            aCoder.encodeObject(imagePath, forKey: "imagePath")
+        }
+    }
+    
+    required init(coder aDecoder: NSCoder) {
+        
+        self.duration  = aDecoder.decodeObjectForKey("duration") as? CGFloat
+        self.transition = aDecoder.decodeObjectForKey("transition") as? CIFilter
+        self.imagePath = aDecoder.decodeObjectForKey("imagePath") as? String
+    }
 }

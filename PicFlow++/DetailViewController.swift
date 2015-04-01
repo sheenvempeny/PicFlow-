@@ -98,7 +98,7 @@ class DetailViewController: UIViewController,RAReorderableLayoutDelegate, RAReor
         {
             
             var frame:Frame = self.frames()![0]
-            imageScrollView?.image = frame.image
+            imageScrollView?.image = frame.image()
         }
     }
     
@@ -146,7 +146,7 @@ class DetailViewController: UIViewController,RAReorderableLayoutDelegate, RAReor
     {
         
         var frame:Frame = self.frames()![indexPath.item]
-        imageScrollView.image = frame.image
+        imageScrollView.image = frame.image()
         
         
     }//Dictionary<String,UIView>
@@ -162,7 +162,7 @@ class FrameCell: UICollectionViewCell
     var inFrame:Frame? {
         didSet {
             
-            self.imageView?.image = inFrame?.image
+            self.imageView?.image = inFrame?.image()
         }
     }
     

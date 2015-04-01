@@ -22,6 +22,8 @@ static sqlite3_stmt *statement = nil;
 -(Project*)projectFromStatement;
 -(Project*)projectForId:(NSString*)projectId;
 -(BOOL)updateProject:(Project*)project;
+-(Project*)projectForQuery:(NSString*)querySQL;
+-(NSString*)projectedIdForCreationDate:(NSDate*)creationDate;
 @end
 
 @implementation DBManager
@@ -43,12 +45,7 @@ static sqlite3_stmt *statement = nil;
 
 -(BOOL)createDB{
     
-    NSString *docsDir;
-    NSArray *dirPaths;
-    // Get the documents directory
-    dirPaths = NSSearchPathForDirectoriesInDomains
-    (NSDocumentDirectory, NSUserDomainMask, YES);
-    docsDir = dirPaths[0];
+    NSString  *docsDir = [Utilities documentDir];//dirPaths[0];
     // Build the path to the database file
     databasePath = [[NSString alloc] initWithString:
                     [docsDir stringByAppendingPathComponent: @"projects.db"]];
@@ -111,25 +108,37 @@ static sqlite3_stmt *statement = nil;
 
 -(BOOL)saveProject:(Project*)project
 {
-
+    BOOL status = NO;
+    
     if(project.uniqueId)
     {
-        return [self updateProject:project];
+        status = [self updateProject:project];
     }
     else
     {
         //save project
         NSString *insertQuery = [NSString stringWithFormat:@"insert into projectsDetail (projectName,resourcePath,captionImagePath,creationDate) values (\"%@\",\"%@\",\"%@\",\"%@\")",project.name,project.resourcePath,project.captionImagePath,[Utilities convertDateToString:project.creationDate]];
-        return [self executeQuery:insertQuery];
+        status = [self executeQuery:insertQuery];
+        if(status)
+        {
+            project.uniqueId = [self projectedIdForCreationDate:project.creationDate];
+        }
     }
     
-    return NO;
+    return status;
 }
 
--(Project*)projectForId:(NSString*)projectId
+-(NSString*)projectedIdForCreationDate:(NSDate*)creationDate
 {
     NSString *querySQL = [NSString stringWithFormat:
-                          @"select * from projectsDetail where projectId = \"%@\"",projectId];
+                          @"select * from projectsDetail where creationDate = \"%@\"",[Utilities convertDateToString:creationDate]];
+   
+    Project *project = [self projectForQuery:querySQL];
+    return project.uniqueId;
+}
+
+-(Project*)projectForQuery:(NSString*)querySQL
+{
     Project *returnProject = nil;
     if ([self prepareStatement:querySQL])
     {
@@ -137,11 +146,20 @@ static sqlite3_stmt *statement = nil;
         {
             returnProject = [self projectFromStatement];
         }
-    
+        
         sqlite3_reset(statement);
     }
-
+    
     return returnProject;
+
+}
+
+
+-(Project*)projectForId:(NSString*)projectId
+{
+    NSString *querySQL = [NSString stringWithFormat:
+                          @"select * from projectsDetail where projectId = \"%@\"",projectId];
+    return [self projectForQuery:querySQL];
 }
 
 -(Project*)projectFromStatement

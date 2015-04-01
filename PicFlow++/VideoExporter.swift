@@ -113,7 +113,7 @@ class VideoExporter: NSObject
                 }
                 else {
                     var frame:Frame = project?.frames[Int(i)] as Frame!
-                    buffer = self.pixelBufferFromCGImage(frame.image!.CGImage, withSize: movieSize!)
+                    buffer = self.pixelBufferFromCGImage(frame.image().CGImage, withSize: movieSize!)
                 }
                 
                 if (buffer != nil) {

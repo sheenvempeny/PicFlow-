@@ -34,5 +34,31 @@
     return returnDate;
 }
 
++(NSString*)documentDir
+{
+    NSString *docsDir;
+    NSArray *dirPaths;
+    // Get the documents directory
+    dirPaths = NSSearchPathForDirectoriesInDomains
+    (NSDocumentDirectory, NSUserDomainMask, YES);
+    docsDir = dirPaths[0];
+
+    return docsDir;
+}
+
++(NSString*)findaNameToSave:(NSString*)prefix
+{
+    int cnt = 1;
+    NSString *returnName = [NSString stringWithFormat:@"%@%d.png",prefix,cnt]; //String(format: "%@%d.png", name,cnt)
+    
+    while([[NSFileManager defaultManager] fileExistsAtPath:returnName] == YES)
+    {
+        cnt++;
+        returnName = [NSString stringWithFormat:@"%@%d.png",prefix,cnt];
+    }
+    
+    return returnName;
+}
+
 
 @end

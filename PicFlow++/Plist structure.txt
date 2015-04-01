@@ -1,0 +1,6 @@
+Plist structure
+----------------
+key                value
+
+Frames        ,   Array------------> we save frame object as array
+
