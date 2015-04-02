@@ -20,7 +20,15 @@ import Foundation
     var modificationDate:NSDate?
     var resourcePath:String?
     var captionImagePath:String?
-    var plistPath:String?
+    var projectSaver:ProjectSaver?
+    
+    
+    func plistPath() -> String
+    {
+        var plistPath:String = resourcePath!.stringByAppendingPathComponent("details.plist")
+        NSFileManager.defaultManager().createFileAtPath(plistPath, contents: nil, attributes: nil)
+        return plistPath
+    }
     
     override init() {
         super.init();
@@ -34,19 +42,21 @@ import Foundation
         resourcePath = Utilities.documentDir().stringByAppendingPathComponent(resourceFolderName)
         NSFileManager.defaultManager().createDirectoryAtPath(resourcePath!, withIntermediateDirectories: false, attributes: nil, error: nil)
         // Now we will create plist for saving project details
-        plistPath = resourcePath?.stringByAppendingPathComponent("details.plist")
-        NSFileManager.defaultManager().createFileAtPath(plistPath!, contents: nil, attributes: nil)
+        projectSaver = ProjectSaver(path: self.plistPath())
     }
     
     func load(){
-        
-        
+       
+        if(projectSaver == nil)
+        {
+            projectSaver = ProjectSaver(path: self.plistPath())
+            frames = projectSaver?.getValue("frames") as [Frame]
+        }
     }
     
     
     func saveToPlist(){
-    
-        
+        projectSaver?.saveValue(frames, forKey: "frames")
     }
     
     

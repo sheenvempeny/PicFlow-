@@ -184,6 +184,7 @@ static sqlite3_stmt *statement = nil;
     NSString *modificationDate = [[NSString alloc] initWithUTF8String:
                                   (const char *) sqlite3_column_text(statement, 5)];
     newProject.modificationDate = [Utilities convertStringToDate:modificationDate];
+    [newProject load];
     
     return newProject;
 }

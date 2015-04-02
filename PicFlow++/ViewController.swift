@@ -25,7 +25,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var operViewController : OperationViewController!
    
     
-    var mProject : Project?;
+    var projects : [Project] = []
     
     
     override func viewDidLoad() {
@@ -33,6 +33,12 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
         let mAppDelegate:AppDelegate  =  UIApplication.sharedApplication().delegate as AppDelegate
         mAppDelegate.mainViewController = self
+        var projectArray:NSArray = DBManager.getSharedInstance().getProjects()
+        var mProject:Project?
+        for mProject in projectArray
+        {
+            projects.append(mProject as Project)
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -53,7 +59,8 @@ class ViewController: UIViewController {
     @IBAction func NewProject(sender: AnyObject)
     {
         var newProject:Project = Project()
-        mProject = newProject
+        projects.append(newProject)
+        
     }
     
     // In a storyboard-based application, you will often want to do a little preparation before navigation
