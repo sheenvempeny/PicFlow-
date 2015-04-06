@@ -109,7 +109,7 @@ class OperationViewController: UIViewController,UINavigationControllerDelegate,E
     */
     func imagePickerController(picker:PhotoPickerViewController,didFinishPickingArrayOfMediaWithInfo info:NSArray)
     {
-        self.getViewController()?.mProject?.addPhotos(info)
+        self.getViewController()?.selectedProject?.addPhotos(info)
         self.dismissViewControllerAnimated(false, completion: nil)
         self.getViewController()?.showDetailedViewController()
     }
@@ -124,7 +124,7 @@ class OperationViewController: UIViewController,UINavigationControllerDelegate,E
     
     func elcImagePickerController(picker: ELCImagePickerController, didFinishPickingMediaWithInfo info: NSArray )
     {
-        self.getViewController()?.mProject?.addPhotos(info)
+        self.getViewController()?.selectedProject?.addPhotos(info)
         self.dismissViewControllerAnimated(false, completion: nil)
         self.getViewController()?.showDetailedViewController()
     }

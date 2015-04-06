@@ -16,7 +16,7 @@ class DetailViewController: UIViewController,RAReorderableLayoutDelegate, RAReor
     func getProject() -> Project?
     {
         let appDelegate:AppDelegate = UIApplication.sharedApplication().delegate as AppDelegate
-        var project:Project? = appDelegate.mainViewController?.mProject
+        var project:Project? = appDelegate.mainViewController?.selectedProject
         
         return project;
         

@@ -26,7 +26,7 @@ class ViewController: UIViewController {
    
     
     var projects : [Project] = []
-    
+    var selectedProject:Project?
     
     override func viewDidLoad() {
         super.viewDidLoad()

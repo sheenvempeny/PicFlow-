@@ -75,6 +75,18 @@ import Foundation
         }
     }
     
+    func captionImage() -> UIImage
+    {
+        var returnImage:UIImage?
+        
+        if(captionImagePath == nil)
+        {
+            returnImage = UIImage(contentsOfFile: captionImagePath!)
+        }
+        
+        return returnImage!
+    }
+    
     func addPhotos(images:NSArray)
     {
         if(resourcePath == nil)
