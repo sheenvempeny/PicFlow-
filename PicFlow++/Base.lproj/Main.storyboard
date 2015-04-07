@@ -27,7 +27,7 @@
         <!--View Controller-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
-                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModule="PicFlow__" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModule="PicFlow" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
@@ -51,14 +51,9 @@
                             </button>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Qpe-j5-Adm">
                                 <rect key="frame" x="0.0" y="108" width="600" height="492"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="kay-0U-CY6">
-                                    <size key="itemSize" width="50" height="50"/>
-                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                </collectionViewFlowLayout>
+                                <collectionViewLayout key="collectionViewLayout" id="lyx-HN-aAp" customClass="ProjectLayout" customModule="PicFlow" customModuleProvider="target"/>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="kTC-2k-Jlg">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="PhotoCell" id="kTC-2k-Jlg">
                                         <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -92,7 +87,7 @@
         <!--Detail View Controller-->
         <scene sceneID="xBZ-P9-hoI">
             <objects>
-                <viewController storyboardIdentifier="DetailView" id="GKX-go-Hi6" customClass="DetailViewController" customModule="PicFlow__" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DetailView" id="GKX-go-Hi6" customClass="DetailViewController" customModule="PicFlow" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="6kr-KS-MaQ"/>
                         <viewControllerLayoutGuide type="bottom" id="McJ-4Q-Mtz"/>
@@ -101,7 +96,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" alwaysBounceHorizontal="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Tny-q7-BSf" customClass="YRImageZoomingView" customModule="PicFlow__" customModuleProvider="target">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" alwaysBounceHorizontal="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Tny-q7-BSf" customClass="YRImageZoomingView" customModule="PicFlow" customModuleProvider="target">
                                 <rect key="frame" x="10" y="21" width="581" height="308"/>
                             </scrollView>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BlJ-00-jmq">
@@ -155,7 +150,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="159" id="ax7-l8-k90"/>
                                 </constraints>
-                                <collectionViewLayout key="collectionViewLayout" id="xAe-ea-8ot" customClass="RAReorderableLayout" customModule="PicFlow__" customModuleProvider="target"/>
+                                <collectionViewLayout key="collectionViewLayout" id="xAe-ea-8ot" customClass="RAReorderableLayout" customModule="PicFlow" customModuleProvider="target"/>
                                 <cells/>
                             </collectionView>
                         </subviews>
@@ -191,7 +186,7 @@
         <!--Operation View Controller-->
         <scene sceneID="fBj-Nc-lNL">
             <objects>
-                <viewController id="ysM-Pd-V58" customClass="OperationViewController" customModule="PicFlow__" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="ysM-Pd-V58" customClass="OperationViewController" customModule="PicFlow" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="hK1-BK-5Kw"/>
                         <viewControllerLayoutGuide type="bottom" id="msq-P5-KHI"/>
@@ -255,7 +250,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="SzS-r0-WWv"/>
         <segue reference="XjE-yM-U5Z"/>
+        <segue reference="1cb-Rk-qWX"/>
     </inferredMetricsTieBreakers>
 </document>

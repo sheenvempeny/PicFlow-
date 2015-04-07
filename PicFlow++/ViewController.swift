@@ -21,6 +21,7 @@ class ViewController: UIViewController {
      super.init(coder: aDecoder)
     }
     
+    var projectCollectionManager:ProjectsCollectionManager?
     @IBOutlet weak var projectsList: UICollectionView!
     @IBOutlet weak var operViewController : OperationViewController!
    
@@ -39,6 +40,9 @@ class ViewController: UIViewController {
         {
             projects.append(mProject as Project)
         }
+        
+        projectCollectionManager = ProjectsCollectionManager(inCollectionView: projectsList, withProjects: projects)
+        
     }
 
     override func didReceiveMemoryWarning() {

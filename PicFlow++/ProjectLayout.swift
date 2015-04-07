@@ -98,4 +98,69 @@ class ProjectLayout : UICollectionViewLayout {
         return allAttributes;
     }
 
+    override func layoutAttributesForItemAtIndexPath(indexPath:NSIndexPath) -> UICollectionViewLayoutAttributes
+    {
+       var dict:NSDictionary  = self.layoutInfo!.objectForKey(LayoutPhotoCellKind) as NSDictionary
+        var attrs = dict.objectForKey(indexPath) as UICollectionViewLayoutAttributes
+        return attrs
+    }
+    
+    override func collectionViewContentSize() -> CGSize
+    {
+        var returnSize:CGSize = self.collectionView!.bounds.size
+        
+        if(self.numberOfColumns != nil)
+        {
+            var rowCount:NSInteger = self.collectionView!.numberOfSections() / self.numberOfColumns!
+            // make sure we count another row if one is only partially filled
+            if (self.collectionView!.numberOfSections() % self.numberOfColumns! > 0){
+                rowCount++;
+            }
+            
+            var height:CGFloat = self.itemInsets!.top + (CGFloat(rowCount) * self.itemSize!.height) + CGFloat(rowCount - 1) * self.interItemSpacingY! + self.itemInsets!.bottom;
+            returnSize = CGSizeMake(self.collectionView!.bounds.size.width, height);
+        }
+        
+        return returnSize;
+    }
+    
+    func setItemInsets(inItemInsets:UIEdgeInsets)
+    {
+        if (UIEdgeInsetsEqualToEdgeInsets(inItemInsets, itemInsets!) == true) {
+            
+            return;
+        }
+    
+        itemInsets = inItemInsets;
+        self.invalidateLayout()
+        
+    }
+    
+    func setItemSize(inItemSize:CGSize)
+    {
+        if (CGSizeEqualToSize(itemSize!, inItemSize) == true){
+            return;
+        }
+        itemSize = inItemSize;
+        self.invalidateLayout()
+    }
+    
+    func setInterItemSpacingY(InInterItemSpacingY:CGFloat)
+    {
+        if (interItemSpacingY == InInterItemSpacingY){
+            return;
+        }
+        interItemSpacingY =  InInterItemSpacingY;
+        self.invalidateLayout()
+    }
+    
+    func setNumberOfColumns(InNumberOfColumns:NSInteger)
+    {
+        if (numberOfColumns == InNumberOfColumns){
+            return;
+        }
+        
+        numberOfColumns = InNumberOfColumns;
+        self.invalidateLayout()
+    }
 }
