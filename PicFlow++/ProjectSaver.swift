@@ -21,6 +21,11 @@ class ProjectSaver: NSObject {
         super.init();
         savePath = path
         dict = NSMutableDictionary(contentsOfFile: path)
+        if(dict == nil){
+            
+            dict = NSMutableDictionary()
+        }
+        
     }
     
     func saveValue(value:AnyObject,forKey key:String)

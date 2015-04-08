@@ -41,7 +41,7 @@ class ViewController: UIViewController {
             projects.append(mProject as Project)
         }
         
-        projectCollectionManager = ProjectsCollectionManager(inCollectionView: projectsList, withProjects: projects)
+        //projectCollectionManager = ProjectsCollectionManager(inCollectionView: projectsList, withProjects: projects)
         
     }
 
@@ -64,7 +64,7 @@ class ViewController: UIViewController {
     {
         var newProject:Project = Project()
         projects.append(newProject)
-        
+        selectedProject = newProject;
     }
     
     // In a storyboard-based application, you will often want to do a little preparation before navigation

@@ -166,24 +166,54 @@ static sqlite3_stmt *statement = nil;
 {
     
     Project *newProject = [[Project alloc] init];
-    NSString *projectId = [[NSString alloc] initWithUTF8String:
-                           (const char *) sqlite3_column_text(statement, 0)];
-    newProject.uniqueId = projectId;
-    NSString *name = [[NSString alloc] initWithUTF8String:
-                      (const char *) sqlite3_column_text(statement, 1)];
-    newProject.name = name;
-    NSString *rPath = [[NSString alloc] initWithUTF8String:
-                       (const char *) sqlite3_column_text(statement, 2)];
-    newProject.resourcePath = rPath;
-    NSString *imagePath = [[NSString alloc] initWithUTF8String:
-                           (const char *) sqlite3_column_text(statement, 3)];
-    newProject.captionImagePath = imagePath;
-    NSString *creationDate = [[NSString alloc] initWithUTF8String:
-                              (const char *) sqlite3_column_text(statement, 4)];
-    newProject.creationDate = [Utilities convertStringToDate:creationDate];
-    NSString *modificationDate = [[NSString alloc] initWithUTF8String:
-                                  (const char *) sqlite3_column_text(statement, 5)];
-    newProject.modificationDate = [Utilities convertStringToDate:modificationDate];
+    const char *col1Value = (const char *) sqlite3_column_text(statement, 0);
+    if(col1Value)
+    {
+        NSString *projectId = [[NSString alloc] initWithUTF8String:
+                           col1Value];
+        newProject.uniqueId = projectId;
+    }
+    
+    const char *col2Value = (const char *) sqlite3_column_text(statement, 1);
+    if(col2Value)
+    {
+        NSString *name = [[NSString alloc] initWithUTF8String:
+                      col2Value];
+        newProject.name = name;
+    }
+    
+    const char *col3Value = (const char *) sqlite3_column_text(statement, 2);
+    if(col3Value)
+    {
+        NSString *rPath = [[NSString alloc] initWithUTF8String:
+                      col3Value];
+        newProject.resourcePath = rPath;
+    }
+    
+    const char *col4Value = (const char *) sqlite3_column_text(statement, 3);
+    if(col4Value)
+    {
+        NSString *imagePath = [[NSString alloc] initWithUTF8String:
+                           col4Value];
+        newProject.captionImagePath = imagePath;
+    }
+    
+    const char *col5Value = (const char *) sqlite3_column_text(statement, 4);
+    if(col5Value)
+    {
+        NSString *creationDate = [[NSString alloc] initWithUTF8String:
+                              col5Value];
+        newProject.creationDate = [Utilities convertStringToDate:creationDate];
+    }
+    
+    const char *col6Value = (const char *) sqlite3_column_text(statement, 5);
+    if(col6Value)
+    {
+        NSString *modificationDate = [[NSString alloc] initWithUTF8String:
+                                  col6Value];
+        newProject.modificationDate = [Utilities convertStringToDate:modificationDate];
+    }
+        
     [newProject load];
     
     return newProject;

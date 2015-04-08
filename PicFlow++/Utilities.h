@@ -17,7 +17,7 @@
 +(NSString*)convertDateToString:(NSDate*)date;
 +(NSDate*)convertStringToDate:(NSString*)dateStr;
 +(NSString*)documentDir;
-+(NSString*)findaNameToSave:(NSString*)prefix;
+
 @end
 
 

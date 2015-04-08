@@ -31,6 +31,7 @@
 		30C36B771ACBDAB900743CD8 /* Plist structure.txt in Resources */ = {isa = PBXBuildFile; fileRef = 30C36B761ACBDAB900743CD8 /* Plist structure.txt */; };
 		30CDD5F51ABFF1BA004E2513 /* PicFlowDetails.txt in Resources */ = {isa = PBXBuildFile; fileRef = 30CDD5F41ABFF1BA004E2513 /* PicFlowDetails.txt */; };
 		30CDD5F71AC0055E004E2513 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 30CDD5F61AC0055E004E2513 /* libsqlite3.dylib */; };
+		30D858851AD56A5400B8CA25 /* NSFileManager+Addition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D858841AD56A5400B8CA25 /* NSFileManager+Addition.swift */; };
 		30D93AEA1ACD2B22002D7762 /* ProjectSaver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D93AE91ACD2B22002D7762 /* ProjectSaver.swift */; };
 		30DC483F1AC3E811001A61A7 /* Utilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 30DC483E1AC3E811001A61A7 /* Utilities.m */; };
 		30EC14B11A7F579100985144 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30EC14B01A7F579100985144 /* AppDelegate.swift */; };
@@ -110,6 +111,7 @@
 		30C36B761ACBDAB900743CD8 /* Plist structure.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Plist structure.txt"; sourceTree = "<group>"; };
 		30CDD5F41ABFF1BA004E2513 /* PicFlowDetails.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = PicFlowDetails.txt; sourceTree = "<group>"; };
 		30CDD5F61AC0055E004E2513 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
+		30D858841AD56A5400B8CA25 /* NSFileManager+Addition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSFileManager+Addition.swift"; sourceTree = "<group>"; };
 		30D93AE91ACD2B22002D7762 /* ProjectSaver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectSaver.swift; sourceTree = "<group>"; };
 		30DC483D1AC3E811001A61A7 /* Utilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utilities.h; sourceTree = "<group>"; };
 		30DC483E1AC3E811001A61A7 /* Utilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Utilities.m; sourceTree = "<group>"; };
@@ -168,8 +170,6 @@
 		3010EFD51AC14DBB0018B238 /* Database */ = {
 			isa = PBXGroup;
 			children = (
-				30DC483D1AC3E811001A61A7 /* Utilities.h */,
-				30DC483E1AC3E811001A61A7 /* Utilities.m */,
 				3047A4561AC2944E0019F71B /* DBManager.h */,
 				3047A4571AC2944E0019F71B /* DBManager.m */,
 			);
@@ -216,6 +216,16 @@
 			name = View;
 			sourceTree = "<group>";
 		};
+		30D858831AD56A3100B8CA25 /* Utilites */ = {
+			isa = PBXGroup;
+			children = (
+				30DC483D1AC3E811001A61A7 /* Utilities.h */,
+				30DC483E1AC3E811001A61A7 /* Utilities.m */,
+				30D858841AD56A5400B8CA25 /* NSFileManager+Addition.swift */,
+			);
+			name = Utilites;
+			sourceTree = "<group>";
+		};
 		30EC14A21A7F579100985144 = {
 			isa = PBXGroup;
 			children = (
@@ -242,6 +252,7 @@
 		30EC14AD1A7F579100985144 /* PicFlow++ */ = {
 			isa = PBXGroup;
 			children = (
+				30D858831AD56A3100B8CA25 /* Utilites */,
 				3010EFD51AC14DBB0018B238 /* Database */,
 				308217781AB1D1FC00F6E496 /* View */,
 				30F4F73C1AB018A4007312AD /* StoryBoard */,
@@ -516,6 +527,7 @@
 				3082177A1AB1D21000F6E496 /* YRImageZoomingView.swift in Sources */,
 				300E0E6C1AD25CE200ED389F /* ProjectsCollectionManager.swift in Sources */,
 				30DC483F1AC3E811001A61A7 /* Utilities.m in Sources */,
+				30D858851AD56A5400B8CA25 /* NSFileManager+Addition.swift in Sources */,
 				3044CCC81AAC70FB005DEC22 /* AudioTrack.swift in Sources */,
 				3047A4581AC2944E0019F71B /* DBManager.m in Sources */,
 				307E8CC51AA342DD0049D69D /* OperationViewController.swift in Sources */,

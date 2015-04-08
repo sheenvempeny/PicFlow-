@@ -26,7 +26,7 @@ import Foundation
     func plistPath() -> String
     {
         var plistPath:String = resourcePath!.stringByAppendingPathComponent("details.plist")
-        NSFileManager.defaultManager().createFileAtPath(plistPath, contents: nil, attributes: nil)
+        var status = NSFileManager.defaultManager().createFileAtPath(plistPath, contents: nil, attributes: nil)
         return plistPath
     }
     
@@ -50,7 +50,12 @@ import Foundation
         if(projectSaver == nil)
         {
             projectSaver = ProjectSaver(path: self.plistPath())
-            frames = projectSaver?.getValue("frames") as [Frame]
+            var _frames: AnyObject? = projectSaver?.getValue("frames")
+            if(_frames != nil)
+            {
+                frames = _frames as [Frame]
+            }
+            
         }
     }
     
@@ -99,8 +104,8 @@ import Foundation
     
         for dict in images
         {
-            var prefix:NSString = "image" as NSString
-            var path:String = Utilities.findaNameToSave(prefix)!
+            var prefix:String = "image"
+            var path = NSFileManager.defaultManager().uniqueNameForPath(resourcePath!, withPrefix:prefix , withExtension: "png")
             image = dict.objectForKey(UIImagePickerControllerOriginalImage) as? UIImage
             UIImagePNGRepresentation(image).writeToFile(path, atomically: true)
             
