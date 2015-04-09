@@ -12,8 +12,8 @@ import Foundation
 
 @objc class Project : NSObject
 {
-    var uniqueId:String?
-    var name:String = "";
+    var uniqueId:NSString?
+    var name:NSString = "";
     var frames:[Frame] = []
     var duration:NSRange?
     var creationDate:NSDate?
@@ -26,7 +26,11 @@ import Foundation
     func plistPath() -> String
     {
         var plistPath:String = resourcePath!.stringByAppendingPathComponent("details.plist")
-        var status = NSFileManager.defaultManager().createFileAtPath(plistPath, contents: nil, attributes: nil)
+        
+        if NSFileManager.defaultManager().fileExistsAtPath(plistPath) == false {
+            NSFileManager.defaultManager().createFileAtPath(plistPath, contents: nil, attributes: nil)
+        }
+        
         return plistPath
     }
     
@@ -84,7 +88,7 @@ import Foundation
     {
         var returnImage:UIImage?
         
-        if(captionImagePath == nil)
+        if(captionImagePath != nil)
         {
             returnImage = UIImage(contentsOfFile: captionImagePath!)
         }

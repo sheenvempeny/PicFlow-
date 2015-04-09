@@ -20,10 +20,11 @@ class ProjectsCollectionManager:NSObject,UICollectionViewDataSource,UICollection
     
         super.init()
         collectionView = inCollectionView
-        collectionView?.dataSource = self;
-        collectionView?.delegate = self
         projects = inProjects;
         collectionView!.backgroundColor = UIColor(white: 0.25, alpha: 1)
+        collectionView!.registerClass(ProjectCell.self, forCellWithReuseIdentifier: PhotoCellIdentifier)
+        collectionView?.dataSource = self;
+        collectionView?.delegate = self
     }
     
     

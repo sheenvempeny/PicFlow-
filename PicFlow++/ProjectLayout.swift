@@ -19,10 +19,12 @@ class ProjectLayout : UICollectionViewLayout {
  
     override init() {
         super.init()
+        self.setup()
     }
     
     required init(coder aDecoder: NSCoder) {
          super.init()
+         self.setup()
     }
     
     func setup(){
@@ -34,21 +36,24 @@ class ProjectLayout : UICollectionViewLayout {
     
     func frameForAlbumPhotoAtIndexPath(indexPath:NSIndexPath) -> CGRect
     {
-        
-        var row:NSInteger = indexPath.section / self.numberOfColumns!;
-        var column: NSInteger = indexPath.section % self.numberOfColumns!;
-        
-        var width = (CGFloat(self.numberOfColumns!) *   self.itemSize!.width)
-        var spacingX:CGFloat = self.collectionView!.bounds.size.width - self.itemInsets!.left - self.itemInsets!.right - width
-        
-        if (self.numberOfColumns > 1){
+        var originX:CGFloat = 0
+        var originY:CGFloat = 0
+        if( self.numberOfColumns != nil)
+        {
+            var row:NSInteger = indexPath.section / self.numberOfColumns!;
+            var column: NSInteger = indexPath.section % self.numberOfColumns!;
             
-            spacingX = spacingX / CGFloat(self.numberOfColumns! - 1)
+            var width = (CGFloat(self.numberOfColumns!) *   self.itemSize!.width)
+            var spacingX:CGFloat = self.collectionView!.bounds.size.width - self.itemInsets!.left - self.itemInsets!.right - width
+            
+            if (self.numberOfColumns > 1){
+                
+                spacingX = spacingX / CGFloat(self.numberOfColumns! - 1)
+            }
+            
+            var originX = CGFloat(floorf(Float(self.itemInsets!.left + (self.itemSize!.width + spacingX) * CGFloat(column))))
+            var originY = CGFloat(floorf(Float(self.itemInsets!.top + (self.itemSize!.height + self.interItemSpacingY!) * CGFloat(row))))
         }
-
-        var originX:CGFloat = CGFloat(floorf(Float(self.itemInsets!.left + (self.itemSize!.width + spacingX) * CGFloat(column))))
-        var originY:CGFloat = CGFloat(floorf(Float(self.itemInsets!.top + (self.itemSize!.height + self.interItemSpacingY!) * CGFloat(row))))
- 
         return CGRectMake(originX, originY, self.itemSize!.width, self.itemSize!.height);
     }
     

@@ -19,10 +19,10 @@ static sqlite3_stmt *statement = nil;
 -(BOOL)createDB;
 -(BOOL)executeQuery:(NSString*)query;
 -(const char*)createTabelQuery;
--(Project*)projectFromStatement;
+-(Project*)projectFromStatement:(BOOL)loadProject;
 -(Project*)projectForId:(NSString*)projectId;
 -(BOOL)updateProject:(Project*)project;
--(Project*)projectForQuery:(NSString*)querySQL;
+-(Project*)projectForQuery:(NSString*)querySQL loadStatus:(BOOL)status;
 -(NSString*)projectedIdForCreationDate:(NSDate*)creationDate;
 @end
 
@@ -101,7 +101,10 @@ static sqlite3_stmt *statement = nil;
 
 -(BOOL)updateProject:(Project*)project
 {
-    NSString *updateQuery = [NSString stringWithFormat:@"update projectsDetail SET projectName = \"%@\",resourcePath = \"%@\",captionImagePath = \"%@\",modificationDate = \"%@\" where projectId = \"%@\"",project.name,project.resourcePath,project.captionImagePath,[Utilities convertDateToString:project.modificationDate],project.uniqueId];
+    NSString *resourcePath = [project.resourcePath stringByReplacingOccurrencesOfString:[Utilities documentDir] withString:@""];
+    NSString *captionImagePath = [project.resourcePath stringByReplacingOccurrencesOfString:[Utilities documentDir] withString:@""];
+    
+    NSString *updateQuery = [NSString stringWithFormat:@"update projectsDetail SET projectName = \"%@\",resourcePath = \"%@\",captionImagePath = \"%@\",modificationDate = \"%@\" where projectId = \"%@\"",project.name,resourcePath,captionImagePath,[Utilities convertDateToString:project.modificationDate],project.uniqueId];
     
     return [self executeQuery:updateQuery];
 }
@@ -116,8 +119,12 @@ static sqlite3_stmt *statement = nil;
     }
     else
     {
+        NSString *resourcePath = [project.resourcePath stringByReplacingOccurrencesOfString:[Utilities documentDir] withString:@""];
+        NSString *captionImagePath = [project.captionImagePath stringByReplacingOccurrencesOfString:[Utilities documentDir] withString:@""];
+        
+        
         //save project
-        NSString *insertQuery = [NSString stringWithFormat:@"insert into projectsDetail (projectName,resourcePath,captionImagePath,creationDate) values (\"%@\",\"%@\",\"%@\",\"%@\")",project.name,project.resourcePath,project.captionImagePath,[Utilities convertDateToString:project.creationDate]];
+        NSString *insertQuery = [NSString stringWithFormat:@"insert into projectsDetail (projectName,resourcePath,captionImagePath,creationDate) values (\"%@\",\"%@\",\"%@\",\"%@\")",project.name,resourcePath,captionImagePath,[Utilities convertDateToString:project.creationDate]];
         status = [self executeQuery:insertQuery];
         if(status)
         {
@@ -133,18 +140,18 @@ static sqlite3_stmt *statement = nil;
     NSString *querySQL = [NSString stringWithFormat:
                           @"select * from projectsDetail where creationDate = \"%@\"",[Utilities convertDateToString:creationDate]];
    
-    Project *project = [self projectForQuery:querySQL];
+    Project *project = [self projectForQuery:querySQL loadStatus:NO];
     return project.uniqueId;
 }
 
--(Project*)projectForQuery:(NSString*)querySQL
+-(Project*)projectForQuery:(NSString*)querySQL loadStatus:(BOOL)status
 {
     Project *returnProject = nil;
     if ([self prepareStatement:querySQL])
     {
         while (sqlite3_step(statement) == SQLITE_ROW)
         {
-            returnProject = [self projectFromStatement];
+            returnProject = [self projectFromStatement:status];
         }
         
         sqlite3_reset(statement);
@@ -159,10 +166,10 @@ static sqlite3_stmt *statement = nil;
 {
     NSString *querySQL = [NSString stringWithFormat:
                           @"select * from projectsDetail where projectId = \"%@\"",projectId];
-    return [self projectForQuery:querySQL];
+    return [self projectForQuery:querySQL loadStatus:NO];
 }
 
--(Project*)projectFromStatement
+-(Project*)projectFromStatement:(BOOL)loadProject
 {
     
     Project *newProject = [[Project alloc] init];
@@ -187,6 +194,7 @@ static sqlite3_stmt *statement = nil;
     {
         NSString *rPath = [[NSString alloc] initWithUTF8String:
                       col3Value];
+        rPath = [[Utilities documentDir] stringByAppendingString:rPath];
         newProject.resourcePath = rPath;
     }
     
@@ -195,6 +203,7 @@ static sqlite3_stmt *statement = nil;
     {
         NSString *imagePath = [[NSString alloc] initWithUTF8String:
                            col4Value];
+        imagePath = [[Utilities documentDir] stringByAppendingString:imagePath];
         newProject.captionImagePath = imagePath;
     }
     
@@ -214,7 +223,10 @@ static sqlite3_stmt *statement = nil;
         newProject.modificationDate = [Utilities convertStringToDate:modificationDate];
     }
         
-    [newProject load];
+    if(loadProject)
+    {
+        [newProject load];
+    }
     
     return newProject;
 }
@@ -250,7 +262,7 @@ static sqlite3_stmt *statement = nil;
              while (sqlite3_step(statement) == SQLITE_ROW)
             {
                 
-                [resultArray addObject:[self projectFromStatement]];
+                [resultArray addObject:[self projectFromStatement:YES]];
             }
     
          sqlite3_reset(statement);

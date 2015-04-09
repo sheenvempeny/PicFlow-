@@ -12,7 +12,7 @@ class ProjectSaver: NSObject {
     
     private
     
-    var dict:NSMutableDictionary?
+    var dict:NSMutableDictionary = NSMutableDictionary()
     var savePath:String?
     
     internal
@@ -20,23 +20,32 @@ class ProjectSaver: NSObject {
     init(path:String) {
         super.init();
         savePath = path
-        dict = NSMutableDictionary(contentsOfFile: path)
-        if(dict == nil){
-            
-            dict = NSMutableDictionary()
+        if let data =  NSData(contentsOfFile: path)
+        {
+            if data.length > 0 {
+                var unarchiver = NSKeyedUnarchiver(forReadingWithData: data)
+                var _dict = unarchiver.decodeObject() as NSDictionary
+                dict = NSMutableDictionary(dictionary: _dict)
+                unarchiver.finishDecoding()
+            }
         }
-        
+
     }
     
     func saveValue(value:AnyObject,forKey key:String)
     {
-        dict?.setObject(value, forKey: key)
-        dict?.writeToFile(savePath!, atomically: true)
+        dict.setObject(value, forKey: key)
+        var data:NSMutableData = NSMutableData()
+        var archiver:NSKeyedArchiver = NSKeyedArchiver(forWritingWithMutableData: data)
+        archiver.encodeObject(dict)
+        archiver.finishEncoding()
+        data.writeToFile(savePath!, atomically: true)
+        
     }
     
      func getValue(key: String) -> AnyObject? {
         
-        return dict?.objectForKey(key)
+        return dict.objectForKey(key)
     }
     
 }

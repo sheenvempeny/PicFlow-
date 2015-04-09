@@ -31,6 +31,8 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+            
         // Do any additional setup after loading the view, typically from a nib.
         let mAppDelegate:AppDelegate  =  UIApplication.sharedApplication().delegate as AppDelegate
         mAppDelegate.mainViewController = self
@@ -38,10 +40,11 @@ class ViewController: UIViewController {
         var mProject:Project?
         for mProject in projectArray
         {
-            projects.append(mProject as Project)
+            var aProject = mProject as Project
+            projects.append(aProject)
         }
         
-        //projectCollectionManager = ProjectsCollectionManager(inCollectionView: projectsList, withProjects: projects)
+        projectCollectionManager = ProjectsCollectionManager(inCollectionView: projectsList, withProjects: projects)
         
     }
 
