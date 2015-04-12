@@ -73,6 +73,7 @@ In first version we are not going to support videos . It will come in future.
 UICollection Layout
 --------------------
 http://skeuo.com/uicollectionview-custom-layout-tutorial
+http://code.tutsplus.com/tutorials/a-springboard-like-layout-with-the-uicollectionview-class--mobile-13426
 
 Extra - for mockup creation
 ---------------------------

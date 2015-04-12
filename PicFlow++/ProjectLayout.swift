@@ -16,6 +16,10 @@ class ProjectLayout : UICollectionViewLayout {
     var numberOfColumns:NSInteger?;
     var LayoutPhotoCellKind:String = "PhotoCell";
     var layoutInfo:NSDictionary?
+    let RotationCount:NSInteger = 32;
+    let RotationStride:NSInteger = 3;
+    var rotations:[CATransform3D] = []
+    let PhotoCellBaseZIndex:NSInteger = 100
  
     override init() {
         super.init()
@@ -28,10 +32,32 @@ class ProjectLayout : UICollectionViewLayout {
     }
     
     func setup(){
-        self.itemInsets = UIEdgeInsetsMake(22.0, 22.0, 13.0, 22.0);
-        self.itemSize = CGSizeMake(125.0, 125.0);
-        self.interItemSpacingY = 12.0;
+        self.itemInsets = UIEdgeInsetsMake(32.0, 32.0, 32.0, 32.0);
+        self.itemSize = CGSizeMake(144.0, 144.0);
+        self.interItemSpacingY = 26.0;
         self.numberOfColumns = 2;
+        
+        var _rotations:[CATransform3D] = []
+        var  difference:CGFloat = 0
+        var percentage:CGFloat = 0
+        for (var i = 0; i < RotationCount; i++) {
+            // ensure that each angle is different enough to be seen
+            var newPercentage:CGFloat = 0
+            do {
+                newPercentage =  (CGFloat(arc4random() % 220) - 110) * 0.0001
+                difference = CGFloat(fabsf(Float(percentage) - Float(newPercentage)))
+            } while (difference < 0.006);
+            percentage = newPercentage;
+            
+            var angle:CGFloat = 2 * CGFloat(M_PI) * (1 + percentage);
+            var transform:CATransform3D = CATransform3DMakeRotation(angle, 0.0, 0.0, 1.0);
+            
+            _rotations.append(transform)
+            
+           
+        }
+        
+        self.rotations = _rotations;
     }
     
     func frameForAlbumPhotoAtIndexPath(indexPath:NSIndexPath) -> CGRect
@@ -40,8 +66,9 @@ class ProjectLayout : UICollectionViewLayout {
         var originY:CGFloat = 0
         if( self.numberOfColumns != nil)
         {
-            var row:NSInteger = indexPath.section / self.numberOfColumns!;
-            var column: NSInteger = indexPath.section % self.numberOfColumns!;
+          
+            var row:NSInteger = indexPath.item / self.numberOfColumns!;
+            var column: NSInteger = indexPath.item % self.numberOfColumns!;
             
             var width = (CGFloat(self.numberOfColumns!) *   self.itemSize!.width)
             var spacingX:CGFloat = self.collectionView!.bounds.size.width - self.itemInsets!.left - self.itemInsets!.right - width
@@ -51,8 +78,8 @@ class ProjectLayout : UICollectionViewLayout {
                 spacingX = spacingX / CGFloat(self.numberOfColumns! - 1)
             }
             
-            var originX = CGFloat(floorf(Float(self.itemInsets!.left + (self.itemSize!.width + spacingX) * CGFloat(column))))
-            var originY = CGFloat(floorf(Float(self.itemInsets!.top + (self.itemSize!.height + self.interItemSpacingY!) * CGFloat(row))))
+                originX = CGFloat(floorf(Float(self.itemInsets!.left + (self.itemSize!.width + spacingX) * CGFloat(column))))
+                originY = CGFloat(floorf(Float(self.itemInsets!.top + (self.itemSize!.height + self.interItemSpacingY!) * CGFloat(row))))
         }
         return CGRectMake(originX, originY, self.itemSize!.width, self.itemSize!.height);
     }
@@ -74,6 +101,8 @@ class ProjectLayout : UICollectionViewLayout {
     
                 var itemAttributes:UICollectionViewLayoutAttributes = UICollectionViewLayoutAttributes(forCellWithIndexPath: indexPath)
                 itemAttributes.frame = self.frameForAlbumPhotoAtIndexPath(indexPath)
+                itemAttributes.transform3D = self.transformForAlbumPhotoAtIndex(indexPath)
+                itemAttributes.zIndex = PhotoCellBaseZIndex + 80 - item;
                 cellLayoutInfo[indexPath] = itemAttributes;
             }
    
@@ -127,6 +156,14 @@ class ProjectLayout : UICollectionViewLayout {
         }
         
         return returnSize;
+    }
+    
+    func transformForAlbumPhotoAtIndex(indexPath:NSIndexPath) -> CATransform3D
+    {
+    
+        var offset:NSInteger = (indexPath.section * RotationStride + indexPath.item);
+        var returnVal = self.rotations[offset % RotationCount] as CATransform3D
+        return returnVal;
     }
     
     func setItemInsets(inItemInsets:UIEdgeInsets)

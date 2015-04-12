@@ -70,6 +70,8 @@ class ProjectCell: UICollectionViewCell
         self.layer.shadowRadius = 3.0;
         self.layer.shadowOffset = CGSizeMake(0.0, 2.0);
         self.layer.shadowOpacity = 0.5;
+        self.layer.rasterizationScale = UIScreen.mainScreen().scale //[UIScreen mainScreen].scale;
+        self.layer.shouldRasterize = true;
         
         self.imageView = UIImageView(frame: self.bounds)//[[UIImageView alloc] initWithFrame:self.bounds];
         self.imageView!.contentMode = .ScaleAspectFill;
