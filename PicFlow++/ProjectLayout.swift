@@ -67,8 +67,8 @@ class ProjectLayout : UICollectionViewLayout {
         if( self.numberOfColumns != nil)
         {
           
-            var row:NSInteger = indexPath.item / self.numberOfColumns!;
-            var column: NSInteger = indexPath.item % self.numberOfColumns!;
+            var row:NSInteger = indexPath.section / self.numberOfColumns!;
+            var column: NSInteger = indexPath.section % self.numberOfColumns!;
             
             var width = (CGFloat(self.numberOfColumns!) *   self.itemSize!.width)
             var spacingX:CGFloat = self.collectionView!.bounds.size.width - self.itemInsets!.left - self.itemInsets!.right - width
@@ -95,7 +95,7 @@ class ProjectLayout : UICollectionViewLayout {
         
         for (var section:NSInteger = 0; section < sectionCount; section++) {
             var itemCount:NSInteger = self.collectionView!.numberOfItemsInSection(section)
-    
+            
             for (var item:NSInteger = 0; item < itemCount; item++) {
                 indexPath = NSIndexPath(forItem: item, inSection: section)
     

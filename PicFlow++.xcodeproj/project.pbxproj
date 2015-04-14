@@ -43,6 +43,7 @@
 		30EC14D11A7F596700985144 /* PicFlow.txt in Resources */ = {isa = PBXBuildFile; fileRef = 30EC14D01A7F596700985144 /* PicFlow.txt */; };
 		30EC14D41A7F619C00985144 /* First Screen.png in Resources */ = {isa = PBXBuildFile; fileRef = 30EC14D31A7F619C00985144 /* First Screen.png */; };
 		30EC14D61A7F64A100985144 /* Second Screen.png in Resources */ = {isa = PBXBuildFile; fileRef = 30EC14D51A7F64A100985144 /* Second Screen.png */; };
+		30EC57721ADD530C00318735 /* TTMSFMXNativeUICollectionView1.png in Resources */ = {isa = PBXBuildFile; fileRef = 30EC57711ADD530C00318735 /* TTMSFMXNativeUICollectionView1.png */; };
 		30EC81DA1AB841B10037B742 /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30EC81D91AB841B00037B742 /* CoreImage.framework */; };
 		30EC81DC1AB841C10037B742 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30EC81DB1AB841C10037B742 /* CoreGraphics.framework */; };
 		30EC81DE1AB841D80037B742 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30EC81DD1AB841D80037B742 /* OpenGLES.framework */; };
@@ -128,6 +129,7 @@
 		30EC14D01A7F596700985144 /* PicFlow.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = PicFlow.txt; sourceTree = SOURCE_ROOT; };
 		30EC14D31A7F619C00985144 /* First Screen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "First Screen.png"; path = "Screens/First Screen.png"; sourceTree = SOURCE_ROOT; };
 		30EC14D51A7F64A100985144 /* Second Screen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Second Screen.png"; sourceTree = SOURCE_ROOT; };
+		30EC57711ADD530C00318735 /* TTMSFMXNativeUICollectionView1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = TTMSFMXNativeUICollectionView1.png; path = Screens/TTMSFMXNativeUICollectionView1.png; sourceTree = SOURCE_ROOT; };
 		30EC81D91AB841B00037B742 /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
 		30EC81DB1AB841C10037B742 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		30EC81DD1AB841D80037B742 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
@@ -300,6 +302,7 @@
 		30EC14D21A7F615300985144 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				30EC57711ADD530C00318735 /* TTMSFMXNativeUICollectionView1.png */,
 				30EC14D31A7F619C00985144 /* First Screen.png */,
 				30EC14D51A7F64A100985144 /* Second Screen.png */,
 				306907841ABADE3600202263 /* ThirdScreen.png */,
@@ -462,6 +465,7 @@
 				3014F0051ABEB05700817FDF /* PhotoPickerPlus.strings in Resources */,
 				30EC14D41A7F619C00985144 /* First Screen.png in Resources */,
 				30EC14B61A7F579100985144 /* Main.storyboard in Resources */,
+				30EC57721ADD530C00318735 /* TTMSFMXNativeUICollectionView1.png in Resources */,
 				30EC14D11A7F596700985144 /* PicFlow.txt in Resources */,
 				3010EFD41AC13E350018B238 /* Todo.txt in Resources */,
 				306907851ABADE3600202263 /* ThirdScreen.png in Resources */,

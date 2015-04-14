@@ -25,6 +25,7 @@ class ProjectsCollectionManager:NSObject,UICollectionViewDataSource,UICollection
         collectionView!.registerClass(ProjectCell.self, forCellWithReuseIdentifier: PhotoCellIdentifier)
         collectionView?.dataSource = self;
         collectionView?.delegate = self
+        
     }
     
     
