@@ -74,6 +74,7 @@ UICollection Layout
 --------------------
 http://skeuo.com/uicollectionview-custom-layout-tutorial
 http://code.tutsplus.com/tutorials/a-springboard-like-layout-with-the-uicollectionview-class--mobile-13426
+https://github.com/jlpiedrahita/ShadowPathDemo
 
 Extra - for mockup creation
 ---------------------------
