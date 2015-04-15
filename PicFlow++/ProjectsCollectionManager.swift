@@ -14,7 +14,6 @@ class ProjectsCollectionManager:NSObject,UICollectionViewDataSource,UICollection
     var collectionView:UICollectionView?
     var projects:[Project] = []
     var PhotoCellIdentifier = "PhotoCell";
-    var layout:ProjectLayout?
     
     init(inCollectionView:UICollectionView, withProjects inProjects:[Project]) {
     
@@ -63,23 +62,27 @@ class ProjectCell: UICollectionViewCell
     override init(frame: CGRect) {
         
         super.init(frame: frame)
-        self.backgroundColor = UIColor(white: 0.85, alpha: 1.0)
+        self.backgroundColor = UIColor(white: 1.0, alpha: 1.0)
         
-        self.layer.borderColor = UIColor.whiteColor().CGColor//[UIColor whiteColor].CGColor;
-        self.layer.borderWidth = 3.0;
-        self.layer.shadowColor = UIColor.blackColor().CGColor//[UIColor blackColor].CGColor;
+       // self.layer.borderColor = UIColor.whiteColor().CGColor//[UIColor whiteColor].CGColor;
+       // self.layer.borderWidth = 3.0;
+        self.layer.shadowColor = UIColor.greenColor().CGColor//[UIColor blackColor].CGColor;
         self.layer.shadowRadius = 3.0;
-        self.layer.shadowOffset = CGSizeMake(0.0, 2.0);
+        self.layer.shadowOffset = CGSizeMake(0.0, 5.0);
         self.layer.shadowOpacity = 0.5;
         self.layer.rasterizationScale = UIScreen.mainScreen().scale //[UIScreen mainScreen].scale;
         self.layer.shouldRasterize = true;
+        self.layer.zPosition = 1000000001;
         
-        self.imageView = UIImageView(frame: self.bounds)//[[UIImageView alloc] initWithFrame:self.bounds];
+        var imageRect = CGRectInset(self.bounds, 10.0, 20.0)
+        imageRect.origin.y += 10.0;
+        
+        self.imageView = UIImageView(frame: imageRect)//[[UIImageView alloc] initWithFrame:self.bounds];
         self.imageView!.contentMode = .ScaleAspectFill;
         self.imageView!.clipsToBounds = true;
         self.contentView.addSubview(self.imageView!)
         
-        }
+    }
 
     required init(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
