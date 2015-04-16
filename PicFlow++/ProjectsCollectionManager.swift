@@ -59,6 +59,22 @@ class ProjectCell: UICollectionViewCell
     var imageView:UIImageView?
     var layoutInfo:NSDictionary?;
     
+    func customShadowPathForRect(rect:CGRect) -> CGPathRef
+    {
+        let kCurveSlope:CGFloat = 20;
+    
+        var shadowPath:UIBezierPath = UIBezierPath()
+        shadowPath.moveToPoint(CGPointMake(CGRectGetMinX(rect), CGRectGetMidY(rect)))
+        shadowPath.addLineToPoint(CGPointMake(CGRectGetMinX(rect), CGRectGetMaxY(rect) ))
+        shadowPath.addQuadCurveToPoint(CGPointMake(CGRectGetMaxX(rect), CGRectGetMaxY(rect) + kCurveSlope), controlPoint: CGPointMake(CGRectGetMidX(rect), CGRectGetMaxY(rect) - kCurveSlope))
+        shadowPath.addLineToPoint(CGPointMake(CGRectGetMaxX(rect), CGRectGetMidY(rect)))
+        shadowPath.closePath();
+        return shadowPath.CGPath;
+    }
+    
+
+    
+    
     override init(frame: CGRect) {
         
         super.init(frame: frame)
@@ -73,6 +89,7 @@ class ProjectCell: UICollectionViewCell
         self.layer.rasterizationScale = UIScreen.mainScreen().scale //[UIScreen mainScreen].scale;
         self.layer.shouldRasterize = true;
         self.layer.zPosition = 1000000001;
+        self.layer.shadowPath = self.customShadowPathForRect(self.bounds)
         
         var imageRect = CGRectInset(self.bounds, 10.0, 20.0)
         imageRect.origin.y += 10.0;
