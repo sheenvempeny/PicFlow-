@@ -79,7 +79,7 @@
 		300B914A1AB9720200A6C5EF /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
 		300B914C1AB9721800A6C5EF /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
 		300B914E1AB972AB00A6C5EF /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
-		300E0E6B1AD25CE200ED389F /* ProjectsCollectionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectsCollectionManager.swift; sourceTree = "<group>"; };
+		300E0E6B1AD25CE200ED389F /* ProjectsCollectionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProjectsCollectionManager.swift; path = "../../../../Users/sheen/Desktop/PicFlow/PicFlow++/ProjectsCollectionManager.swift"; sourceTree = DEVELOPER_DIR; };
 		3010EFD31AC13E350018B238 /* Todo.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Todo.txt; sourceTree = "<group>"; };
 		3010F0011AC199080018B238 /* DB.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = DB.xcconfig; sourceTree = "<group>"; };
 		3010F0071AC19C4B0018B238 /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
