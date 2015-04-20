@@ -20,7 +20,7 @@ class ProjectsCollectionManager:NSObject,UICollectionViewDataSource,UICollection
         super.init()
         collectionView = inCollectionView
         projects = inProjects;
-        collectionView!.backgroundColor = UIColor(patternImage: UIImage(named: "projectBackground")!)
+        collectionView!.backgroundColor = UIColor(patternImage: UIImage(named: "ProjectBackground")!)
         
         
         
@@ -49,6 +49,7 @@ class ProjectsCollectionManager:NSObject,UICollectionViewDataSource,UICollection
             collectionView.dequeueReusableCellWithReuseIdentifier(PhotoCellIdentifier,forIndexPath:indexPath) as ProjectCell;
         var project : Project = projects[indexPath.item]
         photoCell.imageView!.image = project.captionImage()
+       
         
         return photoCell;
         
@@ -61,21 +62,28 @@ class ProjectCell: UICollectionViewCell
     
     var imageView:UIImageView?
     var layoutInfo:NSDictionary?;
+    var imageLayer:CALayer?
     
     func customShadowPathForRect(rect:CGRect) -> CGPathRef
     {
-        let kCurveSlope:CGFloat = 20;
-    
-        var shadowPath:UIBezierPath = UIBezierPath()
-        shadowPath.moveToPoint(CGPointMake(CGRectGetMinX(rect), CGRectGetMidY(rect)))
-        shadowPath.addLineToPoint(CGPointMake(CGRectGetMinX(rect), CGRectGetMaxY(rect) ))
+        let kCurveSlope:CGFloat = 4;
+        
+        var shadowPath: UIBezierPath  = UIBezierPath()
+        var startX:CGFloat = CGRectGetMinX(rect);
+        var startY:CGFloat = CGRectGetMinY(rect) + rect.size.height * 0.4;
+        
+        shadowPath.moveToPoint(CGPointMake(startX,startY))
+        shadowPath.addLineToPoint(CGPointMake(CGRectGetMinX(rect), CGRectGetMaxY(rect) + kCurveSlope));
         shadowPath.addQuadCurveToPoint(CGPointMake(CGRectGetMaxX(rect), CGRectGetMaxY(rect) + kCurveSlope), controlPoint: CGPointMake(CGRectGetMidX(rect), CGRectGetMaxY(rect) - kCurveSlope))
-        shadowPath.addLineToPoint(CGPointMake(CGRectGetMaxX(rect), CGRectGetMidY(rect)))
-        shadowPath.closePath();
+        
+        var stopX:CGFloat = CGRectGetMaxX(rect);
+        var stopY:CGFloat = CGRectGetMinY(rect) + rect.size.height * 0.4;
+        
+        shadowPath.addLineToPoint(CGPointMake(stopX,stopY))
+        shadowPath.closePath()
+        
         return shadowPath.CGPath;
     }
-    
-
     
     
     override init(frame: CGRect) {
@@ -83,24 +91,22 @@ class ProjectCell: UICollectionViewCell
         super.init(frame: frame)
         self.backgroundColor = UIColor(white: 1.0, alpha: 1.0)
         
-       // self.layer.borderColor = UIColor.whiteColor().CGColor//[UIColor whiteColor].CGColor;
-       // self.layer.borderWidth = 3.0;
-        self.layer.shadowColor = UIColor.greenColor().CGColor//[UIColor blackColor].CGColor;
-        self.layer.shadowRadius = 3.0;
-        self.layer.shadowOffset = CGSizeMake(0.0, 5.0);
+        self.layer.shadowColor = UIColor.blackColor().CGColor
+        self.layer.shadowOffset = CGSizeMake(0.0, 4.0);
         self.layer.shadowOpacity = 0.5;
-        self.layer.rasterizationScale = UIScreen.mainScreen().scale //[UIScreen mainScreen].scale;
+        self.layer.rasterizationScale = UIScreen.mainScreen().scale
         self.layer.shouldRasterize = true;
-        self.layer.zPosition = 1000000001;
         self.layer.shadowPath = self.customShadowPathForRect(self.bounds)
         
         var imageRect = CGRectInset(self.bounds, 10.0, 20.0)
         imageRect.origin.y += 10.0;
         
-        self.imageView = UIImageView(frame: imageRect)//[[UIImageView alloc] initWithFrame:self.bounds];
+        self.imageView = UIImageView(frame: imageRect)
         self.imageView!.contentMode = .ScaleAspectFill;
         self.imageView!.clipsToBounds = true;
         self.contentView.addSubview(self.imageView!)
+
+        
         
     }
 

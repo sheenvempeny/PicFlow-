@@ -7,11 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		300687171AE5086400198D68 /* ProjectsCollectionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 300687161AE5086400198D68 /* ProjectsCollectionManager.swift */; };
 		300B91491AB95C6300A6C5EF /* VideoExporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 300B91481AB95C6300A6C5EF /* VideoExporter.swift */; };
 		300B914B1AB9720200A6C5EF /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 300B914A1AB9720200A6C5EF /* CoreVideo.framework */; };
 		300B914D1AB9721800A6C5EF /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 300B914C1AB9721800A6C5EF /* AssetsLibrary.framework */; };
 		300B914F1AB972AB00A6C5EF /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 300B914E1AB972AB00A6C5EF /* CoreMedia.framework */; };
-		300E0E6C1AD25CE200ED389F /* ProjectsCollectionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 300E0E6B1AD25CE200ED389F /* ProjectsCollectionManager.swift */; };
 		3010EFD41AC13E350018B238 /* Todo.txt in Resources */ = {isa = PBXBuildFile; fileRef = 3010EFD31AC13E350018B238 /* Todo.txt */; };
 		3010F0021AC199080018B238 /* DB.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 3010F0011AC199080018B238 /* DB.xcconfig */; };
 		3014F0041ABEB05700817FDF /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3014EFE31ABEB05700817FDF /* InfoPlist.strings */; };
@@ -75,11 +75,11 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		300687161AE5086400198D68 /* ProjectsCollectionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectsCollectionManager.swift; sourceTree = "<group>"; };
 		300B91481AB95C6300A6C5EF /* VideoExporter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoExporter.swift; sourceTree = "<group>"; };
 		300B914A1AB9720200A6C5EF /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
 		300B914C1AB9721800A6C5EF /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
 		300B914E1AB972AB00A6C5EF /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
-		300E0E6B1AD25CE200ED389F /* ProjectsCollectionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProjectsCollectionManager.swift; path = "../../../../Users/sheen/Desktop/PicFlow/PicFlow++/ProjectsCollectionManager.swift"; sourceTree = DEVELOPER_DIR; };
 		3010EFD31AC13E350018B238 /* Todo.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Todo.txt; sourceTree = "<group>"; };
 		3010F0011AC199080018B238 /* DB.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = DB.xcconfig; sourceTree = "<group>"; };
 		3010F0071AC19C4B0018B238 /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
@@ -322,7 +322,7 @@
 				30EC14B21A7F579100985144 /* ViewController.swift */,
 				30F84A161AAECF10003DC410 /* DetailViewController.swift */,
 				307E8CC41AA342DD0049D69D /* OperationViewController.swift */,
-				300E0E6B1AD25CE200ED389F /* ProjectsCollectionManager.swift */,
+				300687161AE5086400198D68 /* ProjectsCollectionManager.swift */,
 			);
 			name = "View Controller";
 			sourceTree = "<group>";
@@ -525,7 +525,7 @@
 				30EC14B11A7F579100985144 /* AppDelegate.swift in Sources */,
 				30D93AEA1ACD2B22002D7762 /* ProjectSaver.swift in Sources */,
 				3082177A1AB1D21000F6E496 /* YRImageZoomingView.swift in Sources */,
-				300E0E6C1AD25CE200ED389F /* ProjectsCollectionManager.swift in Sources */,
+				300687171AE5086400198D68 /* ProjectsCollectionManager.swift in Sources */,
 				30DC483F1AC3E811001A61A7 /* Utilities.m in Sources */,
 				30D858851AD56A5400B8CA25 /* NSFileManager+Addition.swift in Sources */,
 				3044CCC81AAC70FB005DEC22 /* AudioTrack.swift in Sources */,
