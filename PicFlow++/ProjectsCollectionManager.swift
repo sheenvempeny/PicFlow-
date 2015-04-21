@@ -8,12 +8,22 @@
 
 import Foundation
 
+
+protocol ProjectsCollectionProtocol
+{
+    
+   func projectSelectionChanged(project:Project);
+    
+}
+
+
 class ProjectsCollectionManager:NSObject,UICollectionViewDataSource,UICollectionViewDelegate
 {
     
     var collectionView:UICollectionView?
     var projects:[Project] = []
     var PhotoCellIdentifier = "PhotoCell";
+    var delegate:ProjectsCollectionProtocol?
     
     init(inCollectionView:UICollectionView, withProjects inProjects:[Project]) {
     
@@ -54,6 +64,14 @@ class ProjectsCollectionManager:NSObject,UICollectionViewDataSource,UICollection
         return photoCell;
         
     }
+    
+    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+    
+        var project : Project = projects[indexPath.item]
+        delegate?.projectSelectionChanged(project)
+        
+    }
+    
 
 }
 

@@ -87,7 +87,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-60" y="-571"/>
+            <point key="canvasLocation" x="75" y="-602"/>
         </scene>
         <!--Detail View Controller-->
         <scene sceneID="xBZ-P9-hoI">
@@ -112,11 +112,15 @@
                                 <items>
                                     <barButtonItem title="Back" id="YGH-KD-4HO">
                                         <connections>
-                                            <segue destination="ysM-Pd-V58" kind="show" id="SzS-r0-WWv"/>
+                                            <segue destination="vXZ-lx-hvc" kind="show" id="bLB-RX-Rpc"/>
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="BeR-cR-2ym"/>
-                                    <barButtonItem title="Music" id="sxl-G0-e4J"/>
+                                    <barButtonItem title="Add Media" id="sxl-G0-e4J">
+                                        <connections>
+                                            <segue destination="ysM-Pd-V58" kind="show" id="pK3-QQ-jcL"/>
+                                        </connections>
+                                    </barButtonItem>
                                     <barButtonItem width="42" style="plain" systemItem="fixedSpace" id="Lp2-Qq-UxI"/>
                                     <barButtonItem title="Preview" id="ytD-Td-a19"/>
                                 </items>
@@ -186,7 +190,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DbG-uM-Pte" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="121" y="202"/>
+            <point key="canvasLocation" x="112" y="395"/>
         </scene>
         <!--Operation View Controller-->
         <scene sceneID="fBj-Nc-lNL">
@@ -251,11 +255,11 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="G0S-IO-gkR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-824" y="294"/>
+            <point key="canvasLocation" x="-720" y="573"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="XjE-yM-U5Z"/>
-        <segue reference="1cb-Rk-qWX"/>
+        <segue reference="pK3-QQ-jcL"/>
+        <segue reference="bLB-RX-Rpc"/>
     </inferredMetricsTieBreakers>
 </document>

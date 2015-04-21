@@ -15,6 +15,8 @@ class Frame:NSObject,NSCoding
     var duration : CGFloat?
     var transition : CIFilter?
     var imagePath : String?
+    var parentFolder:String?
+    
     
     override init() {
         super.init()
@@ -26,7 +28,7 @@ class Frame:NSObject,NSCoding
     
     func image() -> UIImage
     {
-        return UIImage(contentsOfFile: imagePath!)!
+        return UIImage(contentsOfFile: parentFolder!.stringByAppendingPathComponent(imagePath!))!
     }
     
     func encodeWithCoder(aCoder: NSCoder) {

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController,ProjectsCollectionProtocol {
 
    
     let detailedViewController:DetailViewController?
@@ -45,7 +45,7 @@ class ViewController: UIViewController {
         }
         
         projectCollectionManager = ProjectsCollectionManager(inCollectionView: projectsList, withProjects: projects)
-        
+        projectCollectionManager!.delegate = self
     }
 
     override func didReceiveMemoryWarning() {
@@ -60,6 +60,17 @@ class ViewController: UIViewController {
         let appDelegate:AppDelegate = UIApplication.sharedApplication().delegate as AppDelegate
         let navController:UINavigationController = appDelegate.window?.rootViewController as UINavigationController
         navController.pushViewController(controller, animated: true)
+    }
+    
+     func projectSelectionChanged(project: Project) {
+        self.loadProject(project)
+    }
+    
+    func loadProject(project:Project) -> Void
+    {
+        selectedProject = project;
+        selectedProject?.load()
+        self.showDetailedViewController();
     }
     
 

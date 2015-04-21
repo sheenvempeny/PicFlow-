@@ -91,8 +91,11 @@ static sqlite3_stmt *statement = nil;
             status = YES;
         }
         else {
+            
+             NSLog(@"Error while binding variable. '%s'", sqlite3_errmsg(database));
             return status;
         }
+        
         sqlite3_reset(statement);
     }
     
@@ -102,9 +105,9 @@ static sqlite3_stmt *statement = nil;
 -(BOOL)updateProject:(Project*)project
 {
     NSString *resourcePath = [project.resourcePath stringByReplacingOccurrencesOfString:[Utilities documentDir] withString:@""];
-    NSString *captionImagePath = [project.resourcePath stringByReplacingOccurrencesOfString:[Utilities documentDir] withString:@""];
+    NSString *captionImagePath = [project.captionImagePath stringByReplacingOccurrencesOfString:[Utilities documentDir] withString:@""];
     
-    NSString *updateQuery = [NSString stringWithFormat:@"update projectsDetail SET projectName = \"%@\",resourcePath = \"%@\",captionImagePath = \"%@\",modificationDate = \"%@\" where projectId = \"%@\"",project.name,resourcePath,captionImagePath,[Utilities convertDateToString:project.modificationDate],project.uniqueId];
+    NSString *updateQuery = [NSString stringWithFormat:@"update projectsDetail SET projectName = \"%@\",resourcePath = \"%@\",captionImagePath = \"%@\",modifiedDate = \"%@\" where projectId = \"%@\"",project.name,resourcePath,captionImagePath,[Utilities convertDateToString:project.modificationDate],project.uniqueId];
     
     return [self executeQuery:updateQuery];
 }
@@ -121,7 +124,6 @@ static sqlite3_stmt *statement = nil;
     {
         NSString *resourcePath = [project.resourcePath stringByReplacingOccurrencesOfString:[Utilities documentDir] withString:@""];
         NSString *captionImagePath = [project.captionImagePath stringByReplacingOccurrencesOfString:[Utilities documentDir] withString:@""];
-        
         
         //save project
         NSString *insertQuery = [NSString stringWithFormat:@"insert into projectsDetail (projectName,resourcePath,captionImagePath,creationDate) values (\"%@\",\"%@\",\"%@\",\"%@\")",project.name,resourcePath,captionImagePath,[Utilities convertDateToString:project.creationDate]];

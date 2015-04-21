@@ -58,6 +58,11 @@ import Foundation
             if(_frames != nil)
             {
                 frames = _frames as [Frame]
+                var _frame:Frame?
+                for _frame in self.frames
+                {
+                    _frame.parentFolder = resourcePath!
+                }
             }
             
         }
@@ -70,6 +75,8 @@ import Foundation
     
     
     func saveProject(){
+        
+      self.modificationDate = NSDate(timeIntervalSinceNow: 0)
       DBManager.getSharedInstance().saveProject(self)
       //save the project details to the plist
       saveToPlist()
@@ -80,7 +87,7 @@ import Foundation
         if(frames.count > 0)
         {
             var firstFrame:Frame = frames[0]
-            captionImagePath = firstFrame.imagePath
+            captionImagePath = self.resourcePath!.stringByAppendingPathComponent(firstFrame.imagePath!)
         }
     }
     
@@ -115,7 +122,8 @@ import Foundation
             
             //Here we saving image to our directory
             var newFrame = Frame()
-            newFrame.imagePath = path
+            newFrame.parentFolder = resourcePath!
+            newFrame.imagePath = path.lastPathComponent
             frames.append(newFrame)
         }
         
@@ -134,6 +142,15 @@ import Foundation
         let frame:Frame = frames.removeAtIndex(startIndex)
         frames.insert(frame, atIndex: endIndex)
         saveToPlist()
+        
+        if(endIndex == 0 || startIndex == 0 ){
+             setCaptionImage()
+             saveProject()
+        }
+        else{
+            saveToPlist()
+        }
+        
     }
     
     
