@@ -30,7 +30,7 @@ class ProjectsCollectionManager:NSObject,UICollectionViewDataSource,UICollection
         super.init()
         collectionView = inCollectionView
         projects = inProjects;
-        collectionView!.backgroundColor = UIColor(patternImage: UIImage(named: "ProjectBackground")!)
+        collectionView!.backgroundColor = UIColor(patternImage: UIImage(named: "ProjectsBackground")!)
         
         
         

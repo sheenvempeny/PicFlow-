@@ -91,3 +91,11 @@ https://www.cocoacontrols.com/controls/asradial
 https://www.cocoacontrols.com/controls/sywaveformplayer
 https://www.cocoacontrols.com/controls/cnpgridmenu
 
+
+Tobias suggestion : User can click on each frame and record audio for that frame. When user click reposition the frame we can
+------------------
+put a view at the top to know the position of the frame .
+
+
+
+

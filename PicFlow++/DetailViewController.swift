@@ -158,6 +158,7 @@ class FrameCell: UICollectionViewCell
 {
     
     private var imageView:UIImageView!
+    private var deleteButton:UIButton?
 
     var inFrame:Frame? {
         didSet {
@@ -186,11 +187,16 @@ class FrameCell: UICollectionViewCell
         [self.backgroundView?.removeFromSuperview()]
         self.backgroundView = backImageView
         backImageView.image = UIImage(named: "film.png")
-       
-        
         var imageRect:CGRect = CGRectMake(5.0, 10.0, CGRectGetWidth(self.bounds) - 10.0, CGRectGetHeight(self.bounds) - 20.0)
         self.imageView = UIImageView(frame: imageRect)
         self.imageView.autoresizingMask = .FlexibleWidth | .FlexibleHeight
         self.contentView.addSubview(imageView)
+        
+        deleteButton = UIButton()
+        var buttonSize:CGSize = CGSizeMake(20.0, 20.0)
+        deleteButton!.frame = CGRectMake(CGRectGetWidth(imageRect) - buttonSize.width, 4.0, buttonSize.width, buttonSize.height)
+        deleteButton!.setImage(UIImage(named: "Delete.png"), forState: .Normal)
+        imageView.addSubview(deleteButton!)
+        
     }
 }
