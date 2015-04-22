@@ -1,3 +1,9 @@
-* Project save and retrive and show on view controller
+* Add deletion optoion for farmes to detailed view controller
+
+* Add deletion to main projects display controller
+
+* investigate on Transition
+
+* May be we can remove Operation view controller
 
 

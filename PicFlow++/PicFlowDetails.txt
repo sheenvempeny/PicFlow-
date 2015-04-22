@@ -32,7 +32,7 @@ Modification
 Frames
 ________
 
- * Frame contains a) Image b) range ( starting time and duration) c) image path
+ * Frame contains a) Image b)  duration c) image path
 
 
 Audio Track
