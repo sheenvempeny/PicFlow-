@@ -97,5 +97,10 @@ Tobias suggestion : User can click on each frame and record audio for that frame
 put a view at the top to know the position of the frame .
 
 
+Media framework - APIs - Advance media manipulation
+------------------
+http://www.slideshare.net/invalidname/advanced-media-manipulation-with-av-foundation
+http://stackoverflow.com/questions/5031721/coreanimation-avfoundation-and-ability-to-make-video-export
+http://www.raywenderlich.com/30200/avfoundation-tutorial-adding-overlays-and-animations-to-videos
 
 
