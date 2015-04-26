@@ -11,7 +11,7 @@ import UIKit
 class ViewController: UIViewController,ProjectsCollectionProtocol {
 
    
-    let detailedViewController:DetailViewController?
+    var detailedViewController:DetailViewController?
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
       super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
@@ -23,7 +23,7 @@ class ViewController: UIViewController,ProjectsCollectionProtocol {
     
     var projectCollectionManager:ProjectsCollectionManager?
     @IBOutlet weak var projectsList: UICollectionView!
-    @IBOutlet weak var operViewController : OperationViewController!
+    var operViewController : OperationViewController = OperationViewController()
    
     
     var projects : [Project] = []
@@ -56,10 +56,13 @@ class ViewController: UIViewController,ProjectsCollectionProtocol {
     func showDetailedViewController() -> Void
     {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let controller = storyboard.instantiateViewControllerWithIdentifier("DetailView") as DetailViewController
+        if( detailedViewController == nil){
+            let controller = storyboard.instantiateViewControllerWithIdentifier("DetailView") as DetailViewController
+            detailedViewController = controller;
+        }
         let appDelegate:AppDelegate = UIApplication.sharedApplication().delegate as AppDelegate
         let navController:UINavigationController = appDelegate.window?.rootViewController as UINavigationController
-        navController.pushViewController(controller, animated: true)
+        navController.pushViewController(detailedViewController!, animated: true)
     }
     
      func projectSelectionChanged(project: Project) {
@@ -79,6 +82,8 @@ class ViewController: UIViewController,ProjectsCollectionProtocol {
         var newProject:Project = Project()
         projects.append(newProject)
         selectedProject = newProject;
+        operViewController.currentViewController = self
+        operViewController.addPhotos(self)
     }
     
     // In a storyboard-based application, you will often want to do a little preparation before navigation

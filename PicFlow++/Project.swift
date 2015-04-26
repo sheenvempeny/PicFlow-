@@ -50,7 +50,7 @@ import Foundation
     }
     
     func load(){
-       
+        
         if(projectSaver == nil)
         {
             projectSaver = ProjectSaver(path: self.plistPath())
@@ -76,10 +76,10 @@ import Foundation
     
     func saveProject(){
         
-      self.modificationDate = NSDate(timeIntervalSinceNow: 0)
-      DBManager.getSharedInstance().saveProject(self)
-      //save the project details to the plist
-      saveToPlist()
+        self.modificationDate = NSDate(timeIntervalSinceNow: 0)
+        DBManager.getSharedInstance().saveProject(self)
+        //save the project details to the plist
+        saveToPlist()
     }
     
     func setCaptionImage(){
@@ -105,36 +105,37 @@ import Foundation
     
     func addPhotos(images:NSArray)
     {
-        if(resourcePath == nil)
-        {
-            createResources();
-        }
         
-        var dict:NSDictionary?
-        var image:UIImage?
-    
-        for dict in images
-        {
-            var prefix:String = "image"
-            var path = NSFileManager.defaultManager().uniqueNameForPath(resourcePath!, withPrefix:prefix , withExtension: "png")
-            image = dict.objectForKey(UIImagePickerControllerOriginalImage) as? UIImage
-            UIImagePNGRepresentation(image).writeToFile(path, atomically: true)
+            if(self.resourcePath == nil)
+            {
+                self.createResources();
+            }
             
-            //Here we saving image to our directory
-            var newFrame = Frame()
-            newFrame.parentFolder = resourcePath!
-            newFrame.imagePath = path.lastPathComponent
-            frames.append(newFrame)
-        }
-        
-        if(self.captionImagePath == nil){
-            setCaptionImage()
-            saveProject()
-        }
-        else{
-            saveToPlist()
-        }
-        
+            var dict:NSDictionary?
+            var image:UIImage?
+            
+            for dict in images
+            {
+                var prefix:String = "image"
+                var path = NSFileManager.defaultManager().uniqueNameForPath(self.resourcePath!, withPrefix:prefix , withExtension: "png")
+                image = dict.objectForKey(UIImagePickerControllerOriginalImage) as? UIImage
+                UIImagePNGRepresentation(image).writeToFile(path, atomically: true)
+                
+                //Here we saving image to our directory
+                var newFrame = Frame()
+                newFrame.parentFolder = self.resourcePath!
+                newFrame.imagePath = path.lastPathComponent
+                self.frames.append(newFrame)
+            }
+            
+            if(self.captionImagePath == nil){
+                self.setCaptionImage()
+                self.saveProject()
+            }
+            else{
+                self.saveToPlist()
+            }
+         
     }
     
     func repositionFrame(atIndex startIndex:NSInteger,toIndex endIndex:NSInteger) -> Void
@@ -144,8 +145,8 @@ import Foundation
         saveToPlist()
         
         if(endIndex == 0 || startIndex == 0 ){
-             setCaptionImage()
-             saveProject()
+            setCaptionImage()
+            saveProject()
         }
         else{
             saveToPlist()

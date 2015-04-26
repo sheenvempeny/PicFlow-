@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3002F64E1AED0C2D00992FBD /* UINavigationController+Block.m in Sources */ = {isa = PBXBuildFile; fileRef = 3002F64D1AED0C2D00992FBD /* UINavigationController+Block.m */; };
 		300687171AE5086400198D68 /* ProjectsCollectionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 300687161AE5086400198D68 /* ProjectsCollectionManager.swift */; };
 		300B91491AB95C6300A6C5EF /* VideoExporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 300B91481AB95C6300A6C5EF /* VideoExporter.swift */; };
 		300B914B1AB9720200A6C5EF /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 300B914A1AB9720200A6C5EF /* CoreVideo.framework */; };
@@ -75,6 +76,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		3002F64C1AED0C2D00992FBD /* UINavigationController+Block.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+Block.h"; sourceTree = "<group>"; };
+		3002F64D1AED0C2D00992FBD /* UINavigationController+Block.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+Block.m"; sourceTree = "<group>"; };
+		3002F64F1AED0CDA00992FBD /* iOSBlocksProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = iOSBlocksProtocol.h; sourceTree = "<group>"; };
 		300687161AE5086400198D68 /* ProjectsCollectionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectsCollectionManager.swift; sourceTree = "<group>"; };
 		300B91481AB95C6300A6C5EF /* VideoExporter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoExporter.swift; sourceTree = "<group>"; };
 		300B914A1AB9720200A6C5EF /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
@@ -221,6 +225,9 @@
 				30DC483D1AC3E811001A61A7 /* Utilities.h */,
 				30DC483E1AC3E811001A61A7 /* Utilities.m */,
 				30D858841AD56A5400B8CA25 /* NSFileManager+Addition.swift */,
+				3002F64C1AED0C2D00992FBD /* UINavigationController+Block.h */,
+				3002F64D1AED0C2D00992FBD /* UINavigationController+Block.m */,
+				3002F64F1AED0CDA00992FBD /* iOSBlocksProtocol.h */,
 			);
 			name = Utilites;
 			sourceTree = "<group>";
@@ -519,6 +526,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				300B91491AB95C6300A6C5EF /* VideoExporter.swift in Sources */,
+				3002F64E1AED0C2D00992FBD /* UINavigationController+Block.m in Sources */,
 				30F84A171AAECF10003DC410 /* DetailViewController.swift in Sources */,
 				304A0C3F1AADD96700370E7F /* RAReorderableLayout.swift in Sources */,
 				30EC14B31A7F579100985144 /* ViewController.swift in Sources */,

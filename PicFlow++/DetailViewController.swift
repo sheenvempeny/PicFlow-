@@ -12,6 +12,13 @@ class DetailViewController: UIViewController,RAReorderableLayoutDelegate, RAReor
     var visibleRect:CGRect = CGRectZero
     @IBOutlet weak var imageScrollView: YRImageZoomingView!
    @IBOutlet weak var picCollectionView: UICollectionView!
+    
+    func getOPViewController() -> OperationViewController
+    {
+        let mAppDelegate:AppDelegate  =  UIApplication.sharedApplication().delegate as AppDelegate
+        return mAppDelegate.mainViewController!.operViewController;
+    }
+
 
     func getProject() -> Project?
     {
@@ -46,13 +53,13 @@ class DetailViewController: UIViewController,RAReorderableLayoutDelegate, RAReor
        
     }
     
-    @IBAction func rotateImage(sender: AnyObject)
+    func reloadProject()
     {
-       
-        
-        
+        self.picCollectionView.reloadData()
     }
-
+    
+    
+   
     @IBAction func deleteFrame(sender: AnyObject)
     {
         
@@ -66,6 +73,41 @@ class DetailViewController: UIViewController,RAReorderableLayoutDelegate, RAReor
         
         
     }
+
+    @IBAction func back(sender: AnyObject)
+    {
+        
+        
+        
+    }
+    
+    @IBAction func showTransitions(sender: AnyObject)
+    {
+        
+        
+    }
+  
+    
+    @IBAction func showPhotosList(sender:AnyObject)
+    {
+        self.getOPViewController().currentViewController = self;
+        self.getOPViewController().addPhotos(self)
+    }
+    
+    @IBAction func showMusicList(sender:AnyObject)
+    {
+        self.getOPViewController().currentViewController = self;
+        self.getOPViewController().addMusic(self)
+    }
+    
+    @IBAction func Preview(sender:AnyObject)
+    {
+        
+        
+        
+        
+    }
+  
 
     
     
@@ -158,7 +200,7 @@ class FrameCell: UICollectionViewCell
 {
     
     private var imageView:UIImageView!
-    private var deleteButton:UIButton?
+  //  private var deleteButton:UIButton?
 
     var inFrame:Frame? {
         didSet {
@@ -191,12 +233,6 @@ class FrameCell: UICollectionViewCell
         self.imageView = UIImageView(frame: imageRect)
         self.imageView.autoresizingMask = .FlexibleWidth | .FlexibleHeight
         self.contentView.addSubview(imageView)
-        
-        deleteButton = UIButton()
-        var buttonSize:CGSize = CGSizeMake(20.0, 20.0)
-        deleteButton!.frame = CGRectMake(CGRectGetWidth(imageRect) - buttonSize.width, 4.0, buttonSize.width, buttonSize.height)
-        deleteButton!.setImage(UIImage(named: "Delete.png"), forState: .Normal)
-        imageView.addSubview(deleteButton!)
         
     }
 }

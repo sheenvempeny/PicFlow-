@@ -103,4 +103,6 @@ http://www.slideshare.net/invalidname/advanced-media-manipulation-with-av-founda
 http://stackoverflow.com/questions/5031721/coreanimation-avfoundation-and-ability-to-make-video-export
 http://www.raywenderlich.com/30200/avfoundation-tutorial-adding-overlays-and-animations-to-videos
 
-
+MPMediaPickerController
+--------------------
+http://stackoverflow.com/questions/8077725/application-crashed-while-importing-songs-from-ipod-library-in-iphone-for-ios-5
