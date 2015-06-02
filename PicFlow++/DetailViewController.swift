@@ -11,7 +11,13 @@ class DetailViewController: UIViewController,RAReorderableLayoutDelegate, RAReor
     
     var visibleRect:CGRect = CGRectZero
     @IBOutlet weak var imageScrollView: YRImageZoomingView!
-   @IBOutlet weak var picCollectionView: UICollectionView!
+    @IBOutlet weak var picCollectionView: UICollectionView!
+    var selectedFrame:Frame?{
+        didSet{
+            
+             imageScrollView?.image = selectedFrame!.image()
+        }
+    }
     
     func getOPViewController() -> OperationViewController
     {
@@ -59,11 +65,29 @@ class DetailViewController: UIViewController,RAReorderableLayoutDelegate, RAReor
     }
     
     
+    func findNextFrameToLoad(index:NSInteger) -> Frame? {
+        
+        var returnIndex:NSInteger = -1;
+        if(self.getProject()!.frames.count <= 0){
+            returnIndex = -1;
+        }
+        else if(index == 0){
+            returnIndex = 0;
+        }
+        
+        
+        
+        return nil;
+    }
+    
    
     @IBAction func deleteFrame(sender: AnyObject)
     {
-        
-        
+        //We have to remove selected frame here
+        if( self.getProject()!.removeFrame(self.selectedFrame!)){
+            
+            self.picCollectionView.reloadData()
+        }
     }
 
     
@@ -140,7 +164,8 @@ class DetailViewController: UIViewController,RAReorderableLayoutDelegate, RAReor
         {
             
             var frame:Frame = self.frames()![0]
-            imageScrollView?.image = frame.image()
+            self.selectedFrame = frame
+            // imageScrollView?.image = frame.image()
         }
     }
     
@@ -188,7 +213,8 @@ class DetailViewController: UIViewController,RAReorderableLayoutDelegate, RAReor
     {
         
         var frame:Frame = self.frames()![indexPath.item]
-        imageScrollView.image = frame.image()
+        self.selectedFrame = frame;
+        //imageScrollView.image = frame.image()
         
         
     }//Dictionary<String,UIView>

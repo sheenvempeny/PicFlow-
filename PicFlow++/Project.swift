@@ -138,20 +138,32 @@ import Foundation
          
     }
     
-    func repositionFrame(atIndex startIndex:NSInteger,toIndex endIndex:NSInteger) -> Void
+    func checkIndexAndSave(index:NSInteger) -> Void
     {
-        let frame:Frame = frames.removeAtIndex(startIndex)
-        frames.insert(frame, atIndex: endIndex)
-        saveToPlist()
-        
-        if(endIndex == 0 || startIndex == 0 ){
+        if(index == 0 ){
             setCaptionImage()
             saveProject()
         }
         else{
             saveToPlist()
         }
+    }
+    
+    
+    func repositionFrame(atIndex startIndex:NSInteger,toIndex endIndex:NSInteger) -> Void
+    {
+        let frame:Frame = frames.removeAtIndex(startIndex)
+        frames.insert(frame, atIndex: endIndex)
+       
+        var index:NSInteger = 0
+        if(endIndex == 0 || startIndex == 0 ){
+            index = 0;
+        }
+        else{
+            index = 1;
+        }
         
+        self.checkIndexAndSave(index);
     }
     
     
@@ -160,6 +172,19 @@ import Foundation
         
         
         
+    }
+    
+    func removeFrame(frame:Frame) -> Bool
+    {
+        var returnValue:Bool = false
+        var index = find(frames, frame)
+        if(index >= 0){
+            frames.removeAtIndex(index!);
+            returnValue = true
+            self.checkIndexAndSave(index!);
+        }
+        
+        return returnValue;
     }
     
 }

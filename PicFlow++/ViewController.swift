@@ -69,6 +69,7 @@ class ViewController: UIViewController,ProjectsCollectionProtocol {
         self.loadProject(project)
     }
     
+    //Load a project
     func loadProject(project:Project) -> Void
     {
         selectedProject = project;
@@ -76,7 +77,7 @@ class ViewController: UIViewController,ProjectsCollectionProtocol {
         self.showDetailedViewController();
     }
     
-
+    //Create new Project
     @IBAction func NewProject(sender: AnyObject)
     {
         var newProject:Project = Project()
