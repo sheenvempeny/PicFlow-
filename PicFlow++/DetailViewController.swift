@@ -14,8 +14,9 @@ class DetailViewController: UIViewController,RAReorderableLayoutDelegate, RAReor
     @IBOutlet weak var picCollectionView: UICollectionView!
     var selectedFrame:Frame?{
         didSet{
-            
-             imageScrollView?.image = selectedFrame!.image()
+            if(selectedFrame != nil){
+                imageScrollView?.image = selectedFrame!.image()
+            }
         }
     }
     
@@ -74,18 +75,26 @@ class DetailViewController: UIViewController,RAReorderableLayoutDelegate, RAReor
         else if(index == 0){
             returnIndex = 0;
         }
+        else{
+            returnIndex = index - 1;
+        }
         
+        var returnFrame:Frame?
         
+        if(returnIndex >= 0){
+            returnFrame = self.getProject()!.frames[returnIndex]
+        }
         
-        return nil;
+        return returnFrame;
     }
     
    
     @IBAction func deleteFrame(sender: AnyObject)
     {
         //We have to remove selected frame here
+         var index = find(self.getProject()!.frames, self.selectedFrame!)
         if( self.getProject()!.removeFrame(self.selectedFrame!)){
-            
+            self.selectedFrame = self.findNextFrameToLoad(index!)
             self.picCollectionView.reloadData()
         }
     }
