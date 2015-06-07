@@ -23,6 +23,12 @@ import Foundation
     var projectSaver:ProjectSaver?
     
     
+    func cleanUp() -> Void
+    {
+        //delete resource path
+        NSFileManager.defaultManager().removeItemAtPath(resourcePath!, error: nil);
+    }
+    
     func plistPath() -> String
     {
         var plistPath:String = resourcePath!.stringByAppendingPathComponent("details.plist")

@@ -19,6 +19,6 @@
 +(DBManager*)getSharedInstance;
 -(NSArray*)getProjects;
 -(BOOL)saveProject:(Project*)project;
-
+-(BOOL)removeProject:(Project*)project;
 
 @end

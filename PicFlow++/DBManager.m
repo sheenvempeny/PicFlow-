@@ -137,6 +137,16 @@ static sqlite3_stmt *statement = nil;
     return status;
 }
 
+-(BOOL)removeProject:(Project*)project
+{
+    BOOL status = NO;
+    //remove project
+    NSString *deleteQuery = [NSString stringWithFormat:@"delete from projectsDetail where projectId = (\"%@\")",project.uniqueId];
+    status = [self executeQuery:deleteQuery];
+
+    return  status;
+}
+
 -(NSString*)projectedIdForCreationDate:(NSDate*)creationDate
 {
     NSString *querySQL = [NSString stringWithFormat:
