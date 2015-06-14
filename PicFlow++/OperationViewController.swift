@@ -35,7 +35,7 @@ class OperationViewController: NSObject,UINavigationControllerDelegate,MPMediaPi
     
     func getViewController() -> ViewController?
     {
-       let mAppDelegate:AppDelegate  =  UIApplication.sharedApplication().delegate as AppDelegate
+       let mAppDelegate:AppDelegate  =  UIApplication.sharedApplication().delegate as! AppDelegate
        return mAppDelegate.mainViewController
     }
     
@@ -51,12 +51,16 @@ class OperationViewController: NSObject,UINavigationControllerDelegate,MPMediaPi
     }
    
     
+    
+    
+    
+    
     //photo picker delegate
     //one asset
      /**
     Called when the user had finished picking and had selected multiple assets, which are returned in an array.
     */
-    func imagePickerController(picker:PhotoPickerViewController,didFinishPickingArrayOfMediaWithInfo info:NSArray)
+    func imagePickerController(picker:PhotoPickerViewController,didFinishPickingArrayOfMediaWithInfo info:[AnyObject]!)
     {
         self.getViewController()!.selectedProject?.addPhotos(info);
         currentViewController!.dismissViewControllerAnimated(false, completion: {

@@ -22,14 +22,14 @@ class DetailViewController: UIViewController,RAReorderableLayoutDelegate, RAReor
     
     func getOPViewController() -> OperationViewController
     {
-        let mAppDelegate:AppDelegate  =  UIApplication.sharedApplication().delegate as AppDelegate
+        let mAppDelegate:AppDelegate  =  UIApplication.sharedApplication().delegate as! AppDelegate
         return mAppDelegate.mainViewController!.operViewController;
     }
 
 
     func getProject() -> Project?
     {
-        let appDelegate:AppDelegate = UIApplication.sharedApplication().delegate as AppDelegate
+        let appDelegate:AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         var project:Project? = appDelegate.mainViewController?.selectedProject
         
         return project;
@@ -55,7 +55,7 @@ class DetailViewController: UIViewController,RAReorderableLayoutDelegate, RAReor
         self.picCollectionView.registerClass(FrameCell.self, forCellWithReuseIdentifier: "horizontalCell")
         self.picCollectionView.delegate = self
         self.picCollectionView.dataSource = self
-        (self.picCollectionView.collectionViewLayout as RAReorderableLayout).scrollDirection = .Horizontal
+        (self.picCollectionView.collectionViewLayout as! RAReorderableLayout).scrollDirection = .Horizontal
         var timer = NSTimer.scheduledTimerWithTimeInterval(0.05, target: self, selector: Selector("selectDefaultPic"), userInfo: nil, repeats: false)
        
     }
@@ -200,7 +200,7 @@ class DetailViewController: UIViewController,RAReorderableLayoutDelegate, RAReor
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         var cell: FrameCell
-        cell = self.picCollectionView.dequeueReusableCellWithReuseIdentifier("horizontalCell", forIndexPath: indexPath) as FrameCell
+        cell = self.picCollectionView.dequeueReusableCellWithReuseIdentifier("horizontalCell", forIndexPath: indexPath) as! FrameCell
         cell.inFrame = self.frames()![indexPath.item]
         return cell
     }

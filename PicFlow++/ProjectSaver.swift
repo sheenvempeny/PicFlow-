@@ -24,7 +24,7 @@ class ProjectSaver: NSObject {
         {
             if data.length > 0 {
                 var unarchiver = NSKeyedUnarchiver(forReadingWithData: data)
-                var _dict = unarchiver.decodeObject() as NSDictionary
+                var _dict = unarchiver.decodeObject() as! NSDictionary
                 dict = NSMutableDictionary(dictionary: _dict)
                 unarchiver.finishDecoding()
             }

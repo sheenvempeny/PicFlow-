@@ -520,8 +520,8 @@
 - (void (^)(id selectedItems))successBlock
 {
     void (^successBlock)(id selectedItems) = ^(id selectedItems){
-        if ([selectedItems isKindOfClass:[NSDictionary class]] && [self.delegate respondsToSelector:@selector(imagePickerController:didFinishPickingMediaWithInfo:)]) {
-            [self.delegate imagePickerController:(PhotoPickerViewController *)self.navigationController didFinishPickingMediaWithInfo:selectedItems];
+        if ([selectedItems isKindOfClass:[NSDictionary class]] && [self.delegate respondsToSelector:@selector(imagePickerControllerOneAsset:didFinishPickingMediaWithInfo:)]) {
+            [self.delegate imagePickerControllerOneAsset:(PhotoPickerViewController *)self.navigationController didFinishPickingMediaWithInfo:selectedItems];
         }
         else if ([selectedItems isKindOfClass:[NSArray class]] && [self.delegate respondsToSelector:@selector(imagePickerController:didFinishPickingArrayOfMediaWithInfo:)]) {
             [self.delegate imagePickerController:(PhotoPickerViewController *)self.navigationController didFinishPickingArrayOfMediaWithInfo:selectedItems];

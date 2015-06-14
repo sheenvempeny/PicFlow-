@@ -56,7 +56,7 @@ class ProjectsCollectionManager:NSObject,UICollectionViewDataSource,UICollection
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell
     {
         var photoCell:ProjectCell  =
-            collectionView.dequeueReusableCellWithReuseIdentifier(PhotoCellIdentifier,forIndexPath:indexPath) as ProjectCell;
+            collectionView.dequeueReusableCellWithReuseIdentifier(PhotoCellIdentifier,forIndexPath:indexPath) as! ProjectCell;
         var project : Project = projects[indexPath.item]
         photoCell.imageView!.image = project.captionImage()
        

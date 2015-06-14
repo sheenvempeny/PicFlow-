@@ -19,7 +19,7 @@
 /**
  Called when the user had finished picking and had selected one asset.
  */
-- (void)imagePickerController:(PhotoPickerViewController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info;
+- (void)imagePickerControllerOneAsset:(PhotoPickerViewController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info;
 /**
  Called when the user had finished picking and had selected multiple assets, which are returned in an array.
  */

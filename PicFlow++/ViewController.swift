@@ -34,13 +34,13 @@ class ViewController: UIViewController,ProjectsCollectionProtocol {
         
             
         // Do any additional setup after loading the view, typically from a nib.
-        let mAppDelegate:AppDelegate  =  UIApplication.sharedApplication().delegate as AppDelegate
+        let mAppDelegate:AppDelegate  =  UIApplication.sharedApplication().delegate as! AppDelegate
         mAppDelegate.mainViewController = self
         var projectArray:NSArray = DBManager.getSharedInstance().getProjects()
         var mProject:Project?
         for mProject in projectArray
         {
-            var aProject = mProject as Project
+            var aProject = mProject as! Project
             projects.append(aProject)
         }
         
@@ -57,11 +57,11 @@ class ViewController: UIViewController,ProjectsCollectionProtocol {
     {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         if( detailedViewController == nil){
-            let controller = storyboard.instantiateViewControllerWithIdentifier("DetailView") as DetailViewController
+            let controller = storyboard.instantiateViewControllerWithIdentifier("DetailView") as! DetailViewController
             detailedViewController = controller;
         }
-        let appDelegate:AppDelegate = UIApplication.sharedApplication().delegate as AppDelegate
-        let navController:UINavigationController = appDelegate.window?.rootViewController as UINavigationController
+        let appDelegate:AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        let navController:UINavigationController = appDelegate.window?.rootViewController as! UINavigationController
         navController.pushViewController(detailedViewController!, animated: true)
     }
     

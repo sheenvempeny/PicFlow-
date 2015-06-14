@@ -63,7 +63,7 @@ import Foundation
             var _frames: AnyObject? = projectSaver?.getValue("frames")
             if(_frames != nil)
             {
-                frames = _frames as [Frame]
+                frames = _frames as! [Frame]
                 var _frame:Frame?
                 for _frame in self.frames
                 {

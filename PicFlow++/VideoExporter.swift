@@ -29,8 +29,8 @@ class VideoExporter: NSObject
         var pixelBufferPointer = UnsafeMutablePointer<Unmanaged<CVPixelBuffer>?>.alloc(1)
         var status:CVReturn = CVPixelBufferCreate(
             kCFAllocatorDefault,
-            UInt(frameSize.width),
-            UInt(frameSize.height),
+            Int(frameSize.width),
+            Int(frameSize.height),
             OSType(kCVPixelFormatType_32ARGB),
             options,
             pixelBufferPointer
@@ -43,8 +43,8 @@ class VideoExporter: NSObject
         
         var context:CGContextRef = CGBitmapContextCreate(
             pxData,
-            UInt(frameSize.width),
-            UInt(frameSize.height),
+            Int(frameSize.width),
+            Int(frameSize.height),
             8,
             4 * CGImageGetWidth(image),
             rgbColorSpace,
