@@ -1,4 +1,7 @@
 * Add deletion to main projects display controller
+  |
+  |__ Add a delete button to main project view and execute function
+
 
 * investigate on Transition
 

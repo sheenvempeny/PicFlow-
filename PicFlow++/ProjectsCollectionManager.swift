@@ -81,6 +81,7 @@ class ProjectCell: UICollectionViewCell
     var imageView:UIImageView?
     var layoutInfo:NSDictionary?;
     var imageLayer:CALayer?
+    var deleteButton:UIButton?
     
     func customShadowPathForRect(rect:CGRect) -> CGPathRef
     {
@@ -108,7 +109,7 @@ class ProjectCell: UICollectionViewCell
         
         super.init(frame: frame)
         self.backgroundColor = UIColor(white: 1.0, alpha: 1.0)
-        
+        //adding white shadow around
         self.layer.shadowColor = UIColor.blackColor().CGColor
         self.layer.shadowOffset = CGSizeMake(0.0, 4.0);
         self.layer.shadowOpacity = 0.5;
@@ -118,12 +119,18 @@ class ProjectCell: UICollectionViewCell
         
         var imageRect = CGRectInset(self.bounds, 10.0, 20.0)
         imageRect.origin.y += 10.0;
-        
+        //add image view
         self.imageView = UIImageView(frame: imageRect)
         self.imageView!.contentMode = .ScaleAspectFill;
         self.imageView!.clipsToBounds = true;
         self.contentView.addSubview(self.imageView!)
-
+        //add a delete button and make it hide on launch
+        var buttonHeight = 20.0;
+        var buttonWidth = 20.0;
+        var buttonPadding = 5.0;
+        var deleteButtonFrame = CGRectMake(0.0, 0.0, 0.0, 0.0)
+        self.deleteButton = UIButton()
+        
         
         
     }
