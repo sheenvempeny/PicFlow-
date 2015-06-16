@@ -128,10 +128,12 @@ class ProjectCell: UICollectionViewCell
         var buttonHeight = 20.0;
         var buttonWidth = 20.0;
         var buttonPadding = 5.0;
-        var deleteButtonFrame = CGRectMake(0.0, 0.0, 0.0, 0.0)
-        self.deleteButton = UIButton()
-        
-        
+        var deleteButtonFrame = CGRectMake(self.frame.size.width - CGFloat(buttonWidth + buttonPadding), self.frame.size.height - CGFloat(buttonHeight + buttonPadding), CGFloat(buttonWidth), CGFloat(buttonHeight));
+        self.deleteButton = UIButton(frame: deleteButtonFrame)
+        var deleteImage = UIImage(named: "Delete")
+        self.deleteButton?.setImage(deleteImage, forState: UIControlState.Normal);
+        self.contentView.addSubview(self.deleteButton!)
+        self.deleteButton?.hidden = true;
         
     }
 
