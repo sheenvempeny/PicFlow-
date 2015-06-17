@@ -16,10 +16,6 @@ protocol ProjectsCollectionProtocol
     
 }
 
-protocol DeleteProjectViewProtocol
-{
-    func turnOffDeleteButton(modal:AnyObject?);
-}
 
 
 class DeleteViewModal {
@@ -30,13 +26,18 @@ class DeleteViewModal {
     var indexPath:NSIndexPath?{
         didSet{
         
-            timer = NSTimer(timeInterval: 10, target: delegate!, selector: "offDeleteButton", userInfo: nil, repeats: true)
+            timer = NSTimer(timeInterval: 10, target: delegate!, selector: "offDeleteButton:", userInfo: self, repeats: true)
+            NSRunLoop.currentRunLoop().addTimer(timer!, forMode: NSRunLoopCommonModes)
         }
     }
     
+     deinit{
+    
+        timer!.invalidate();
+        
+    }
     
 }
-
 
 class ProjectsCollectionManager:NSObject,UICollectionViewDataSource,UICollectionViewDelegate
 {
@@ -45,6 +46,7 @@ class ProjectsCollectionManager:NSObject,UICollectionViewDataSource,UICollection
     var projects:[Project] = []
     var PhotoCellIdentifier = "PhotoCell";
     var delegate:ProjectsCollectionProtocol?
+    var deleteModals:[DeleteViewModal] = []
     
     init(inCollectionView:UICollectionView, withProjects inProjects:[Project]) {
     
@@ -68,7 +70,12 @@ class ProjectsCollectionManager:NSObject,UICollectionViewDataSource,UICollection
         
     }
     
-    func turnOffAllDeleteButton() {
+    
+    func offDeleteButton(modal:AnyObject?){
+        
+    }
+    
+    func turnOffAllDeleteButtons() {
         
        
         
@@ -84,12 +91,18 @@ class ProjectsCollectionManager:NSObject,UICollectionViewDataSource,UICollection
         var indexPath:NSIndexPath? = self.collectionView!.indexPathForItemAtPoint(p)!
         
         if (indexPath != nil){
-            var photoCell:ProjectCell  = self.collectionView!.cellForItemAtIndexPath(indexPath!) as! ProjectCell
-            photoCell.hidden = false
+            //var photoCell:ProjectCell  = self.collectionView!.cellForItemAtIndexPath(indexPath!) as! ProjectCell
+           // photoCell.hidden = false
+            
+            var deleteViewModal:DeleteViewModal = DeleteViewModal()
+            deleteViewModal.delegate = self;
+            deleteViewModal.indexPath = indexPath;
+            deleteModals.append(deleteViewModal)
+            
         }
         else
         {
-            self.turnOffAllDeleteButton()
+            self.turnOffAllDeleteButtons()
             
         }
     }
