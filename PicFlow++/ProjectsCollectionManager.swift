@@ -16,6 +16,27 @@ protocol ProjectsCollectionProtocol
     
 }
 
+protocol DeleteProjectViewProtocol
+{
+    func turnOffDeleteButton(modal:AnyObject?);
+}
+
+
+class DeleteViewModal {
+    
+    var timer:NSTimer?
+    var delegate:AnyObject?
+    
+    var indexPath:NSIndexPath?{
+        didSet{
+        
+            timer = NSTimer(timeInterval: 10, target: delegate!, selector: "offDeleteButton", userInfo: nil, repeats: true)
+        }
+    }
+    
+    
+}
+
 
 class ProjectsCollectionManager:NSObject,UICollectionViewDataSource,UICollectionViewDelegate
 {
@@ -47,6 +68,13 @@ class ProjectsCollectionManager:NSObject,UICollectionViewDataSource,UICollection
         
     }
     
+    func turnOffAllDeleteButton() {
+        
+       
+        
+    }
+    
+    
     func handleLongPress(gestureRecognizer:UILongPressGestureRecognizer){
         
         if (gestureRecognizer.state != UIGestureRecognizerState.Ended) {
@@ -57,7 +85,12 @@ class ProjectsCollectionManager:NSObject,UICollectionViewDataSource,UICollection
         
         if (indexPath != nil){
             var photoCell:ProjectCell  = self.collectionView!.cellForItemAtIndexPath(indexPath!) as! ProjectCell
-
+            photoCell.hidden = false
+        }
+        else
+        {
+            self.turnOffAllDeleteButton()
+            
         }
     }
 
@@ -125,7 +158,6 @@ class ProjectCell: UICollectionViewCell
         
         return shadowPath.CGPath;
     }
-    
     
     override init(frame: CGRect) {
         
