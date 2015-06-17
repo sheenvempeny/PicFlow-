@@ -38,7 +38,29 @@ class ProjectsCollectionManager:NSObject,UICollectionViewDataSource,UICollection
         collectionView?.dataSource = self;
         collectionView?.delegate = self
         
+        //add long press monitor, when long press happens we show delete button
+        var lgpr:UILongPressGestureRecognizer = UILongPressGestureRecognizer(target: self, action: "handleLongPress:")
+        lgpr.minimumPressDuration = 0.5;
+        //lgpr.delegate = self;
+        self.collectionView!.addGestureRecognizer(lgpr)
+
+        
     }
+    
+    func handleLongPress(gestureRecognizer:UILongPressGestureRecognizer){
+        
+        if (gestureRecognizer.state != UIGestureRecognizerState.Ended) {
+            return;
+        }
+        var p:CGPoint = gestureRecognizer.locationInView(self.collectionView!)
+        var indexPath:NSIndexPath? = self.collectionView!.indexPathForItemAtPoint(p)!
+        
+        if (indexPath != nil){
+            var photoCell:ProjectCell  = self.collectionView!.cellForItemAtIndexPath(indexPath!) as! ProjectCell
+
+        }
+    }
+
     
     
     func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int
@@ -128,14 +150,13 @@ class ProjectCell: UICollectionViewCell
         var buttonHeight = 20.0;
         var buttonWidth = 20.0;
         var buttonPadding = 5.0;
-        var deleteButtonFrame = CGRectMake(self.frame.size.width - CGFloat(buttonWidth + buttonPadding), self.frame.size.height - CGFloat(buttonHeight + buttonPadding), CGFloat(buttonWidth), CGFloat(buttonHeight));
+        var deleteButtonFrame = CGRectMake(self.frame.size.width - CGFloat(buttonWidth + buttonPadding),CGFloat(buttonPadding), CGFloat(buttonWidth), CGFloat(buttonHeight));
         self.deleteButton = UIButton(frame: deleteButtonFrame)
         var deleteImage = UIImage(named: "Delete")
         self.deleteButton?.setImage(deleteImage, forState: UIControlState.Normal);
         self.contentView.addSubview(self.deleteButton!)
         self.deleteButton?.hidden = true;
-        
-    }
+}
 
     required init(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
