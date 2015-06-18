@@ -73,20 +73,24 @@ class ProjectsCollectionManager:NSObject,UICollectionViewDataSource,UICollection
     
     func offDeleteButton(modal:AnyObject?){
         
+        var _deleteModal:DeleteViewModal = modal as! DeleteViewModal
+        var indexPath:NSIndexPath = _deleteModal.indexPath!
+        
+        
     }
     
     func turnOffAllDeleteButtons() {
         
-       
-        
+       deleteModals.removeAll(keepCapacity: true)
+       self.collectionView!.reloadData()
     }
     
     func canShowDeleteButton(indexPath:NSIndexPath) -> Bool
     {
         var returnStatus:Bool = false
         var deleteModal:DeleteViewModal?
-        for(deleteModal in deleteModals){
-            if(deleteModal!.indexPath?.isEqual(indexPath)){
+        for deleteModal in deleteModals{
+            if(deleteModal.indexPath!.isEqual(indexPath)){
                 returnStatus = true
                 break
             }
@@ -142,7 +146,7 @@ class ProjectsCollectionManager:NSObject,UICollectionViewDataSource,UICollection
             collectionView.dequeueReusableCellWithReuseIdentifier(PhotoCellIdentifier,forIndexPath:indexPath) as! ProjectCell;
         var project : Project = projects[indexPath.item]
         photoCell.imageView!.image = project.captionImage()
-       photoCell.deleteButton!.hidden = self.canShowDeleteButton(indexPath)
+       photoCell.deleteButton!.hidden = !self.canShowDeleteButton(indexPath)
         
         return photoCell;
         
