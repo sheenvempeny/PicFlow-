@@ -81,6 +81,20 @@ class ProjectsCollectionManager:NSObject,UICollectionViewDataSource,UICollection
         
     }
     
+    func canShowDeleteButton(indexPath:NSIndexPath) -> Bool
+    {
+        var returnStatus:Bool = false
+        var deleteModal:DeleteViewModal?
+        for(deleteModal in deleteModals){
+            if(deleteModal!.indexPath?.isEqual(indexPath)){
+                returnStatus = true
+                break
+            }
+        }
+        
+        return returnStatus;
+    }
+    
     
     func handleLongPress(gestureRecognizer:UILongPressGestureRecognizer){
         
@@ -91,13 +105,14 @@ class ProjectsCollectionManager:NSObject,UICollectionViewDataSource,UICollection
         var indexPath:NSIndexPath? = self.collectionView!.indexPathForItemAtPoint(p)!
         
         if (indexPath != nil){
-            //var photoCell:ProjectCell  = self.collectionView!.cellForItemAtIndexPath(indexPath!) as! ProjectCell
-           // photoCell.hidden = false
+//            var photoCell:ProjectCell  = self.collectionView!.cellForItemAtIndexPath(indexPath!) as! ProjectCell
+//            photoCell.hidden = false
             
             var deleteViewModal:DeleteViewModal = DeleteViewModal()
             deleteViewModal.delegate = self;
             deleteViewModal.indexPath = indexPath;
             deleteModals.append(deleteViewModal)
+            self.collectionView!.reloadItemsAtIndexPaths(NSArray(object: indexPath!) as [AnyObject]);
             
         }
         else
@@ -127,7 +142,7 @@ class ProjectsCollectionManager:NSObject,UICollectionViewDataSource,UICollection
             collectionView.dequeueReusableCellWithReuseIdentifier(PhotoCellIdentifier,forIndexPath:indexPath) as! ProjectCell;
         var project : Project = projects[indexPath.item]
         photoCell.imageView!.image = project.captionImage()
-       
+       photoCell.deleteButton!.hidden = self.canShowDeleteButton(indexPath)
         
         return photoCell;
         
