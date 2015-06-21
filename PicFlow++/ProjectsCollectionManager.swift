@@ -18,7 +18,7 @@ protocol ProjectsCollectionProtocol
 
 
 
-class DeleteViewModal {
+class DeleteViewModal: NSObject {
     
     var timer:NSTimer?
     var delegate:AnyObject?
@@ -26,7 +26,7 @@ class DeleteViewModal {
     var indexPath:NSIndexPath?{
         didSet{
         
-            timer = NSTimer(timeInterval: 10, target: delegate!, selector: "offDeleteButton:", userInfo: self, repeats: true)
+            timer = NSTimer(timeInterval: 5, target: delegate!, selector: "offDeleteButton:", userInfo: self, repeats: true)
             NSRunLoop.currentRunLoop().addTimer(timer!, forMode: NSRunLoopCommonModes)
         }
     }
@@ -66,22 +66,31 @@ class ProjectsCollectionManager:NSObject,UICollectionViewDataSource,UICollection
         lgpr.minimumPressDuration = 0.5;
         //lgpr.delegate = self;
         self.collectionView!.addGestureRecognizer(lgpr)
+        
+        // normal press 
+        var ngpr:UITapGestureRecognizer = UITapGestureRecognizer(target: self , action: "handleNormalPress:")
+       // ngpr.minimumNumberOfTouches = 1
+        self.collectionView!.addGestureRecognizer(ngpr)
 
         
     }
     
-    
-    func offDeleteButton(modal:AnyObject?){
+    func offDeleteButton(timer:NSTimer){
         
-        var _deleteModal:DeleteViewModal = modal as! DeleteViewModal
+        var _deleteModal:DeleteViewModal = timer.userInfo as! DeleteViewModal
         var indexPath:NSIndexPath = _deleteModal.indexPath!
+        var index = find(self.deleteModals, _deleteModal)
         
-        
+        if(index >= 0){
+            self.deleteModals.removeAtIndex(index!);
+            self.collectionView!.reloadItemsAtIndexPaths(NSArray(object: indexPath) as [AnyObject]);
+        }
+    
     }
     
     func turnOffAllDeleteButtons() {
         
-       deleteModals.removeAll(keepCapacity: true)
+       deleteModals.removeAll(keepCapacity: false)
        self.collectionView!.reloadData()
     }
     
@@ -100,17 +109,30 @@ class ProjectsCollectionManager:NSObject,UICollectionViewDataSource,UICollection
     }
     
     
+    func handleNormalPress(gestureRecognizer:UITapGestureRecognizer){
+      
+        if (gestureRecognizer.state != UIGestureRecognizerState.Ended) {
+            return;
+        }
+        var p:CGPoint = gestureRecognizer.locationInView(self.collectionView!)
+        var indexPath:NSIndexPath? = self.collectionView!.indexPathForItemAtPoint(p)
+
+         if (indexPath == nil){
+            self.turnOffAllDeleteButtons()
+        }
+        
+    }
+    
+    
     func handleLongPress(gestureRecognizer:UILongPressGestureRecognizer){
         
         if (gestureRecognizer.state != UIGestureRecognizerState.Ended) {
             return;
         }
         var p:CGPoint = gestureRecognizer.locationInView(self.collectionView!)
-        var indexPath:NSIndexPath? = self.collectionView!.indexPathForItemAtPoint(p)!
+        var indexPath:NSIndexPath? = self.collectionView!.indexPathForItemAtPoint(p)
         
         if (indexPath != nil){
-//            var photoCell:ProjectCell  = self.collectionView!.cellForItemAtIndexPath(indexPath!) as! ProjectCell
-//            photoCell.hidden = false
             
             var deleteViewModal:DeleteViewModal = DeleteViewModal()
             deleteViewModal.delegate = self;
@@ -158,6 +180,7 @@ class ProjectsCollectionManager:NSObject,UICollectionViewDataSource,UICollection
         delegate?.projectSelectionChanged(project)
         
     }
+    
     
 
 }
