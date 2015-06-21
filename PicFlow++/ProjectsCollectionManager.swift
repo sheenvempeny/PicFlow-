@@ -11,10 +11,16 @@ import Foundation
 
 protocol ProjectsCollectionProtocol
 {
-    
-   func projectSelectionChanged(project:Project);
+    func projectSelectionChanged(project:Project);
+ 
+}
+
+protocol ProjectDelectionProtocol
+{
+    func projectDeleted();
     
 }
+
 
 
 
@@ -39,7 +45,7 @@ class DeleteViewModal: NSObject {
     
 }
 
-class ProjectsCollectionManager:NSObject,UICollectionViewDataSource,UICollectionViewDelegate
+class ProjectsCollectionManager:NSObject,UICollectionViewDataSource,UICollectionViewDelegate,ProjectDelectionProtocol
 {
     
     var collectionView:UICollectionView?
@@ -181,6 +187,11 @@ class ProjectsCollectionManager:NSObject,UICollectionViewDataSource,UICollection
         
     }
     
+    func projectDeleted(){
+        
+        
+    }
+    
     
 
 }
@@ -240,9 +251,10 @@ class ProjectCell: UICollectionViewCell
         var deleteButtonFrame = CGRectMake(self.frame.size.width - CGFloat(buttonWidth + buttonPadding),CGFloat(buttonPadding), CGFloat(buttonWidth), CGFloat(buttonHeight));
         self.deleteButton = UIButton(frame: deleteButtonFrame)
         var deleteImage = UIImage(named: "Delete")
-        self.deleteButton?.setImage(deleteImage, forState: UIControlState.Normal);
+        self.deleteButton!.setImage(deleteImage, forState: UIControlState.Normal);
+        self.deleteButton!.addTarget(self.superview, action: "projectDeleted", forControlEvents: UIControlEvents.TouchUpInside)
         self.contentView.addSubview(self.deleteButton!)
-        self.deleteButton?.hidden = true;
+        self.deleteButton!.hidden = true;
 }
 
     required init(coder aDecoder: NSCoder) {
