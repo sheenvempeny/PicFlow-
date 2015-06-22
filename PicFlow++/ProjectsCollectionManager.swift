@@ -8,6 +8,7 @@
 
 import Foundation
 
+//Modify code with http://stackoverflow.com/questions/13966291/achieve-button-click-in-uicollectionview
 
 protocol ProjectsCollectionProtocol
 {
