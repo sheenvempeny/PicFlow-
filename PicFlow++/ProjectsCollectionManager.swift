@@ -8,20 +8,13 @@
 
 import Foundation
 
-//Modify code with http://stackoverflow.com/questions/13966291/achieve-button-click-in-uicollectionview
+
 
 protocol ProjectsCollectionProtocol
 {
     func projectSelectionChanged(project:Project);
  
 }
-
-protocol ProjectDelectionProtocol
-{
-    func projectDeleted();
-    
-}
-
 
 
 
@@ -46,7 +39,7 @@ class DeleteViewModal: NSObject {
     
 }
 
-class ProjectsCollectionManager:NSObject,UICollectionViewDataSource,UICollectionViewDelegate,ProjectDelectionProtocol
+class ProjectsCollectionManager:NSObject,UICollectionViewDataSource,UICollectionViewDelegate,UIGestureRecognizerDelegate
 {
     
     var collectionView:UICollectionView?
@@ -76,7 +69,8 @@ class ProjectsCollectionManager:NSObject,UICollectionViewDataSource,UICollection
         
         // normal press 
         var ngpr:UITapGestureRecognizer = UITapGestureRecognizer(target: self , action: "handleNormalPress:")
-       // ngpr.minimumNumberOfTouches = 1
+        //ngpr.minimumNumberOfTouches = 1
+        ngpr.delegate = self
         self.collectionView!.addGestureRecognizer(ngpr)
 
         
@@ -115,6 +109,22 @@ class ProjectsCollectionManager:NSObject,UICollectionViewDataSource,UICollection
         return returnStatus;
     }
     
+    func removeFromDeleteModals(indexPath:NSIndexPath){
+        
+        var _deleteModal:DeleteViewModal?
+        
+        for deleteModal in deleteModals{
+            if(deleteModal.indexPath!.isEqual(indexPath)){
+                var index = find(self.deleteModals, deleteModal)
+                self.deleteModals.removeAtIndex(index!);
+                return;
+            }
+        }
+
+        
+    }
+    
+     //# MARK: - HANDLE NORMAL PRESS
     
     func handleNormalPress(gestureRecognizer:UITapGestureRecognizer){
       
@@ -130,6 +140,7 @@ class ProjectsCollectionManager:NSObject,UICollectionViewDataSource,UICollection
         
     }
     
+    //# MARK: - HANDLE LONG PRESS
     
     func handleLongPress(gestureRecognizer:UILongPressGestureRecognizer){
         
@@ -155,6 +166,28 @@ class ProjectsCollectionManager:NSObject,UICollectionViewDataSource,UICollection
         }
     }
 
+     //# MARK: - gestureRecognizer delegate
+    
+    func gestureRecognizer(gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWithGestureRecognizer otherGestureRecognizer: UIGestureRecognizer) -> Bool{
+        
+        return true;
+    }
+    
+    func gestureRecognizerShouldBegin(gestureRecognizer: UIGestureRecognizer) -> Bool{
+        return true;
+    }
+    
+    func gestureRecognizer(gestureRecognizer: UIGestureRecognizer, shouldReceiveTouch touch: UITouch) -> Bool{
+        
+        if(touch.view is UICollectionView){
+            return true;
+        }
+        
+        return false
+    }
+    
+    
+    //# MARK: - COLLECTION VIEW DATA SOURCE
     
     
     func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int
@@ -175,7 +208,11 @@ class ProjectsCollectionManager:NSObject,UICollectionViewDataSource,UICollection
             collectionView.dequeueReusableCellWithReuseIdentifier(PhotoCellIdentifier,forIndexPath:indexPath) as! ProjectCell;
         var project : Project = projects[indexPath.item]
         photoCell.imageView!.image = project.captionImage()
-       photoCell.deleteButton!.hidden = !self.canShowDeleteButton(indexPath)
+        photoCell.deleteButton!.hidden = !self.canShowDeleteButton(indexPath)
+        
+        if(false == photoCell.deleteButton!.hidden){
+            photoCell.deleteButton!.addTarget(self, action: "projectDeleted:event:", forControlEvents: UIControlEvents.TouchUpInside);
+        }
         
         return photoCell;
         
@@ -185,11 +222,24 @@ class ProjectsCollectionManager:NSObject,UICollectionViewDataSource,UICollection
     
         var project : Project = projects[indexPath.item]
         delegate?.projectSelectionChanged(project)
-        
     }
     
-    func projectDeleted(){
+    
+    
+    func projectDeleted(sender:AnyObject?,event inevent:UIEvent){
         
+        var touches:NSSet = inevent.allTouches()!
+        var touch:UITouch = touches.anyObject()! as! UITouch
+        var touchPoint:CGPoint = touch.locationInView(self.collectionView!)
+        var indexPath:NSIndexPath = self.collectionView!.indexPathForItemAtPoint(touchPoint)!
+        
+        var projectToDelete:Project = projects[indexPath.item]
+        if(true == DBManager.getSharedInstance().removeProject(projectToDelete)){
+            
+            self.removeFromDeleteModals(indexPath)
+            projects.removeAtIndex(indexPath.item)
+            self.collectionView!.reloadData()
+        }
         
     }
     
@@ -253,7 +303,6 @@ class ProjectCell: UICollectionViewCell
         self.deleteButton = UIButton(frame: deleteButtonFrame)
         var deleteImage = UIImage(named: "Delete")
         self.deleteButton!.setImage(deleteImage, forState: UIControlState.Normal);
-        self.deleteButton!.addTarget(self.superview, action: "projectDeleted", forControlEvents: UIControlEvents.TouchUpInside)
         self.contentView.addSubview(self.deleteButton!)
         self.deleteButton!.hidden = true;
 }
