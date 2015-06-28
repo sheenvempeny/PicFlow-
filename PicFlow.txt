@@ -67,8 +67,9 @@ Initial screens : 3
 First Version
 --------------
 
-In first version we are not going to support videos . It will come in future.
+* In first version we are not going to support videos . It will come in future.
 
+* We give only one transition for the inital version. Future version will come with more transition
 
 UICollection Layout
 --------------------

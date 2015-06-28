@@ -72,8 +72,9 @@ class VideoExporter: NSObject
     
 
     
-    func export()
+    func exportImagesToVideo()
     {
+        //Here we exporting images to the video
         //https://github.com/HarrisonJackson/HJImagesToVideo/blob/master/ImageToVid/HJImagesToVideo/HJImagesToVideo.m
         
         var fps:Int32?

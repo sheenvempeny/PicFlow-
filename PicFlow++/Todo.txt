@@ -1,3 +1,9 @@
+We can take the transition at the end . For this moment we will go with only one
+transition.
+
+* When user click on the preview button we will create the movie
+
+
 * investigate on Transition
 
 
