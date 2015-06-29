@@ -70,6 +70,21 @@ class VideoExporter: NSObject
         return adaptor.appendPixelBuffer(buffer, withPresentationTime: presentTime)
     }
     
+    
+    func export()
+    {
+        
+        let qualityOfServiceClass = QOS_CLASS_BACKGROUND
+        let backgroundQueue = dispatch_get_global_queue(qualityOfServiceClass, 0)
+        dispatch_async(backgroundQueue, {
+            println("This is run on the background queue")
+            self.exportImagesToVideo();
+            dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                println("This is run on the main queue, after the previous code in outer block")
+            })
+        })
+        
+    }
 
     
     func exportImagesToVideo()
@@ -77,7 +92,7 @@ class VideoExporter: NSObject
         //Here we exporting images to the video
         //https://github.com/HarrisonJackson/HJImagesToVideo/blob/master/ImageToVid/HJImagesToVideo/HJImagesToVideo.m
         
-        var fps:Int32?
+        var fps:Int32? = 60
         var error: NSError?;
         var videoWriter:AVAssetWriter? = AVAssetWriter(URL: outputFile, fileType: AVFileTypeMPEG4, error: &error)
         
@@ -107,6 +122,7 @@ class VideoExporter: NSObject
         while (i >= 0)
         {
             if(writerInput.readyForMoreMediaData){
+                
                 presentTime = CMTimeMake(i, fps!);
                 
                 if (Int(i) >= project?.frames.count) {
