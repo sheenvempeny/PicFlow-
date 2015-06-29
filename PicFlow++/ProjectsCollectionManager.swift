@@ -222,6 +222,7 @@ class ProjectsCollectionManager:NSObject,UICollectionViewDataSource,UICollection
     
         var project : Project = projects[indexPath.item]
         delegate?.projectSelectionChanged(project)
+        self.turnOffAllDeleteButtons()
     }
     
     
