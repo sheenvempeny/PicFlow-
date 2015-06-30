@@ -71,6 +71,8 @@ First Version
 
 * We give only one transition for the inital version. Future version will come with more transition
 
+* In the First version we are not saving the preview movie state . We create preview movie each time user press preview
+
 UICollection Layout
 --------------------
 http://skeuo.com/uicollectionview-custom-layout-tutorial

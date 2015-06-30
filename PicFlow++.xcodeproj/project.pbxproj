@@ -28,6 +28,7 @@
 		306907851ABADE3600202263 /* ThirdScreen.png in Resources */ = {isa = PBXBuildFile; fileRef = 306907841ABADE3600202263 /* ThirdScreen.png */; };
 		307E8CC51AA342DD0049D69D /* OperationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 307E8CC41AA342DD0049D69D /* OperationViewController.swift */; };
 		3082177A1AB1D21000F6E496 /* YRImageZoomingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 308217791AB1D21000F6E496 /* YRImageZoomingView.swift */; };
+		3084BB6D1B42875C0000A849 /* PreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3084BB6C1B42875C0000A849 /* PreviewViewController.swift */; };
 		30C36B771ACBDAB900743CD8 /* Plist structure.txt in Resources */ = {isa = PBXBuildFile; fileRef = 30C36B761ACBDAB900743CD8 /* Plist structure.txt */; };
 		30CDD5F51ABFF1BA004E2513 /* PicFlowDetails.txt in Resources */ = {isa = PBXBuildFile; fileRef = 30CDD5F41ABFF1BA004E2513 /* PicFlowDetails.txt */; };
 		30CDD5F71AC0055E004E2513 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 30CDD5F61AC0055E004E2513 /* libsqlite3.dylib */; };
@@ -111,6 +112,7 @@
 		306907841ABADE3600202263 /* ThirdScreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ThirdScreen.png; path = Screens/ThirdScreen.png; sourceTree = SOURCE_ROOT; };
 		307E8CC41AA342DD0049D69D /* OperationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OperationViewController.swift; sourceTree = "<group>"; };
 		308217791AB1D21000F6E496 /* YRImageZoomingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YRImageZoomingView.swift; sourceTree = "<group>"; };
+		3084BB6C1B42875C0000A849 /* PreviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreviewViewController.swift; sourceTree = "<group>"; };
 		30C36B761ACBDAB900743CD8 /* Plist structure.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Plist structure.txt"; sourceTree = "<group>"; };
 		30CDD5F41ABFF1BA004E2513 /* PicFlowDetails.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = PicFlowDetails.txt; sourceTree = "<group>"; };
 		30CDD5F61AC0055E004E2513 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
@@ -330,6 +332,7 @@
 				30F84A161AAECF10003DC410 /* DetailViewController.swift */,
 				307E8CC41AA342DD0049D69D /* OperationViewController.swift */,
 				300687161AE5086400198D68 /* ProjectsCollectionManager.swift */,
+				3084BB6C1B42875C0000A849 /* PreviewViewController.swift */,
 			);
 			name = "View Controller";
 			sourceTree = "<group>";
@@ -528,6 +531,7 @@
 				300B91491AB95C6300A6C5EF /* VideoExporter.swift in Sources */,
 				3002F64E1AED0C2D00992FBD /* UINavigationController+Block.m in Sources */,
 				30F84A171AAECF10003DC410 /* DetailViewController.swift in Sources */,
+				3084BB6D1B42875C0000A849 /* PreviewViewController.swift in Sources */,
 				304A0C3F1AADD96700370E7F /* RAReorderableLayout.swift in Sources */,
 				30EC14B31A7F579100985144 /* ViewController.swift in Sources */,
 				30EC14B11A7F579100985144 /* AppDelegate.swift in Sources */,

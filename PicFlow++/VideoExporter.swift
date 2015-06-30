@@ -71,7 +71,7 @@ class VideoExporter: NSObject
     }
     
     
-    func export()
+    func export(completionHandler:(success:Bool) -> Void)
     {
         
         let qualityOfServiceClass = QOS_CLASS_BACKGROUND
@@ -80,7 +80,8 @@ class VideoExporter: NSObject
             println("This is run on the background queue")
             self.exportImagesToVideo();
             dispatch_async(dispatch_get_main_queue(), { () -> Void in
-                println("This is run on the main queue, after the previous code in outer block")
+             //   println("This is run on the main queue, after the previous code in outer block")
+                completionHandler(success: true)
             })
         })
         

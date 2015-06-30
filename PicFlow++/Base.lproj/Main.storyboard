@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6249" systemVersion="14D131" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="kI0-in-0dO">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E26a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="kI0-in-0dO">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6243"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -133,7 +133,7 @@
                                 <rect key="frame" x="10" y="335" width="581" height="61"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="339-pv-iM7">
-                                        <rect key="frame" x="8" y="12" width="59" height="37"/>
+                                        <rect key="frame" x="8" y="21" width="59" height="28"/>
                                         <state key="normal" title="Duration">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
@@ -142,7 +142,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uPc-NF-2Wi">
-                                        <rect key="frame" x="500" y="12" width="59" height="37"/>
+                                        <rect key="frame" x="500" y="21" width="59" height="28"/>
                                         <state key="normal" title="Delete">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
@@ -150,19 +150,9 @@
                                             <action selector="deleteFrame:" destination="GKX-go-Hi6" eventType="touchDown" id="S4T-xb-5pv"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dOY-CT-fGq">
-                                        <rect key="frame" x="93" y="12" width="74" height="37"/>
-                                        <state key="normal" title="Transitions">
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="showTransitions:" destination="GKX-go-Hi6" eventType="touchDown" id="T9E-GT-pSD"/>
-                                        </connections>
-                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstItem="dOY-CT-fGq" firstAttribute="leading" secondItem="339-pv-iM7" secondAttribute="trailing" constant="26" id="DPY-Zq-F1n"/>
                                     <constraint firstItem="339-pv-iM7" firstAttribute="leading" secondItem="EPM-AV-guw" secondAttribute="leading" constant="8" id="iJh-6L-P33"/>
                                     <constraint firstAttribute="height" constant="61" id="l0b-FZ-J5e"/>
                                     <constraint firstAttribute="trailing" secondItem="uPc-NF-2Wi" secondAttribute="trailing" constant="22" id="oB1-OO-dZQ"/>
@@ -206,6 +196,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DbG-uM-Pte" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="112" y="395"/>
+        </scene>
+        <!--Preview View Controller-->
+        <scene sceneID="2vT-4C-zmM">
+            <objects>
+                <viewController id="Oc1-Nt-a3S" customClass="PreviewViewController" customModule="PicFlow" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="sfY-WZ-Bzg"/>
+                        <viewControllerLayoutGuide type="bottom" id="1nQ-E9-67y"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Uat-bH-fxM">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jPL-cc-NLK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="308" y="1074"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
