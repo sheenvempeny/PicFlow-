@@ -25,10 +25,12 @@
 		3047A4581AC2944E0019F71B /* DBManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3047A4571AC2944E0019F71B /* DBManager.m */; };
 		304A0C3F1AADD96700370E7F /* RAReorderableLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 304A0C3E1AADD96700370E7F /* RAReorderableLayout.swift */; };
 		305628441ABCC43F0081A281 /* GCConfiguration.plist in Resources */ = {isa = PBXBuildFile; fileRef = 305628431ABCC43F0081A281 /* GCConfiguration.plist */; };
+		305D07E91B496084008EF601 /* detailedScreen1.png in Resources */ = {isa = PBXBuildFile; fileRef = 305D07E71B496084008EF601 /* detailedScreen1.png */; };
+		305D07EA1B496084008EF601 /* detailedScreen2.png in Resources */ = {isa = PBXBuildFile; fileRef = 305D07E81B496084008EF601 /* detailedScreen2.png */; };
+		305D07EC1B49612A008EF601 /* MoviePlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 305D07EB1B49612A008EF601 /* MoviePlayView.swift */; };
 		306907851ABADE3600202263 /* ThirdScreen.png in Resources */ = {isa = PBXBuildFile; fileRef = 306907841ABADE3600202263 /* ThirdScreen.png */; };
 		307E8CC51AA342DD0049D69D /* OperationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 307E8CC41AA342DD0049D69D /* OperationViewController.swift */; };
 		3082177A1AB1D21000F6E496 /* YRImageZoomingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 308217791AB1D21000F6E496 /* YRImageZoomingView.swift */; };
-		3084BB6D1B42875C0000A849 /* PreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3084BB6C1B42875C0000A849 /* PreviewViewController.swift */; };
 		30C36B771ACBDAB900743CD8 /* Plist structure.txt in Resources */ = {isa = PBXBuildFile; fileRef = 30C36B761ACBDAB900743CD8 /* Plist structure.txt */; };
 		30CDD5F51ABFF1BA004E2513 /* PicFlowDetails.txt in Resources */ = {isa = PBXBuildFile; fileRef = 30CDD5F41ABFF1BA004E2513 /* PicFlowDetails.txt */; };
 		30CDD5F71AC0055E004E2513 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 30CDD5F61AC0055E004E2513 /* libsqlite3.dylib */; };
@@ -109,10 +111,12 @@
 		304A0C3E1AADD96700370E7F /* RAReorderableLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RAReorderableLayout.swift; sourceTree = "<group>"; };
 		3056283F1ABCC1940081A281 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		305628431ABCC43F0081A281 /* GCConfiguration.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = GCConfiguration.plist; sourceTree = "<group>"; };
+		305D07E71B496084008EF601 /* detailedScreen1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = detailedScreen1.png; sourceTree = SOURCE_ROOT; };
+		305D07E81B496084008EF601 /* detailedScreen2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = detailedScreen2.png; sourceTree = SOURCE_ROOT; };
+		305D07EB1B49612A008EF601 /* MoviePlayView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoviePlayView.swift; sourceTree = "<group>"; };
 		306907841ABADE3600202263 /* ThirdScreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ThirdScreen.png; path = Screens/ThirdScreen.png; sourceTree = SOURCE_ROOT; };
 		307E8CC41AA342DD0049D69D /* OperationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OperationViewController.swift; sourceTree = "<group>"; };
 		308217791AB1D21000F6E496 /* YRImageZoomingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YRImageZoomingView.swift; sourceTree = "<group>"; };
-		3084BB6C1B42875C0000A849 /* PreviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreviewViewController.swift; sourceTree = "<group>"; };
 		30C36B761ACBDAB900743CD8 /* Plist structure.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Plist structure.txt"; sourceTree = "<group>"; };
 		30CDD5F41ABFF1BA004E2513 /* PicFlowDetails.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = PicFlowDetails.txt; sourceTree = "<group>"; };
 		30CDD5F61AC0055E004E2513 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
@@ -267,6 +271,7 @@
 				30F84A191AAED645003DC410 /* Modals */,
 				30F84A181AAECF26003DC410 /* View Controller */,
 				304A0C3E1AADD96700370E7F /* RAReorderableLayout.swift */,
+				305D07EB1B49612A008EF601 /* MoviePlayView.swift */,
 				30EC14B01A7F579100985144 /* AppDelegate.swift */,
 				30EC14B71A7F579100985144 /* Images.xcassets */,
 				30EC14AE1A7F579100985144 /* Supporting Files */,
@@ -311,6 +316,8 @@
 				30EC57711ADD530C00318735 /* TTMSFMXNativeUICollectionView1.png */,
 				30EC14D31A7F619C00985144 /* First Screen.png */,
 				30EC14D51A7F64A100985144 /* Second Screen.png */,
+				305D07E71B496084008EF601 /* detailedScreen1.png */,
+				305D07E81B496084008EF601 /* detailedScreen2.png */,
 				306907841ABADE3600202263 /* ThirdScreen.png */,
 			);
 			name = Screens;
@@ -332,7 +339,6 @@
 				30F84A161AAECF10003DC410 /* DetailViewController.swift */,
 				307E8CC41AA342DD0049D69D /* OperationViewController.swift */,
 				300687161AE5086400198D68 /* ProjectsCollectionManager.swift */,
-				3084BB6C1B42875C0000A849 /* PreviewViewController.swift */,
 			);
 			name = "View Controller";
 			sourceTree = "<group>";
@@ -466,6 +472,7 @@
 				30C36B771ACBDAB900743CD8 /* Plist structure.txt in Resources */,
 				3010F0021AC199080018B238 /* DB.xcconfig in Resources */,
 				30CDD5F51ABFF1BA004E2513 /* PicFlowDetails.txt in Resources */,
+				305D07E91B496084008EF601 /* detailedScreen1.png in Resources */,
 				30EC14D61A7F64A100985144 /* Second Screen.png in Resources */,
 				3014F0041ABEB05700817FDF /* InfoPlist.strings in Resources */,
 				305628441ABCC43F0081A281 /* GCConfiguration.plist in Resources */,
@@ -473,6 +480,7 @@
 				30EC14D41A7F619C00985144 /* First Screen.png in Resources */,
 				30EC14B61A7F579100985144 /* Main.storyboard in Resources */,
 				30EC57721ADD530C00318735 /* TTMSFMXNativeUICollectionView1.png in Resources */,
+				305D07EA1B496084008EF601 /* detailedScreen2.png in Resources */,
 				30EC14D11A7F596700985144 /* PicFlow.txt in Resources */,
 				3010EFD41AC13E350018B238 /* Todo.txt in Resources */,
 				306907851ABADE3600202263 /* ThirdScreen.png in Resources */,
@@ -531,7 +539,6 @@
 				300B91491AB95C6300A6C5EF /* VideoExporter.swift in Sources */,
 				3002F64E1AED0C2D00992FBD /* UINavigationController+Block.m in Sources */,
 				30F84A171AAECF10003DC410 /* DetailViewController.swift in Sources */,
-				3084BB6D1B42875C0000A849 /* PreviewViewController.swift in Sources */,
 				304A0C3F1AADD96700370E7F /* RAReorderableLayout.swift in Sources */,
 				30EC14B31A7F579100985144 /* ViewController.swift in Sources */,
 				30EC14B11A7F579100985144 /* AppDelegate.swift in Sources */,
@@ -543,6 +550,7 @@
 				3044CCC81AAC70FB005DEC22 /* AudioTrack.swift in Sources */,
 				3047A4581AC2944E0019F71B /* DBManager.m in Sources */,
 				307E8CC51AA342DD0049D69D /* OperationViewController.swift in Sources */,
+				305D07EC1B49612A008EF601 /* MoviePlayView.swift in Sources */,
 				3044CCC41AAC6749005DEC22 /* Project.swift in Sources */,
 				3044CCC61AAC67F8005DEC22 /* Frame.swift in Sources */,
 			);

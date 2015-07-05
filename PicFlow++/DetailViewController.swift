@@ -139,6 +139,8 @@ class DetailViewController: UIViewController,RAReorderableLayoutDelegate, RAReor
         
         
         
+        
+        
     }
   
 

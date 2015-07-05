@@ -75,17 +75,14 @@ class RAReorderableLayout: UICollectionViewFlowLayout, UIGestureRecognizerDelega
     }
     
     private var displayLink: CADisplayLink?
-    
     private var longPress: UILongPressGestureRecognizer?
-    
     private var panGesture: UIPanGestureRecognizer?
-    
     private var continuousScrollDirection: direction = .stay
     
     private var cellFakeView: RACellFakeView?
+   
     
     private var panTranslation: CGPoint?
-    
     private var fakeCellCenter: CGPoint?
     
     var trigerInsets: UIEdgeInsets = UIEdgeInsetsMake(100.0, 100.0, 100.0, 100.0)
@@ -93,6 +90,8 @@ class RAReorderableLayout: UICollectionViewFlowLayout, UIGestureRecognizerDelega
     var trigerPadding: UIEdgeInsets = UIEdgeInsetsZero
     
     var scrollSpeedValue: CGFloat = 10.0
+   
+    
     
     private var offsetFromTop: CGFloat {
         let contentOffset = self.collectionView!.contentOffset
@@ -527,6 +526,8 @@ class RAReorderableLayout: UICollectionViewFlowLayout, UIGestureRecognizerDelega
         
         return true
     }
+    
+    
 }
 
 private class RACellFakeView: UIView {
