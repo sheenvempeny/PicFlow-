@@ -17,7 +17,7 @@ class ViewController: UIViewController,ProjectsCollectionProtocol {
       super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
     }
     
-    required init(coder aDecoder: NSCoder) {
+    required init?(coder aDecoder: NSCoder) {
      super.init(coder: aDecoder)
     }
     
@@ -36,11 +36,11 @@ class ViewController: UIViewController,ProjectsCollectionProtocol {
         // Do any additional setup after loading the view, typically from a nib.
         let mAppDelegate:AppDelegate  =  UIApplication.sharedApplication().delegate as! AppDelegate
         mAppDelegate.mainViewController = self
-        var projectArray:NSArray = DBManager.getSharedInstance().getProjects()
+        let projectArray:NSArray = DBManager.getSharedInstance().getProjects()
         var mProject:Project?
         for mProject in projectArray
         {
-            var aProject = mProject as! Project
+            let aProject = mProject as! Project
             projects.append(aProject)
         }
         
@@ -80,7 +80,7 @@ class ViewController: UIViewController,ProjectsCollectionProtocol {
     //Create new Project
     @IBAction func NewProject(sender: AnyObject)
     {
-        var newProject:Project = Project()
+        let newProject:Project = Project()
         projects.append(newProject)
         selectedProject = newProject;
         operViewController.currentViewController = self

@@ -10,6 +10,7 @@
 
 import Foundation
 
+
 @objc class Project : NSObject
 {
     var uniqueId:NSString?
@@ -25,13 +26,16 @@ import Foundation
     
     func cleanUp() -> Void
     {
-        //delete resource path
-        NSFileManager.defaultManager().removeItemAtPath(resourcePath!, error: nil);
+        do {
+            //delete resource path
+            try NSFileManager.defaultManager().removeItemAtPath(resourcePath!)
+        } catch _ {
+        };
     }
     
     func plistPath() -> String
     {
-        var plistPath:String = resourcePath!.stringByAppendingPathComponent("details.plist")
+        let plistPath:String = resourcePath!.stringByAppendingPathComponent("details.plist")
         
         if NSFileManager.defaultManager().fileExistsAtPath(plistPath) == false {
             NSFileManager.defaultManager().createFileAtPath(plistPath, contents: nil, attributes: nil)
@@ -47,10 +51,13 @@ import Foundation
     func createResources(){
         
         // we will create resource folder with time stamp
-        var date:NSDate = NSDate(timeIntervalSinceNow: 0)
-        var resourceFolderName:String = Utilities.convertDateToString(date)
+        let date:NSDate = NSDate(timeIntervalSinceNow: 0)
+        let resourceFolderName:String = Utilities.convertDateToString(date)
         resourcePath = Utilities.documentDir().stringByAppendingPathComponent(resourceFolderName)
-        NSFileManager.defaultManager().createDirectoryAtPath(resourcePath!, withIntermediateDirectories: false, attributes: nil, error: nil)
+        do {
+            try NSFileManager.defaultManager().createDirectoryAtPath(resourcePath!, withIntermediateDirectories: false, attributes: nil)
+        } catch _ {
+        }
         // Now we will create plist for saving project details
         projectSaver = ProjectSaver(path: self.plistPath())
     }
@@ -60,7 +67,7 @@ import Foundation
         if(projectSaver == nil)
         {
             projectSaver = ProjectSaver(path: self.plistPath())
-            var _frames: AnyObject? = projectSaver?.getValue("frames")
+            let _frames: AnyObject? = projectSaver?.getValue("frames")
             if(_frames != nil)
             {
                 frames = _frames as! [Frame]
@@ -92,7 +99,7 @@ import Foundation
         
         if(frames.count > 0)
         {
-            var firstFrame:Frame = frames[0]
+            let firstFrame:Frame = frames[0]
             captionImagePath = self.resourcePath!.stringByAppendingPathComponent(firstFrame.imagePath!)
         }
     }
@@ -125,12 +132,12 @@ import Foundation
                 var prefix:String = "image"
                 var path = NSFileManager.defaultManager().uniqueNameForPath(self.resourcePath!, withPrefix:prefix , withExtension: "png")
                 image = dict.objectForKey(UIImagePickerControllerOriginalImage) as? UIImage
-                UIImagePNGRepresentation(image).writeToFile(path, atomically: true)
+                UIImagePNGRepresentation(image!)!.writeToFile(path, atomically: true)
                 
                 //Here we saving image to our directory
                 var newFrame = Frame()
                 newFrame.parentFolder = self.resourcePath!
-                newFrame.imagePath = path.lastPathComponent
+                newFrame.imagePath = (path as NSString).lastPathComponent
                 self.frames.append(newFrame)
             }
             
@@ -183,7 +190,7 @@ import Foundation
     func removeFrame(frame:Frame) -> Bool
     {
         var returnValue:Bool = false
-        var index = find(frames, frame)
+        let index = frames.indexOf(frame)
         if(index >= 0){
             frames.removeAtIndex(index!);
             returnValue = true

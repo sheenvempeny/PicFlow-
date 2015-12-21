@@ -23,8 +23,8 @@ class ProjectSaver: NSObject {
         if let data =  NSData(contentsOfFile: path)
         {
             if data.length > 0 {
-                var unarchiver = NSKeyedUnarchiver(forReadingWithData: data)
-                var _dict = unarchiver.decodeObject() as! NSDictionary
+                let unarchiver = NSKeyedUnarchiver(forReadingWithData: data)
+                let _dict = unarchiver.decodeObject() as! NSDictionary
                 dict = NSMutableDictionary(dictionary: _dict)
                 unarchiver.finishDecoding()
             }
@@ -35,8 +35,8 @@ class ProjectSaver: NSObject {
     func saveValue(value:AnyObject,forKey key:String)
     {
         dict.setObject(value, forKey: key)
-        var data:NSMutableData = NSMutableData()
-        var archiver:NSKeyedArchiver = NSKeyedArchiver(forWritingWithMutableData: data)
+        let data:NSMutableData = NSMutableData()
+        let archiver:NSKeyedArchiver = NSKeyedArchiver(forWritingWithMutableData: data)
         archiver.encodeObject(dict)
         archiver.finishEncoding()
         data.writeToFile(savePath!, atomically: true)

@@ -30,7 +30,7 @@ class DetailViewController: UIViewController,RAReorderableLayoutDelegate, RAReor
     func getProject() -> Project?
     {
         let appDelegate:AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-        var project:Project? = appDelegate.mainViewController?.selectedProject
+        let project:Project? = appDelegate.mainViewController?.selectedProject
         
         return project;
         
@@ -45,7 +45,7 @@ class DetailViewController: UIViewController,RAReorderableLayoutDelegate, RAReor
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
     }
     
-    required init(coder aDecoder: NSCoder) {
+    required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
     
@@ -92,7 +92,7 @@ class DetailViewController: UIViewController,RAReorderableLayoutDelegate, RAReor
     @IBAction func deleteFrame(sender: AnyObject)
     {
         //We have to remove selected frame here
-         var index = find(self.getProject()!.frames, self.selectedFrame!)
+         let index = self.getProject()!.frames.indexOf(self.selectedFrame!)
         if( self.getProject()!.removeFrame(self.selectedFrame!)){
             self.selectedFrame = self.findNextFrameToLoad(index!)
             self.picCollectionView.reloadData()
@@ -174,7 +174,7 @@ class DetailViewController: UIViewController,RAReorderableLayoutDelegate, RAReor
         if(self.frames()?.count > 0)
         {
             
-            var frame:Frame = self.frames()![0]
+            let frame:Frame = self.frames()![0]
             self.selectedFrame = frame
             // imageScrollView?.image = frame.image()
         }
@@ -223,7 +223,7 @@ class DetailViewController: UIViewController,RAReorderableLayoutDelegate, RAReor
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath)
     {
         
-        var frame:Frame = self.frames()![indexPath.item]
+        let frame:Frame = self.frames()![indexPath.item]
         self.selectedFrame = frame;
         //imageScrollView.image = frame.image()
         
@@ -246,7 +246,7 @@ class FrameCell: UICollectionViewCell
         }
     }
     
-    required init(coder aDecoder: NSCoder) {
+    required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
     
@@ -266,9 +266,9 @@ class FrameCell: UICollectionViewCell
         [self.backgroundView?.removeFromSuperview()]
         self.backgroundView = backImageView
         backImageView.image = UIImage(named: "film.png")
-        var imageRect:CGRect = CGRectMake(5.0, 10.0, CGRectGetWidth(self.bounds) - 10.0, CGRectGetHeight(self.bounds) - 20.0)
+        let imageRect:CGRect = CGRectMake(5.0, 10.0, CGRectGetWidth(self.bounds) - 10.0, CGRectGetHeight(self.bounds) - 20.0)
         self.imageView = UIImageView(frame: imageRect)
-        self.imageView.autoresizingMask = .FlexibleWidth | .FlexibleHeight
+        self.imageView.autoresizingMask = [.FlexibleWidth, .FlexibleHeight]
         self.contentView.addSubview(imageView)
         
     }

@@ -31,6 +31,7 @@
 		306907851ABADE3600202263 /* ThirdScreen.png in Resources */ = {isa = PBXBuildFile; fileRef = 306907841ABADE3600202263 /* ThirdScreen.png */; };
 		307E8CC51AA342DD0049D69D /* OperationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 307E8CC41AA342DD0049D69D /* OperationViewController.swift */; };
 		3082177A1AB1D21000F6E496 /* YRImageZoomingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 308217791AB1D21000F6E496 /* YRImageZoomingView.swift */; };
+		308E044C1C282FE500C5A798 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 308E044B1C282FE500C5A798 /* StringExtension.swift */; settings = {ASSET_TAGS = (); }; };
 		30C36B771ACBDAB900743CD8 /* Plist structure.txt in Resources */ = {isa = PBXBuildFile; fileRef = 30C36B761ACBDAB900743CD8 /* Plist structure.txt */; };
 		30CDD5F51ABFF1BA004E2513 /* PicFlowDetails.txt in Resources */ = {isa = PBXBuildFile; fileRef = 30CDD5F41ABFF1BA004E2513 /* PicFlowDetails.txt */; };
 		30CDD5F71AC0055E004E2513 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 30CDD5F61AC0055E004E2513 /* libsqlite3.dylib */; };
@@ -117,6 +118,7 @@
 		306907841ABADE3600202263 /* ThirdScreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ThirdScreen.png; path = Screens/ThirdScreen.png; sourceTree = SOURCE_ROOT; };
 		307E8CC41AA342DD0049D69D /* OperationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OperationViewController.swift; sourceTree = "<group>"; };
 		308217791AB1D21000F6E496 /* YRImageZoomingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YRImageZoomingView.swift; sourceTree = "<group>"; };
+		308E044B1C282FE500C5A798 /* StringExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		30C36B761ACBDAB900743CD8 /* Plist structure.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Plist structure.txt"; sourceTree = "<group>"; };
 		30CDD5F41ABFF1BA004E2513 /* PicFlowDetails.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = PicFlowDetails.txt; sourceTree = "<group>"; };
 		30CDD5F61AC0055E004E2513 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
@@ -234,6 +236,7 @@
 				3002F64C1AED0C2D00992FBD /* UINavigationController+Block.h */,
 				3002F64D1AED0C2D00992FBD /* UINavigationController+Block.m */,
 				3002F64F1AED0CDA00992FBD /* iOSBlocksProtocol.h */,
+				308E044B1C282FE500C5A798 /* StringExtension.swift */,
 			);
 			name = Utilites;
 			sourceTree = "<group>";
@@ -433,6 +436,8 @@
 		30EC14A31A7F579100985144 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftMigration = 0700;
+				LastSwiftUpdateCheck = 0700;
 				LastUpgradeCheck = 0610;
 				ORGANIZATIONNAME = Sheen;
 				TargetAttributes = {
@@ -550,6 +555,7 @@
 				3044CCC81AAC70FB005DEC22 /* AudioTrack.swift in Sources */,
 				3047A4581AC2944E0019F71B /* DBManager.m in Sources */,
 				307E8CC51AA342DD0049D69D /* OperationViewController.swift in Sources */,
+				308E044C1C282FE500C5A798 /* StringExtension.swift in Sources */,
 				305D07EC1B49612A008EF601 /* MoviePlayView.swift in Sources */,
 				3044CCC41AAC6749005DEC22 /* Project.swift in Sources */,
 				3044CCC61AAC67F8005DEC22 /* Frame.swift in Sources */,

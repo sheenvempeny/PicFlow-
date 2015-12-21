@@ -15,7 +15,7 @@ class OperationViewController: NSObject,UINavigationControllerDelegate,MPMediaPi
     
     func openMeida(mediaType: EMedia)
     {
-        var photoPicker = PhotoPickerViewController(title: "Photos")
+        let photoPicker = PhotoPickerViewController(title: "Photos")
         photoPicker.isMultipleSelectionEnabled = true
         photoPicker.delegate = self;
         currentViewController!.presentViewController(photoPicker, animated: true, completion: nil)
@@ -24,7 +24,7 @@ class OperationViewController: NSObject,UINavigationControllerDelegate,MPMediaPi
     
     func openAudio()
     {
-        var picker: MPMediaPickerController = MPMediaPickerController(mediaTypes: MPMediaType.Music)
+        let picker: MPMediaPickerController = MPMediaPickerController(mediaTypes: MPMediaType.Music)
         picker.delegate						= self;
         picker.allowsPickingMultipleItems	= true;
         picker.prompt						= "Add songs to play"
@@ -65,7 +65,7 @@ class OperationViewController: NSObject,UINavigationControllerDelegate,MPMediaPi
         self.getViewController()!.selectedProject?.addPhotos(info);
         currentViewController!.dismissViewControllerAnimated(false, completion: {
         
-            var detailedViewController = self.getViewController()!.detailedViewController
+            let detailedViewController = self.getViewController()!.detailedViewController
             if(self.currentViewController!.isEqual(detailedViewController) == false){
                 self.getViewController()?.showDetailedViewController()
             }
@@ -86,12 +86,12 @@ class OperationViewController: NSObject,UINavigationControllerDelegate,MPMediaPi
         currentViewController!.dismissViewControllerAnimated(true, completion: nil)
     }
     
-    func mediaPicker(mediaPicker: MPMediaPickerController!, didPickMediaItems mediaItemCollection: MPMediaItemCollection!)
+    func mediaPicker(mediaPicker: MPMediaPickerController, didPickMediaItems mediaItemCollection: MPMediaItemCollection)
     {
         currentViewController!.dismissViewControllerAnimated(true, completion: nil)
     }
     
-    func mediaPickerDidCancel(mediaPicker: MPMediaPickerController!)
+    func mediaPickerDidCancel(mediaPicker: MPMediaPickerController)
     {
         currentViewController!.dismissViewControllerAnimated(true, completion: nil)
     }

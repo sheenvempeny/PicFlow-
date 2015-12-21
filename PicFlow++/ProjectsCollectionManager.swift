@@ -62,13 +62,13 @@ class ProjectsCollectionManager:NSObject,UICollectionViewDataSource,UICollection
         collectionView?.delegate = self
         
         //add long press monitor, when long press happens we show delete button
-        var lgpr:UILongPressGestureRecognizer = UILongPressGestureRecognizer(target: self, action: "handleLongPress:")
+        let lgpr:UILongPressGestureRecognizer = UILongPressGestureRecognizer(target: self, action: "handleLongPress:")
         lgpr.minimumPressDuration = 0.5;
         //lgpr.delegate = self;
         self.collectionView!.addGestureRecognizer(lgpr)
         
         // normal press 
-        var ngpr:UITapGestureRecognizer = UITapGestureRecognizer(target: self , action: "handleNormalPress:")
+        let ngpr:UITapGestureRecognizer = UITapGestureRecognizer(target: self , action: "handleNormalPress:")
         //ngpr.minimumNumberOfTouches = 1
         ngpr.delegate = self
         self.collectionView!.addGestureRecognizer(ngpr)
@@ -80,11 +80,11 @@ class ProjectsCollectionManager:NSObject,UICollectionViewDataSource,UICollection
         
         var _deleteModal:DeleteViewModal = timer.userInfo as! DeleteViewModal
         var indexPath:NSIndexPath = _deleteModal.indexPath!
-        var index = find(self.deleteModals, _deleteModal)
+        var index = self.deleteModals.indexOf(_deleteModal)
         
         if(index >= 0){
             self.deleteModals.removeAtIndex(index!);
-            self.collectionView!.reloadItemsAtIndexPaths(NSArray(object: indexPath) as [AnyObject]);
+            self.collectionView!.reloadItemsAtIndexPaths(NSArray(object: indexPath) as! [NSIndexPath]);
         }
     
     }
@@ -115,7 +115,7 @@ class ProjectsCollectionManager:NSObject,UICollectionViewDataSource,UICollection
         
         for deleteModal in deleteModals{
             if(deleteModal.indexPath!.isEqual(indexPath)){
-                var index = find(self.deleteModals, deleteModal)
+                let index = self.deleteModals.indexOf(deleteModal)
                 self.deleteModals.removeAtIndex(index!);
                 return;
             }
@@ -131,8 +131,8 @@ class ProjectsCollectionManager:NSObject,UICollectionViewDataSource,UICollection
         if (gestureRecognizer.state != UIGestureRecognizerState.Ended) {
             return;
         }
-        var p:CGPoint = gestureRecognizer.locationInView(self.collectionView!)
-        var indexPath:NSIndexPath? = self.collectionView!.indexPathForItemAtPoint(p)
+        let p:CGPoint = gestureRecognizer.locationInView(self.collectionView!)
+        let indexPath:NSIndexPath? = self.collectionView!.indexPathForItemAtPoint(p)
 
          if (indexPath == nil){
             self.turnOffAllDeleteButtons()
@@ -156,7 +156,7 @@ class ProjectsCollectionManager:NSObject,UICollectionViewDataSource,UICollection
             deleteViewModal.delegate = self;
             deleteViewModal.indexPath = indexPath;
             deleteModals.append(deleteViewModal)
-            self.collectionView!.reloadItemsAtIndexPaths(NSArray(object: indexPath!) as [AnyObject]);
+            self.collectionView!.reloadItemsAtIndexPaths(NSArray(object: indexPath!) as! [NSIndexPath]);
             
         }
         else
@@ -204,9 +204,9 @@ class ProjectsCollectionManager:NSObject,UICollectionViewDataSource,UICollection
     // The cell that is returned must be retrieved from a call to -dequeueReusableCellWithReuseIdentifier:forIndexPath:
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell
     {
-        var photoCell:ProjectCell  =
+        let photoCell:ProjectCell  =
             collectionView.dequeueReusableCellWithReuseIdentifier(PhotoCellIdentifier,forIndexPath:indexPath) as! ProjectCell;
-        var project : Project = projects[indexPath.item]
+        let project : Project = projects[indexPath.item]
         photoCell.imageView!.image = project.captionImage()
         photoCell.deleteButton!.hidden = !self.canShowDeleteButton(indexPath)
         
@@ -220,7 +220,7 @@ class ProjectsCollectionManager:NSObject,UICollectionViewDataSource,UICollection
     
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
     
-        var project : Project = projects[indexPath.item]
+        let project : Project = projects[indexPath.item]
         delegate?.projectSelectionChanged(project)
         self.turnOffAllDeleteButtons()
     }
@@ -229,12 +229,12 @@ class ProjectsCollectionManager:NSObject,UICollectionViewDataSource,UICollection
     
     func projectDeleted(sender:AnyObject?,event inevent:UIEvent){
         
-        var touches:NSSet = inevent.allTouches()!
-        var touch:UITouch = touches.anyObject()! as! UITouch
-        var touchPoint:CGPoint = touch.locationInView(self.collectionView!)
-        var indexPath:NSIndexPath = self.collectionView!.indexPathForItemAtPoint(touchPoint)!
+        let touches:NSSet = inevent.allTouches()!
+        let touch:UITouch = touches.anyObject()! as! UITouch
+        let touchPoint:CGPoint = touch.locationInView(self.collectionView!)
+        let indexPath:NSIndexPath = self.collectionView!.indexPathForItemAtPoint(touchPoint)!
         
-        var projectToDelete:Project = projects[indexPath.item]
+        let projectToDelete:Project = projects[indexPath.item]
         if(true == DBManager.getSharedInstance().removeProject(projectToDelete)){
             
             self.removeFromDeleteModals(indexPath)
@@ -260,16 +260,16 @@ class ProjectCell: UICollectionViewCell
     {
         let kCurveSlope:CGFloat = 4;
         
-        var shadowPath: UIBezierPath  = UIBezierPath()
-        var startX:CGFloat = CGRectGetMinX(rect);
-        var startY:CGFloat = CGRectGetMinY(rect) + rect.size.height * 0.4;
+        let shadowPath: UIBezierPath  = UIBezierPath()
+        let startX:CGFloat = CGRectGetMinX(rect);
+        let startY:CGFloat = CGRectGetMinY(rect) + rect.size.height * 0.4;
         
         shadowPath.moveToPoint(CGPointMake(startX,startY))
         shadowPath.addLineToPoint(CGPointMake(CGRectGetMinX(rect), CGRectGetMaxY(rect) + kCurveSlope));
         shadowPath.addQuadCurveToPoint(CGPointMake(CGRectGetMaxX(rect), CGRectGetMaxY(rect) + kCurveSlope), controlPoint: CGPointMake(CGRectGetMidX(rect), CGRectGetMaxY(rect) - kCurveSlope))
         
-        var stopX:CGFloat = CGRectGetMaxX(rect);
-        var stopY:CGFloat = CGRectGetMinY(rect) + rect.size.height * 0.4;
+        let stopX:CGFloat = CGRectGetMaxX(rect);
+        let stopY:CGFloat = CGRectGetMinY(rect) + rect.size.height * 0.4;
         
         shadowPath.addLineToPoint(CGPointMake(stopX,stopY))
         shadowPath.closePath()
@@ -297,18 +297,18 @@ class ProjectCell: UICollectionViewCell
         self.imageView!.clipsToBounds = true;
         self.contentView.addSubview(self.imageView!)
         //add a delete button and make it hide on launch
-        var buttonHeight = 20.0;
-        var buttonWidth = 20.0;
-        var buttonPadding = 5.0;
-        var deleteButtonFrame = CGRectMake(self.frame.size.width - CGFloat(buttonWidth + buttonPadding),CGFloat(buttonPadding), CGFloat(buttonWidth), CGFloat(buttonHeight));
+        let buttonHeight = 20.0;
+        let buttonWidth = 20.0;
+        let buttonPadding = 5.0;
+        let deleteButtonFrame = CGRectMake(self.frame.size.width - CGFloat(buttonWidth + buttonPadding),CGFloat(buttonPadding), CGFloat(buttonWidth), CGFloat(buttonHeight));
         self.deleteButton = UIButton(frame: deleteButtonFrame)
-        var deleteImage = UIImage(named: "Delete")
+        let deleteImage = UIImage(named: "Delete")
         self.deleteButton!.setImage(deleteImage, forState: UIControlState.Normal);
         self.contentView.addSubview(self.deleteButton!)
         self.deleteButton!.hidden = true;
 }
 
-    required init(coder aDecoder: NSCoder) {
+    required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     

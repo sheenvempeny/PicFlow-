@@ -44,7 +44,7 @@ class Frame:NSObject,NSCoding
         }
     }
     
-    required init(coder aDecoder: NSCoder) {
+    required init?(coder aDecoder: NSCoder) {
         
         self.duration  = aDecoder.decodeObjectForKey("duration") as? CGFloat
         self.transition = aDecoder.decodeObjectForKey("transition") as? CIFilter

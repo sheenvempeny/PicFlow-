@@ -26,7 +26,7 @@ class VideoExporter: NSObject
             "kCVPixelBufferCGBitmapContextCompatibilityKey": true
         ]
         
-        var pixelBufferPointer = UnsafeMutablePointer<Unmanaged<CVPixelBuffer>?>.alloc(1)
+        var pixelBufferPointer = UnsafeMutablePointer<CVPixelBuffer?>.alloc(1)
         var status:CVReturn = CVPixelBufferCreate(
             kCFAllocatorDefault,
             Int(frameSize.width),
@@ -36,10 +36,10 @@ class VideoExporter: NSObject
             pixelBufferPointer
         )
         
-        var lockStatus:CVReturn = CVPixelBufferLockBaseAddress(pixelBufferPointer.memory?.takeUnretainedValue(), 0)
-        var pxData:UnsafeMutablePointer<(Void)> = CVPixelBufferGetBaseAddress(pixelBufferPointer.memory?.takeUnretainedValue())
-        let bitmapinfo = CGBitmapInfo(rawValue: CGImageAlphaInfo.NoneSkipFirst.rawValue)
-        let rgbColorSpace:CGColorSpace = CGColorSpaceCreateDeviceRGB()
+        var lockStatus:CVReturn = CVPixelBufferLockBaseAddress(pixelBufferPointer.memory!, 0)
+        var pxData:UnsafeMutablePointer<(Void)> = CVPixelBufferGetBaseAddress(pixelBufferPointer.memory!)
+      //  let bitmapinfo = CGBitmapInfo(rawValue: CGImageAlphaInfo.NoneSkipFirst.rawValue)
+        let rgbColorSpace:CGColorSpace = CGColorSpaceCreateDeviceRGB()!
         
         var context:CGContextRef = CGBitmapContextCreate(
             pxData,
@@ -48,12 +48,12 @@ class VideoExporter: NSObject
             8,
             4 * CGImageGetWidth(image),
             rgbColorSpace,
-            bitmapinfo
-        )
+             CGImageAlphaInfo.NoneSkipFirst.rawValue
+        )!
         
         CGContextDrawImage(context, CGRectMake(0, 0, frameSize.width, frameSize.height), image)
-        CVPixelBufferUnlockBaseAddress(pixelBufferPointer.memory?.takeUnretainedValue(), 0)
-        return pixelBufferPointer.memory?.takeUnretainedValue()
+        CVPixelBufferUnlockBaseAddress(pixelBufferPointer.memory!, 0)
+        return pixelBufferPointer.memory!
     }
     
     func appendToAdapter(adaptor:AVAssetWriterInputPixelBufferAdaptor,
@@ -77,7 +77,7 @@ class VideoExporter: NSObject
         let qualityOfServiceClass = QOS_CLASS_BACKGROUND
         let backgroundQueue = dispatch_get_global_queue(qualityOfServiceClass, 0)
         dispatch_async(backgroundQueue, {
-            println("This is run on the background queue")
+            print("This is run on the background queue")
             self.exportImagesToVideo();
             dispatch_async(dispatch_get_main_queue(), { () -> Void in
              //   println("This is run on the main queue, after the previous code in outer block")
@@ -93,9 +93,15 @@ class VideoExporter: NSObject
         //Here we exporting images to the video
         //https://github.com/HarrisonJackson/HJImagesToVideo/blob/master/ImageToVid/HJImagesToVideo/HJImagesToVideo.m
         
-        var fps:Int32? = 60
+        let fps:Int32? = 60
         var error: NSError?;
-        var videoWriter:AVAssetWriter? = AVAssetWriter(URL: outputFile, fileType: AVFileTypeMPEG4, error: &error)
+        var videoWriter:AVAssetWriter?
+        do {
+            videoWriter = try AVAssetWriter(URL: outputFile!, fileType: AVFileTypeMPEG4)
+        } catch let error1 as NSError {
+            error = error1
+            videoWriter = nil
+        }
         
         if (error != nil) {
            
@@ -103,8 +109,8 @@ class VideoExporter: NSObject
         }
         var videoSettings = Dictionary<String, AnyObject!>()
         videoSettings = [AVVideoCodecKey:AVVideoCodecH264, AVVideoWidthKey:movieSize?.width, AVVideoHeightKey:movieSize?.height]
-        var writerInput:AVAssetWriterInput = AVAssetWriterInput(mediaType: AVMediaTypeVideo, outputSettings: videoSettings)
-        var adaptor:AVAssetWriterInputPixelBufferAdaptor = AVAssetWriterInputPixelBufferAdaptor(assetWriterInput: writerInput, sourcePixelBufferAttributes:nil);
+        let writerInput:AVAssetWriterInput = AVAssetWriterInput(mediaType: AVMediaTypeVideo, outputSettings: videoSettings)
+        let adaptor:AVAssetWriterInputPixelBufferAdaptor = AVAssetWriterInputPixelBufferAdaptor(assetWriterInput: writerInput, sourcePixelBufferAttributes:nil);
         
         if(videoWriter?.canAddInput(writerInput) == false){
             
@@ -130,13 +136,13 @@ class VideoExporter: NSObject
                     buffer = nil;
                 }
                 else {
-                    var frame:Frame = project?.frames[Int(i)] as Frame!
-                    buffer = self.pixelBufferFromCGImage(frame.image().CGImage, withSize: movieSize!)
+                    let frame:Frame = project?.frames[Int(i)] as Frame!
+                    buffer = self.pixelBufferFromCGImage(frame.image().CGImage!, withSize: movieSize!)
                 }
                 
                 if (buffer != nil) {
                 
-                    var appendSuccess:Bool = self.appendToAdapter(adaptor, pixelBuffer: buffer!, atTime: presentTime, withInput: writerInput)
+                    let appendSuccess:Bool = self.appendToAdapter(adaptor, pixelBuffer: buffer!, atTime: presentTime, withInput: writerInput)
                     if(appendSuccess == false){
                         return;
                     }
