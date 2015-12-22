@@ -214,7 +214,7 @@
       NSMutableArray *infoArray = [NSMutableArray array];
       if(self.isItDevice){
         typeof(self) weakSelf = self;
-        __block int execCounter = self.selectedAssets.count - 1;
+        __block int execCounter = (int)self.selectedAssets.count - 1;
         for (PHAsset *asset in self.selectedAssets) {
           [asset requestMetadataWithBlock:^(NSDictionary *metadata) {
             [infoArray addObject:metadata];

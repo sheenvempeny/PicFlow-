@@ -37,7 +37,7 @@ class ViewController: UIViewController,ProjectsCollectionProtocol {
         let mAppDelegate:AppDelegate  =  UIApplication.sharedApplication().delegate as! AppDelegate
         mAppDelegate.mainViewController = self
         let projectArray:NSArray = DBManager.getSharedInstance().getProjects()
-        var mProject:Project?
+//        var mProject:Project?
         for mProject in projectArray
         {
             let aProject = mProject as! Project

@@ -78,9 +78,9 @@ class ProjectsCollectionManager:NSObject,UICollectionViewDataSource,UICollection
     
     func offDeleteButton(timer:NSTimer){
         
-        var _deleteModal:DeleteViewModal = timer.userInfo as! DeleteViewModal
-        var indexPath:NSIndexPath = _deleteModal.indexPath!
-        var index = self.deleteModals.indexOf(_deleteModal)
+        let _deleteModal:DeleteViewModal = timer.userInfo as! DeleteViewModal
+        let indexPath:NSIndexPath = _deleteModal.indexPath!
+        let index = self.deleteModals.indexOf(_deleteModal)
         
         if(index >= 0){
             self.deleteModals.removeAtIndex(index!);
@@ -98,7 +98,7 @@ class ProjectsCollectionManager:NSObject,UICollectionViewDataSource,UICollection
     func canShowDeleteButton(indexPath:NSIndexPath) -> Bool
     {
         var returnStatus:Bool = false
-        var deleteModal:DeleteViewModal?
+      //  var deleteModal:DeleteViewModal?
         for deleteModal in deleteModals{
             if(deleteModal.indexPath!.isEqual(indexPath)){
                 returnStatus = true
@@ -111,7 +111,7 @@ class ProjectsCollectionManager:NSObject,UICollectionViewDataSource,UICollection
     
     func removeFromDeleteModals(indexPath:NSIndexPath){
         
-        var _deleteModal:DeleteViewModal?
+     //   var _deleteModal:DeleteViewModal?
         
         for deleteModal in deleteModals{
             if(deleteModal.indexPath!.isEqual(indexPath)){
@@ -147,12 +147,12 @@ class ProjectsCollectionManager:NSObject,UICollectionViewDataSource,UICollection
         if (gestureRecognizer.state != UIGestureRecognizerState.Ended) {
             return;
         }
-        var p:CGPoint = gestureRecognizer.locationInView(self.collectionView!)
-        var indexPath:NSIndexPath? = self.collectionView!.indexPathForItemAtPoint(p)
+        let p:CGPoint = gestureRecognizer.locationInView(self.collectionView!)
+        let indexPath:NSIndexPath? = self.collectionView!.indexPathForItemAtPoint(p)
         
         if (indexPath != nil){
             
-            var deleteViewModal:DeleteViewModal = DeleteViewModal()
+            let deleteViewModal:DeleteViewModal = DeleteViewModal()
             deleteViewModal.delegate = self;
             deleteViewModal.indexPath = indexPath;
             deleteModals.append(deleteViewModal)

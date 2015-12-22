@@ -115,8 +115,8 @@
 
 - (void)getAssetWithID:(NSNumber *)assetID success:(void(^)(GCResponseStatus *responseStatus, GCAsset *asset))success failure:(void(^)(NSError *error))failure
 {
-    [GCServiceAsset getAssetWithID:assetID fromAlbumWithID:self.id success:^(GCResponseStatus *responseStatus, GCAsset *asset) {
-        success(responseStatus,asset);
+    [GCServiceAsset getAssetWithID:assetID fromAlbumWithID:self.id success:^(GCResponseStatus *responseStatus, GCAsset *inasset) {
+        success(responseStatus,inasset);
     } failure:^(NSError *error) {
         failure(error);
     }];
@@ -143,8 +143,8 @@
 - (void)moveAssetWithID:(NSNumber *)assetID toAlbumWithID:(NSNumber *)destinationAlbumID success:(void (^)(GCResponseStatus *, GCAsset *))success failure:(void (^)(NSError *))failure
 {
     
-    [GCServiceAlbum moveAssetWithID:assetID fromAlbumWithID:self.id toAlbumWithID:destinationAlbumID success:^(GCResponseStatus *responseStatus, GCAsset *asset) {
-        success(responseStatus,asset);
+    [GCServiceAlbum moveAssetWithID:assetID fromAlbumWithID:self.id toAlbumWithID:destinationAlbumID success:^(GCResponseStatus *responseStatus, GCAsset *inasset) {
+        success(responseStatus,inasset);
     } failure:^(NSError *error) {
         failure(error);
     }];
@@ -152,8 +152,8 @@
 
 - (void)copyAssetWithID:(NSNumber *)assetID toAlbumWithID:(NSNumber *)destinationAlbumID success:(void (^)(GCResponseStatus *, GCAsset *))success failure:(void (^)(NSError *))failure
 {
-    [GCServiceAlbum copyAssetWithID:assetID fromAlbumWithID:self.id toAlbumWithID:destinationAlbumID success:^(GCResponseStatus *responseStatus, GCAsset *asset) {
-        success(responseStatus,asset);
+    [GCServiceAlbum copyAssetWithID:assetID fromAlbumWithID:self.id toAlbumWithID:destinationAlbumID success:^(GCResponseStatus *responseStatus, GCAsset *inasset) {
+        success(responseStatus,inasset);
     } failure:^(NSError *error) {
         failure(error);
     }];

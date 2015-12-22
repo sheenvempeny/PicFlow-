@@ -245,8 +245,8 @@ class RAReorderableLayout: UICollectionViewFlowLayout, UIGestureRecognizerDelega
         }
         
         let offset = self.offsetFromTop
-        let insetTop = self.insetsTop
-        let insetEnd = self.insetsEnd
+//        let insetTop = self.insetsTop
+//        let insetEnd = self.insetsEnd
         let trigerInsetTop = self.trigerInsetTop
         let trigerInsetEnd = self.trigerInsetEnd
         let paddingTop = self.trigerPaddingTop
@@ -354,10 +354,10 @@ class RAReorderableLayout: UICollectionViewFlowLayout, UIGestureRecognizerDelega
         let offset = self.offsetFromTop
         let offsetEnd = self.offsetFromTop + self.collectionViewLength
         let insetTop = self.insetsTop
-        let insetEnd = self.insetsEnd
+//        let insetEnd = self.insetsEnd
         let trigerInsetTop = self.trigerInsetTop
         let trigerInsetEnd = self.trigerInsetEnd
-        let paddingTop = self.trigerPaddingTop
+//        let paddingTop = self.trigerPaddingTop
         let paddingEnd = self.trigerPaddingEnd
         
         var percentage: CGFloat = 0

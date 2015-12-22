@@ -129,13 +129,13 @@ import Foundation
             
             for dict in images
             {
-                var prefix:String = "image"
-                var path = NSFileManager.defaultManager().uniqueNameForPath(self.resourcePath!, withPrefix:prefix , withExtension: "png")
+                let prefix:String = "image"
+                let path = NSFileManager.defaultManager().uniqueNameForPath(self.resourcePath!, withPrefix:prefix , withExtension: "png")
                 image = dict.objectForKey(UIImagePickerControllerOriginalImage) as? UIImage
                 UIImagePNGRepresentation(image!)!.writeToFile(path, atomically: true)
                 
                 //Here we saving image to our directory
-                var newFrame = Frame()
+                let newFrame = Frame()
                 newFrame.parentFolder = self.resourcePath!
                 newFrame.imagePath = (path as NSString).lastPathComponent
                 self.frames.append(newFrame)

@@ -69,10 +69,10 @@ static NSString * const kGCDefaultPerPage = @"100";
      NSDictionary *params = [mapping serializeObject:album];
      */
     
-    if (moderateMedia == nil)
-        moderateMedia = NO;
-    if (moderateComments == nil)
-        moderateComments = NO;
+//    if (moderateMedia == nil)
+//        moderateMedia = NO;
+//    if (moderateComments == nil)
+//        moderateComments = NO;
     if (name == nil)
         name = @"Album";
     
@@ -113,10 +113,10 @@ static NSString * const kGCDefaultPerPage = @"100";
      NSDictionary *params = [mapping serializeObject:album];
      */
     
-    if (moderateMedia == nil)
-        moderateMedia = NO;
-    if (moderateComments == nil)
-        moderateComments = NO;
+//    if (moderateMedia == nil)
+//        moderateMedia = NO;
+//    if (moderateComments == nil)
+//        moderateComments = NO;
     if (name == nil)
         name = kGCDefaultAlbumName;
     

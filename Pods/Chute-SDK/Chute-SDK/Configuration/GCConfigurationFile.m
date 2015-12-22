@@ -45,7 +45,7 @@ static NSDictionary *sGCServiceFeatures;
 {
     if (![configuration section]) return;
     
-    NSError *error;
+   // NSError *error;
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     NSString *documentsDirectory = [paths objectAtIndex:0];
     NSString *path = [documentsDirectory stringByAppendingPathComponent:[NSString stringWithFormat:@"%@.%@", kGCConfiguration, kGCExtension]];

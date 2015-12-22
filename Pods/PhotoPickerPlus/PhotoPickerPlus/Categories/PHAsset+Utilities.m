@@ -74,8 +74,8 @@
 {
   NSInteger duration = round(self.duration);
 
-  int min = duration/60;
-  int seconds = duration - 60*min;
+  int min = (int)(duration/60);
+  int seconds = (int)(duration - 60*min);
   
   return [NSString stringWithFormat:@"%i:%02i", min, seconds];
 }

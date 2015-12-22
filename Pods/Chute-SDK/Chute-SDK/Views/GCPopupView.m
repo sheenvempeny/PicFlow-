@@ -73,7 +73,7 @@ static CGPoint endPoint;
 	if (_parentView) {
 		self.frame = _parentView.bounds;
 	}
-	CGRect bounds = self.bounds;
+	//CGRect bounds = self.bounds;
     
     [self setFrame:[GCPopupView popupFrameForView:_parentView withStartPoint:CGPointZero]];
     [closeButton setFrame:[self closeButtonFrame]];

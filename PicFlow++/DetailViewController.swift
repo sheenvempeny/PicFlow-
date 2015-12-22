@@ -56,7 +56,7 @@ class DetailViewController: UIViewController,RAReorderableLayoutDelegate, RAReor
         self.picCollectionView.delegate = self
         self.picCollectionView.dataSource = self
         (self.picCollectionView.collectionViewLayout as! RAReorderableLayout).scrollDirection = .Horizontal
-        var timer = NSTimer.scheduledTimerWithTimeInterval(0.05, target: self, selector: Selector("selectDefaultPic"), userInfo: nil, repeats: false)
+        NSTimer.scheduledTimerWithTimeInterval(0.05, target: self, selector: Selector("selectDefaultPic"), userInfo: nil, repeats: false)
        
     }
     

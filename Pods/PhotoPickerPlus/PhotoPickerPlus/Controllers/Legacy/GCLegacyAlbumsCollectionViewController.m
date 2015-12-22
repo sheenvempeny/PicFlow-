@@ -162,7 +162,7 @@ static NSString * const reuseIdentifier = @"AlbumCell";
         [group setAssetsFilter:[ALAssetsFilter allVideos]];
       if ([[[GCPhotoPickerConfiguration configuration] mediaTypesAvailable] isEqualToString:@"All Media"])
         [group setAssetsFilter:[ALAssetsFilter allAssets]];
-      [elementCount addObject: [NSNumber numberWithInt:group.numberOfAssets]];
+      [elementCount addObject: [NSNumber numberWithInt:(int)group.numberOfAssets]];
       
     } else
     {

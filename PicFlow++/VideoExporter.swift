@@ -26,8 +26,8 @@ class VideoExporter: NSObject
             "kCVPixelBufferCGBitmapContextCompatibilityKey": true
         ]
         
-        var pixelBufferPointer = UnsafeMutablePointer<CVPixelBuffer?>.alloc(1)
-        var status:CVReturn = CVPixelBufferCreate(
+        let pixelBufferPointer = UnsafeMutablePointer<CVPixelBuffer?>.alloc(1)
+        CVPixelBufferCreate(
             kCFAllocatorDefault,
             Int(frameSize.width),
             Int(frameSize.height),
@@ -36,12 +36,12 @@ class VideoExporter: NSObject
             pixelBufferPointer
         )
         
-        var lockStatus:CVReturn = CVPixelBufferLockBaseAddress(pixelBufferPointer.memory!, 0)
-        var pxData:UnsafeMutablePointer<(Void)> = CVPixelBufferGetBaseAddress(pixelBufferPointer.memory!)
-      //  let bitmapinfo = CGBitmapInfo(rawValue: CGImageAlphaInfo.NoneSkipFirst.rawValue)
+        CVPixelBufferLockBaseAddress(pixelBufferPointer.memory!, 0)
+        let pxData:UnsafeMutablePointer<(Void)> = CVPixelBufferGetBaseAddress(pixelBufferPointer.memory!)
+     
         let rgbColorSpace:CGColorSpace = CGColorSpaceCreateDeviceRGB()!
         
-        var context:CGContextRef = CGBitmapContextCreate(
+        let context:CGContextRef = CGBitmapContextCreate(
             pxData,
             Int(frameSize.width),
             Int(frameSize.height),
