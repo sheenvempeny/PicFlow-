@@ -17,6 +17,8 @@
 		3010F0021AC199080018B238 /* DB.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 3010F0011AC199080018B238 /* DB.xcconfig */; };
 		3014F0041ABEB05700817FDF /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3014EFE31ABEB05700817FDF /* InfoPlist.strings */; };
 		3014F0051ABEB05700817FDF /* PhotoPickerPlus.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3014EFE51ABEB05700817FDF /* PhotoPickerPlus.strings */; };
+		301CF13E1C2938490079D85B /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 301CF13D1C2938490079D85B /* CoreData.framework */; };
+		301CF1411C2938B30079D85B /* Project.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 301CF13F1C2938B30079D85B /* Project.xcdatamodeld */; settings = {ASSET_TAGS = (); }; };
 		3044CCC01AAC472E005DEC22 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3044CCBF1AAC472E005DEC22 /* AVFoundation.framework */; };
 		3044CCC21AAC4773005DEC22 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3044CCC11AAC4773005DEC22 /* MediaPlayer.framework */; };
 		3044CCC41AAC6749005DEC22 /* Project.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3044CCC31AAC6749005DEC22 /* Project.swift */; };
@@ -101,6 +103,8 @@
 		3010F0121AC19D480018B238 /* sqlite3.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = sqlite3.h; sourceTree = "<group>"; };
 		3014EFE41ABEB05700817FDF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		3014EFE61ABEB05700817FDF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/PhotoPickerPlus.strings; sourceTree = "<group>"; };
+		301CF13D1C2938490079D85B /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		301CF1401C2938B30079D85B /* Project.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Project.xcdatamodel; sourceTree = "<group>"; };
 		3044CCBF1AAC472E005DEC22 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		3044CCC11AAC4773005DEC22 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 		3044CCC31AAC6749005DEC22 /* Project.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Project.swift; sourceTree = "<group>"; };
@@ -155,6 +159,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				301CF13E1C2938490079D85B /* CoreData.framework in Frameworks */,
 				30CDD5F71AC0055E004E2513 /* libsqlite3.dylib in Frameworks */,
 				300B914F1AB972AB00A6C5EF /* CoreMedia.framework in Frameworks */,
 				300B914D1AB9721800A6C5EF /* AssetsLibrary.framework in Frameworks */,
@@ -354,6 +359,7 @@
 				3044CCC51AAC67F8005DEC22 /* Frame.swift */,
 				300B91481AB95C6300A6C5EF /* VideoExporter.swift */,
 				30D93AE91ACD2B22002D7762 /* ProjectSaver.swift */,
+				301CF13F1C2938B30079D85B /* Project.xcdatamodeld */,
 			);
 			name = Modals;
 			sourceTree = "<group>";
@@ -361,6 +367,7 @@
 		502E01A0E17D392E8E37F21E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				301CF13D1C2938490079D85B /* CoreData.framework */,
 				3010F00E1AC19D480018B238 /* sqlite3 */,
 				3010F0091AC19CD70018B238 /* sqlite3 */,
 				3010F0071AC19C4B0018B238 /* libsqlite3.0.dylib */,
@@ -546,6 +553,7 @@
 				30F84A171AAECF10003DC410 /* DetailViewController.swift in Sources */,
 				304A0C3F1AADD96700370E7F /* RAReorderableLayout.swift in Sources */,
 				30EC14B31A7F579100985144 /* ViewController.swift in Sources */,
+				301CF1411C2938B30079D85B /* Project.xcdatamodeld in Sources */,
 				30EC14B11A7F579100985144 /* AppDelegate.swift in Sources */,
 				30D93AEA1ACD2B22002D7762 /* ProjectSaver.swift in Sources */,
 				3082177A1AB1D21000F6E496 /* YRImageZoomingView.swift in Sources */,
@@ -803,6 +811,19 @@
 			defaultConfigurationName = Debug;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		301CF13F1C2938B30079D85B /* Project.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				301CF1401C2938B30079D85B /* Project.xcdatamodel */,
+			);
+			currentVersion = 301CF1401C2938B30079D85B /* Project.xcdatamodel */;
+			path = Project.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 30EC14A31A7F579100985144 /* Project object */;
 }

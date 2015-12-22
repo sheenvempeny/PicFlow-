@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="8195" systemVersion="14E26a" minimumToolsVersion="Xcode 7.0">
+    <entity name="Frame" syncable="YES">
+        <attribute name="imagePath" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="parentFolder" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="Project" syncable="YES">
+        <attribute name="captionImagePath" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="creationDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="modificationDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="resourcePath" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="uniqueId" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="frames" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Frame" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Project" positionX="-63" positionY="-18" width="128" height="150"/>
+        <element name="Frame" positionX="-54" positionY="36" width="128" height="75"/>
+    </elements>
+</model>

@@ -71,7 +71,7 @@ import Foundation
             if(_frames != nil)
             {
                 frames = _frames as! [Frame]
-                var _frame:Frame?
+               // var _frame:Frame?
                 for _frame in self.frames
                 {
                     _frame.parentFolder = resourcePath!
@@ -124,7 +124,7 @@ import Foundation
                 self.createResources();
             }
             
-            var dict:NSDictionary?
+           // var dict:NSDictionary?
             var image:UIImage?
             
             for dict in images
