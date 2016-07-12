@@ -10,11 +10,6 @@ Social Medias
 2) Facebook
 3) Dropbox
 
-Revenue
-————
-
-1) From Advertisement , Show add when something in progress
-2) Remove add , in app purchase
 
 Feature
 —————
